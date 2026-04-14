@@ -3,17 +3,15 @@
 #
 # SPDX-License-Identifier: CC0-1.0
 
-# Germany test configuration - simplified model for testing and development
-
 run:
-  name: "germany-test" 
+  name: "germany_24h" 
   disable_progressbar: true
   shared_resources:
     policy: false
 
 scenario:
   clusters:
-  - all
+  - all # no clustering
   opts:
   - '' # base electricity model
   planning_horizons:
@@ -35,17 +33,23 @@ load:
   #  Store: [H2]
   #  Link: [H2 pipeline]
 
-electricity:
-  renewable_carriers: [solar, solar-hsat, onwind, offwind-ac, offwind-dc, offwind-float]
-  estimate_renewable_capacities:
-    enable: true
-    from_powerplantmatching: true
-    year: 2025
-    expansion_limit: false
-    technology_mapping:
-      Offshore: offwind-ac
-      Onshore: onwind
-      PV: solar
+# electricity:
+#   extendable_carriers:
+#     Generator: [solar, solar-hsat, onwind, offwind-ac, offwind-dc, offwind-float]
+#     StorageUnit: []
+#     Store: []
+#     Link: []
+#   conventional_carriers: []
+#   renewable_carriers: [solar, solar-hsat, onwind, offwind-ac, offwind-dc, offwind-float]
+#   estimate_renewable_capacities:
+#     enable: true
+#     from_powerplantmatching: true
+#     year: 2025
+#     expansion_limit: false
+#     technology_mapping:
+#       Offshore: offwind-ac
+#       Onshore: onwind
+#       PV: solar
 
 atlite:
   default_cutout: "europe-2025-sarah3-era5"
