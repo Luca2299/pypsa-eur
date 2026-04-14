@@ -1,0 +1,91 @@
+# yaml-language-server: $schema=./schema.default.json
+# SPDX-FileCopyrightText: Contributors to PyPSA-Eur <https://github.com/pypsa/pypsa-eur>
+#
+# SPDX-License-Identifier: CC0-1.0
+
+# Germany test configuration - simplified model for testing and development
+
+run:
+  name: "germany-365"
+  disable_progressbar: true
+  shared_resources:
+    policy: false
+
+scenario:
+  clusters:
+  - adm
+  opts:
+  - '' # base electricity model
+  planning_horizons:
+  - 2025
+
+countries: ['DE']
+
+snapshots:
+  start: "2025-01-01"
+  end: "2025-12-31"
+
+load:
+  supplement_synthetic: false
+
+#electricity:
+ # extendable_carriers:
+ #  Generator: [solar, solar-hsat, onwind, offwind-ac, offwind-dc, offwind-float, OCGT, CCGT, nuclear]
+ #   StorageUnit: [battery]
+  #  Store: [H2]
+  #  Link: [H2 pipeline]
+
+electricity:
+  renewable_carriers: [solar, solar-hsat, onwind, offwind-ac, offwind-dc, offwind-float]
+  powerplants_filter: false
+  everywhere_powerplants: [Natural Gas]
+  estimate_renewable_capacities:
+    enable: true
+    from_powerplantmatching: true
+    year: 2025
+    expansion_limit: false
+    technology_mapping:
+      Offshore: offwind-ac
+      Onshore: onwind
+      PV: solar
+
+atlite:
+  default_cutout: "europe-2025-sarah3-era5"
+
+renewable:
+  onwind:
+    corine: false
+  solar:
+    corine: false
+  solar-hsat:
+    corine: false
+
+clustering:
+  mode: administrative
+  administrative:
+    level: 2
+  exclude_carriers: []
+  temporal:
+    resolution_elec: 24h
+#lines.dynamic_line_rating.activate: true enables dynamic line rating, 
+#which means line capacity can vary with weather conditions rather than being fixed. 
+#max_line_rating: 1.3 allows lines to carry up to 130% of their nominal rating 
+#in favorable conditions
+
+#lines:
+#  dynamic_line_rating: 
+#    activate: true 
+#   max_line_rating: 1.3
+
+solving:
+  solver:
+    name: highs
+    options: highs-default
+
+  check_objective:
+    enable: false
+
+data:
+  cutout:
+    source: archive
+    version: v1.0
