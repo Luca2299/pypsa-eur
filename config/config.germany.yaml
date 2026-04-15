@@ -19,18 +19,28 @@ load:
   supplement_synthetic: false
 
 electricity:
-  powerplants_filter: "p_nom.notna() and p_nom > 0"
+  powerplants_filter: "Capacity.notna() and Capacity > 0"
   custom_powerplants: false
-  renewable_carriers: [solar, solar-hsat, onwind, offwind-ac, offwind-dc, offwind-float]
+  conventional_carriers:
+    - OCGT
+    - CCGT
+    - coal
+    - lignite
+    - nuclear
+    - oil
+    - biomass
+    - biogas
+    - hydro
+    - ror
+    - PHS
+    - solar
+    - onwind
+    - offwind-ac
+    - offwind-dc
+  extendable_carriers:
+    Generator: []
   estimate_renewable_capacities:
-    enable: true
-    from_powerplantmatching: true
-    year: 2025
-    expansion_limit: false
-    technology_mapping:
-      Offshore: offwind-ac
-      Onshore: onwind
-      PV: solar
+    enable: false
 
 countries: ['DE']
 
