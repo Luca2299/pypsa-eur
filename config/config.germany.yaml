@@ -9,7 +9,7 @@ run:
 
 scenario:
   clusters:
-  - all # no clustering
+  - "470" #max clusters
   opts:
   - "" # base electricity model
   planning_horizons:
@@ -19,34 +19,25 @@ load:
   supplement_synthetic: false
 
 electricity:
-  powerplants_filter: "Capacity.notna() and Capacity > 0"
   custom_powerplants: false
-  conventional_carriers:
-    - OCGT
-    - CCGT
-    - coal
-    - lignite
-    - nuclear
-    - oil
-    - biomass
-    - biogas
-    - hydro
-    - ror
-    - PHS
-    - solar
-    - onwind
-    - offwind-ac
-    - offwind-dc
-  extendable_carriers:
-    Generator: []
+  renewable_carriers: [solar, onwind, offwind-ac, offwind-dc]
   estimate_renewable_capacities:
-    enable: false
+    enable: true
+    from_powerplantmatching: true
+    year: 2025
+    expansion_limit: false
+    technology_mapping:
+      Offshore: offwind-ac
+      Onshore: onwind
+      PV: solar
+  extendable_carriers:
+    Generator: [solar, onwind, offwind-ac, offwind-dc, OCGT, CCGT]
 
 countries: ['DE']
 
 snapshots:
   start: "2025-05-14"
-  end: "2025-05-16"
+  end: "2025-05-15"
 
 atlite:
   default_cutout: "europe-2025-sarah3-era5"
