@@ -17,13 +17,15 @@ gurobi.log
 .idea
 
 /bak
+/resources/germany_24h
+/resources/germany-*
 /resources
 /resources*
 /results
 /networks
 /benchmarks
 /logs
-/notebooks
+#/notebooks
 /data/*
 /cutouts
 /tmp
@@ -73,7 +75,7 @@ d1gam3xoknrgr2.cloudfront.net/
 
 *.geojson
 
-*.ipynb
+#*.ipynb
 
 merger-todos.md
 
