@@ -647,7 +647,7 @@ def attach_conventional_generators(
         marginal_cost = ppl.marginal_cost
 
     # Define generators using modified ppl DataFrame
-    ppl["p_nom"] = pd.to_numeric(ppl["p_nom"], errors="coerce").fillna(0)
+    ppl["p_nom"] = pd.to_numeric(ppl["p_nom"], errors="coerce").fillna(0) # added by me, Luca Kristin Heyeckhaus
     caps = ppl.groupby("carrier").p_nom.sum().div(1e3).round(2)
     logger.info(f"Adding {len(ppl)} generators with capacities [GW]pp \n{caps}")
 
