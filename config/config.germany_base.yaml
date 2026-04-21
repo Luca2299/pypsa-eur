@@ -9,7 +9,7 @@ run:
 
 scenario:
   clusters:
-  - "all" #max clusters
+  - "450" #max clusters
   opts:
   - "" # base electricity model
   planning_horizons:
