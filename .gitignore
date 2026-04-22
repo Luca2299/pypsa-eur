@@ -25,6 +25,7 @@ gurobi.log
 #/networks
 /benchmarks
 /logs
+*/germany_base//logs
 #/notebooks
 /data/*
 /cutouts
@@ -84,6 +85,8 @@ resources/*/transmission_projects
 merger-todos.md
 
 *.html
+
+*.log
 
 # private dev folder
 dev/*
