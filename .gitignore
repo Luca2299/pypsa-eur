@@ -19,10 +19,10 @@ gurobi.log
 /bak
 /resources/germany_24h
 /resources/germany-*
-/resources
-/resources*
-/results
-/networks
+#/resources
+#/resources*
+/results/germany
+#/networks
 /benchmarks
 /logs
 #/notebooks
@@ -61,7 +61,11 @@ d1gam3xoknrgr2.cloudfront.net/
 
 *.org
 
-*.nc
+resources/*/*.*
+
+resources/*/transmission_projects
+
+#*.nc
 
 *~
 

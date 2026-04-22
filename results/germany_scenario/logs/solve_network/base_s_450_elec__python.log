@@ -1,0 +1,35 @@
+INFO:pypsa.network.io:New version 1.2.0 available! (Current: 1.1.2)
+INFO:pypsa.network.io:Imported network 'Unnamed Network' has buses, carriers, generators, lines, links, loads, stores, sub_networks
+INFO:__main__:Using single-pass optimization...
+INFO:__main__:Creating optimization model...
+INFO:__main__:Adding extra functionality (custom constraints)...
+INFO:__main__:Solving model...
+INFO:linopy.model: Solve problem using Highs solver
+INFO:linopy.model:Solver logs written to `results/germany_scenario/logs/solve_network/base_s_450_elec__solver.log`.
+INFO:linopy.model:Solver options:
+ - threads: 1
+ - solver: ipm
+ - run_crossover: off
+ - small_matrix_value: 1e-06
+ - large_matrix_value: 1000000000.0
+ - primal_feasibility_tolerance: 1e-05
+ - dual_feasibility_tolerance: 1e-05
+ - ipm_optimality_tolerance: 0.0001
+ - parallel: on
+ - random_seed: 123
+INFO:linopy.io:Writing objective.
+INFO:linopy.io: Writing time: 0.47s
+INFO:linopy.solvers:Log file at /home/lucakristin/Desktop/my_pypsa/pypsa-eur/results/germany_scenario/logs/solve_network/base_s_450_elec__solver.log
+WARNING:linopy.solvers:Solution status unknown. Trying to parse solution.
+WARNING:linopy.solvers:Solution parsed successfully.
+INFO:linopy.constants: Optimization successful: 
+Status: ok
+Termination condition: unknown
+Solution: 182803 primals, 423016 duals
+Objective: 1.16e+07
+Solver model: available
+Solver message: Unknown
+
+INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Generator-ext-p-lower, Generator-ext-p-upper, Line-ext-s-lower, Line-ext-s-upper, Link-ext-p-lower, Link-ext-p-upper, Store-ext-e-lower, Store-ext-e-upper, Kirchhoff-Voltage-Law, Store-energy_balance, Line-loss_upper, Line-loss_tangents-1--1, Line-loss_tangents-1-1, Line-loss_tangents-2--1, Line-loss_tangents-2-1 were not assigned to the network.
+INFO:__main__:Maximum memory usage: (1642.05078125, 1776866307.5941467)
+INFO:pypsa.network.io:Exported network 'Unnamed Network' saved to 'results/germany_scenario/networks/base_s_450_elec_.nc contains: carriers, loads, sub_networks, buses, lines, links, generators, stores
