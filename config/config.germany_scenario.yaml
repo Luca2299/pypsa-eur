@@ -1,0 +1,80 @@
+# yaml-language-server: $schema=./schema.default.json
+# Minimal Germany single-day configuration
+
+run:
+  name: "germany_scenario"
+  disable_progressbar: true
+  shared_resources:
+    policy: false
+
+scenario:
+  clusters:
+  - "450" #max clusters
+  opts:
+  - "" # base electricity model
+  planning_horizons:
+  - 2025
+
+load:
+  supplement_synthetic: false
+
+electricity:
+  custom_powerplants: false
+  renewable_carriers: [solar, onwind, offwind-ac, offwind-dc]
+  estimate_renewable_capacities:
+    enable: true
+    from_powerplantmatching: true
+    year: 2025
+    expansion_limit: false
+    technology_mapping:
+      Offshore: offwind-ac
+      Onshore: onwind
+      PV: solar
+  extendable_carriers:
+    Generator: [solar, onwind, offwind-ac, offwind-dc, OCGT, CCGT]
+
+
+# In the first simulation I had this enabled, 
+# but then it does not show the state of the lines right now 
+transmission_projects:
+  enable: false
+
+countries: ['DE']
+
+snapshots:
+  start: "2025-05-14"
+  end: "2025-05-15"
+
+atlite:
+  default_cutout: "europe-2025-sarah3-era5"
+
+renewable:
+  onwind:
+    corine: false
+  solar:
+    corine: false
+  solar-hsat:
+    corine: false
+
+
+# Warning: takes a lot of time to solve!!
+# should I apply Dynamic line rating (variability due to weather conditions) to the lines?
+#lines:
+#  dynamic_line_rating:
+#    activate: true
+#    max_line_rating: 1.3 
+    # means that under the most favorable conditions, 
+    # the model will allow a line's capacity to be increased to 130% of its standard, static rating
+
+solving:
+  solver:
+    name: highs
+    options: highs-default
+
+  check_objective:
+    enable: false
+
+data:
+  cutout:
+    source: archive
+    version: v1.0
