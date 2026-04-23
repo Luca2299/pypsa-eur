@@ -42,13 +42,7 @@ electricity:
       PV: solar
       Onshore: onwind
   extendable_carriers:
-    Generator:
-    - solar
-    - onwind
-    - offwind-ac
-    - offwind-dc
-    - OCGT
-    - CCGT
+    Generator: []
     StorageUnit: []
     Store:
     - battery
