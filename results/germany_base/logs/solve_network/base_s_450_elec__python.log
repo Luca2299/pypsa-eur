@@ -18,18 +18,18 @@ INFO:linopy.model:Solver options:
  - parallel: on
  - random_seed: 123
 INFO:linopy.io:Writing objective.
-INFO:linopy.io: Writing time: 0.34s
+INFO:linopy.io: Writing time: 1.12s
 INFO:linopy.solvers:Log file at /home/lucakristin/Desktop/my_pypsa/pypsa-eur/results/germany_base/logs/solve_network/base_s_450_elec__solver.log
 WARNING:linopy.solvers:Solution status unknown. Trying to parse solution.
 WARNING:linopy.solvers:Solution parsed successfully.
 INFO:linopy.constants: Optimization successful: 
 Status: ok
 Termination condition: unknown
-Solution: 182803 primals, 423016 duals
-Objective: 1.10e+07
+Solution: 181217 primals, 420494 duals
+Objective: 1.11e+07
 Solver model: available
 Solver message: Unknown
 
-INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Generator-ext-p-lower, Generator-ext-p-upper, Line-ext-s-lower, Line-ext-s-upper, Link-ext-p-lower, Link-ext-p-upper, Store-ext-e-lower, Store-ext-e-upper, Kirchhoff-Voltage-Law, Store-energy_balance, Line-loss_upper, Line-loss_tangents-1--1, Line-loss_tangents-1-1, Line-loss_tangents-2--1, Line-loss_tangents-2-1 were not assigned to the network.
-INFO:__main__:Maximum memory usage: (1610.875, 1776871776.6033394)
-INFO:pypsa.network.io:Exported network 'Unnamed Network' saved to 'results/germany_base/networks/base_s_450_elec_.nc contains: loads, sub_networks, carriers, links, buses, lines, stores, generators
+INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Line-ext-s-lower, Line-ext-s-upper, Link-ext-p-lower, Link-ext-p-upper, Store-ext-e-lower, Store-ext-e-upper, Kirchhoff-Voltage-Law, Store-energy_balance, Line-loss_upper, Line-loss_tangents-1--1, Line-loss_tangents-1-1, Line-loss_tangents-2--1, Line-loss_tangents-2-1 were not assigned to the network.
+INFO:__main__:Maximum memory usage: (1590.3828125, 1776942548.7677393)
+INFO:pypsa.network.io:Exported network 'Unnamed Network' saved to 'results/germany_base/networks/base_s_450_elec_.nc contains: loads, buses, generators, links, carriers, sub_networks, stores, lines
