@@ -74,6 +74,11 @@ solving:
     name: highs
     options: highs-default
 
+#solving:
+  #options:
+    #load_shedding:
+      #enable: true
+      #marginal_cost: 3000 # default is 1000
   check_objective:
     enable: false
 
