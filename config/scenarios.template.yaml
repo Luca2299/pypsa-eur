@@ -27,4 +27,23 @@ no-offwind:
     - onwind
     - hydro
 
+# scenarios for different seasons 
+winter: 
+  snapshots:
+    start: "2025-01-14"
+    end: "2026-01-15"
 
+spring:
+  snapshots:
+    start: "2025-04-14"
+    end: "2025-04-15"
+
+summer:
+  snapshots:
+    start: "2025-07-14"
+    end: "2025-07-15"
+
+fall:
+  snapshots:
+    start: "2025-09-14"
+    end: "2025-09-15"
