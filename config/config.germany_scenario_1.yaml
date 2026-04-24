@@ -34,7 +34,7 @@ electricity:
       Offshore: offwind-ac # assuming that all offshore wind is AC
       PV: solar
   extendable_carriers:
-    Generator: [solar, onwind, offwind-ac, offwind-dc, OCGT, CCGT]
+    Generator: [solar, onwind, offwind-ac, offwind-dc, OCGT, CCGT, lignite, oil]
 
 atlite:
   default_cutout: "europe-2025-sarah3-era5"

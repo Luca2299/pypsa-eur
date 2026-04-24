@@ -52,7 +52,7 @@ def modify_fossil_fuel_capacity(n: pypsa.Network, factor: float = 0.8, latitude_
     latitude_threshold : float, optional
         The latitude threshold to define the southern region, by default 47.5.
     """
-    print(f"Modifying southern fossil fuel capacity by a factor of {factor}")
+    print(f"Modifying fossil fuel capacity by a factor of {factor} for generators south of {latitude_threshold} degrees latitude")
     fossil_carriers = ['CCGT', 'gas', 'lignite', 'hard coal', 'coal', 'oil']
     
     # Define southern buses (example: south of 47.5 degrees latitude)
@@ -63,34 +63,6 @@ def modify_fossil_fuel_capacity(n: pypsa.Network, factor: float = 0.8, latitude_
         (n.generators.bus.isin(buses))
     ]
     n.generators.loc[fossil_gens, 'p_nom'] *= factor
-
-def modify_fossil_fuel_production(n: pypsa.Network, factor: float = 0.8, latitude_threshold: float = 47.5) -> None:
-    """
-    Modifies the production of fossil fuel generators in the south.
-
-    Parameters
-    ----------
-    n : pypsa.Network
-        The PyPSA network to modify.
-    factor : float, optional
-        The factor by which to multiply the production, by default 0.8.
-    latitude_threshold : float, optional
-        The latitude threshold to define the southern region, by default 47.5.
-    """
-    print(f"Modifying southern fossil fuel production by a factor of {factor}")
-    fossil_carriers = ['CCGT', 'gas', 'lignite', 'hard coal', 'coal', 'oil']
-    
-    # Define southern buses (example: south of 47.5 degrees latitude)
-    buses = n.buses.index[n.buses.y < latitude_threshold]
-    
-    fossil_gens = n.generators.index[
-        (n.generators.carrier.isin(fossil_carriers)) &
-        (n.generators.bus.isin(buses))
-    ]
-    
-    for gen in fossil_gens:
-        if gen in n.generators_t.p_nom.columns:
-            n.generators_t.p_nom[gen] *= factor
 
 if __name__ == "__main__":
     # --- Configuration ---
@@ -103,9 +75,11 @@ if __name__ == "__main__":
     # Define home relative to the script's location
     script_dir = os.path.dirname(__file__)
     home = os.path.abspath(os.path.join(script_dir, '..', '..'))
+    print(f"Home directory set to: {home}")
+    print(f"Skript directory: {script_dir}")
 
     # 1. Load the base network
-    base_network_path = f"{home}/pypsa-eur/resources/{base_config_name}/networks/base_s_{cluster}_elec.nc"
+    base_network_path = f"{home}/my_pypsa/pypsa-eur/resources/{base_config_name}/networks/base_s_{cluster}_elec_.nc"
     print(f"Loading base network from: {base_network_path}")
     n = pypsa.Network(base_network_path)
 
@@ -114,16 +88,15 @@ if __name__ == "__main__":
 
     # 3. Modify the network
     print("--- Applying modifications ---")
-    modify_offshore_capacity(n_scenario, factor=1.5)
-    #modify_fossil_fuel_capacity(n_scenario, factor=0.8, latitude_threshold=47.5)
-    modify_onshore_capacity(n_scenario, factor=1.2)
-    modify_fossil_fuel_production(n_scenario, factor=0.8, latitude_threshold=47.5)
+    modify_offshore_capacity(n_scenario, factor=2)
+    modify_fossil_fuel_capacity(n_scenario, factor=0.3, latitude_threshold=47.5)
+    modify_onshore_capacity(n_scenario, factor=1.5)
 
     # 4. Create the path for the output file
-    output_path = f"{home}/pypsa-eur/resources/{scenario_config_name}/networks/"
+    output_path = f"{home}//my_pypsa/pypsa-eur/resources/{scenario_config_name}/networks/"
     os.makedirs(output_path, exist_ok=True)
     
-    scenario_network_path = f"{output_path}base_s_{cluster}_elec.nc"
+    scenario_network_path = f"{output_path}base_s_{cluster}_elec_.nc"
 
     # 5. Export the modified network
     print(f"Exporting scenario network to: {scenario_network_path}")
