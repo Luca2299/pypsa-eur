@@ -2,6 +2,9 @@
 Creates a custom network scenario by modifying generator capacities.
 """
 
+import argparse
+from time import time
+
 import pypsa
 import pandas as pd
 import numpy as np
@@ -85,15 +88,24 @@ def modify_fossil_fuel_capacity(n: pypsa.Network, factor: float = 0.8, latitude_
     print(f"Total modified fossil fuel capacity in the south: {summed_capacity_modified:.2f} MW")
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Create a modified scenario network from a base network."
+    )
+    parser.add_argument("--base-config-name", default="germany_base")
+    parser.add_argument("--scenario-config-name", default="germany_scenario_1")
+    parser.add_argument("--cluster", default="450")
+    parser.add_argument("--home", default="/home/lucakristin/Desktop")
+    args = parser.parse_args()
+
     # --- Configuration ---
     # The base configuration to start from
-    base_config_name = "germany_base"
+    base_config_name = args.base_config_name
     # The name for the new scenario
-    scenario_config_name = "germany_scenario_1"
-    cluster = "450"
+    scenario_config_name = args.scenario_config_name
+    cluster = args.cluster
 
     # Define home relative to the script's location
-    home = "/home/lucakristin/Desktop"
+    home = args.home
     print(f"Home directory set to: {home}")
 
     # 1. Load the base network
@@ -119,4 +131,4 @@ if __name__ == "__main__":
     # 5. Export the modified network
     print(f"Exporting scenario network to: {scenario_network_path}")
     n_scenario.export_to_netcdf(scenario_network_path)
-    print("Scenario network created successfully.")
+    print("Scenario network created successfully. At " + time.ctime())
