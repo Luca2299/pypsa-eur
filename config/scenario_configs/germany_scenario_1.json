@@ -1,0 +1,11 @@
+{
+  "base_config_name": "germany_base",
+  "scenario_config_name": "germany_scenario_1",
+  "cluster": "450",
+  "modifications": {
+    "offshore_capacity_factor": 2.0,
+    "onshore_capacity_factor": 1.5,
+    "fossil_fuel_capacity_factor": 0.1,
+    "fossil_fuel_latitude_quantile": 0.75
+  }
+}

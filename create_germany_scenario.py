@@ -3,12 +3,18 @@ Creates a custom network scenario by modifying generator capacities.
 """
 
 import argparse
-from time import time
+import json
+from time import ctime
 
 import pypsa
 import pandas as pd
 import numpy as np
 import os
+
+
+def load_scenario_configuration(config_path: str) -> dict:
+    with open(config_path, "r", encoding="utf-8") as handle:
+        return json.load(handle)
 
 def modify_offshore_capacity(n: pypsa.Network, factor: float = 1.2) -> None:
     """
@@ -95,21 +101,32 @@ if __name__ == "__main__":
     parser.add_argument("--scenario-config-name", default="germany_scenario_1")
     parser.add_argument("--cluster", default="450")
     parser.add_argument("--home", default="/home/lucakristin/Desktop")
+    parser.add_argument("--scenario-config-file", default=None)
     args = parser.parse_args()
 
     # --- Configuration ---
     # The base configuration to start from
-    base_config_name = args.base_config_name
+    scenario_config = {}
+    if args.scenario_config_file:
+        print(f"Loading scenario config from: {args.scenario_config_file}")
+        scenario_config = load_scenario_configuration(args.scenario_config_file)
+
+    base_config_name = scenario_config.get("base_config_name", args.base_config_name)
     # The name for the new scenario
-    scenario_config_name = args.scenario_config_name
-    cluster = args.cluster
+    scenario_config_name = scenario_config.get("scenario_config_name", args.scenario_config_name)
+    cluster = str(scenario_config.get("cluster", args.cluster))
+    modifications = scenario_config.get("modifications", {})
+    offshore_factor = modifications.get("offshore_capacity_factor", 2)
+    onshore_factor = modifications.get("onshore_capacity_factor", 1.5)
+    fossil_factor = modifications.get("fossil_fuel_capacity_factor", 0.1)
+    fossil_latitude_quantile = modifications.get("fossil_fuel_latitude_quantile", 0.75)
 
     # Define home relative to the script's location
     home = args.home
     print(f"Home directory set to: {home}")
 
     # 1. Load the base network
-    base_network_path = f"{home}/my_pypsa/pypsa-eur/resources/{base_config_name}/networks/base_s_{cluster}_elec_.nc"
+    base_network_path = f"{home}/pypsa-eur/resources/{base_config_name}/networks/base_s_{cluster}_elec_.nc"
     print(f"Loading base network from: {base_network_path}")
     n = pypsa.Network(base_network_path)
 
@@ -118,12 +135,12 @@ if __name__ == "__main__":
 
     # 3. Modify the network
     print("--- Applying modifications ---")
-    modify_offshore_capacity(n_scenario, factor=2)
-    modify_fossil_fuel_capacity(n_scenario, factor=0.1, latitude_quantile=0.75)
-    modify_onshore_capacity(n_scenario, factor=1.5)
+    modify_offshore_capacity(n_scenario, factor=offshore_factor)
+    modify_fossil_fuel_capacity(n_scenario, factor=fossil_factor, latitude_quantile=fossil_latitude_quantile)
+    modify_onshore_capacity(n_scenario, factor=onshore_factor)
 
     # 4. Create the path for the output file
-    output_path = f"{home}//my_pypsa/pypsa-eur/resources/{scenario_config_name}/networks/"
+    output_path = f"{home}/pypsa-eur/resources/{scenario_config_name}/networks/"
     os.makedirs(output_path, exist_ok=True)
     
     scenario_network_path = f"{output_path}base_s_{cluster}_elec_.nc"
@@ -131,4 +148,4 @@ if __name__ == "__main__":
     # 5. Export the modified network
     print(f"Exporting scenario network to: {scenario_network_path}")
     n_scenario.export_to_netcdf(scenario_network_path)
-    print("Scenario network created successfully. At " + time.ctime())
+    print("Scenario network created successfully. At " + ctime())
