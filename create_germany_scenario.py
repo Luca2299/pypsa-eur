@@ -15,6 +15,38 @@ import os
 def load_scenario_configuration(config_path: str) -> dict:
     with open(config_path, "r", encoding="utf-8") as handle:
         return json.load(handle)
+    
+
+def modify_load(n: pypsa.Network, factor: float = 1.1, latitude_quantile: float = 0.25) -> None:
+    """
+    Modifies the load by multiplying it with a factor.
+
+    Parameters
+    ----------
+    n : pypsa.Network
+        The PyPSA network to modify.
+    factor : float, optional
+        The factor by which to multiply the load, by default 1.1.
+    latitude_quantile : float, optional
+        The quantile to define the southern region, by default 0.25 (bottom 25%).
+    """
+    print(f"Modifying load by a factor of {factor}")
+    
+    # Calculate the latitude threshold from the quantile
+    latitude_threshold = n.buses.y.quantile(latitude_quantile)
+    print(f"Modifying load for buses south of latitude {latitude_threshold:.2f} ({latitude_quantile:.0%} quantile).")
+    
+    # Define buses based on the calculated threshold
+    buses = n.buses.index[n.buses.y < latitude_threshold]
+    loads = n.loads.index[n.loads.bus.isin(buses)]
+    print(f"Found {len(loads)} loads in the south to modify.")
+    summed_load = n.loads.loc[loads, "p_set"].sum()
+    
+    # Modify the load
+    n.loads.loc[loads, "p_set"] *= factor
+    summed_load_modified = n.loads.loc[loads, "p_set"].sum()
+    print(f"Base load in the south: {summed_load / factor:.2f} MW")
+    print(f"Total modified load in the south: {summed_load_modified:.2f} MW")
 
 def modify_offshore_capacity(n: pypsa.Network, factor: float = 1.2) -> None:
     """
