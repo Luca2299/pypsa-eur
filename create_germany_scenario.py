@@ -81,6 +81,14 @@ def modify_onshore_capacity(n: pypsa.Network, factor: float = 1.2) -> None:
     n.generators.loc[onshore_gens, "p_nom"] *= factor
 
 
+def reduce_generator_capacity(n: pypsa.Network, factor: float) -> None:
+    """Scale all generator nameplate capacities by a global factor."""
+    if factor <= 0:
+        raise ValueError("capacity_scale must be greater than 0.")
+
+    print(f"Applying global generator capacity scale: {factor:.3f}")
+    n.generators.loc[:, "p_nom"] *= factor
+
 def _normalize_capacity_mix(
     target_mix: dict[str, dict[str, float | None]] | list[tuple[str, float]],
 ) -> dict[str, dict[str, float | None]]:
@@ -113,6 +121,8 @@ def _normalize_capacity_mix(
 def modify_generator_capacity_mix(
     n: pypsa.Network,
     target_mix: dict[str, dict[str, float | None]] | list[tuple[str, float]],
+    capacity_scale: float = 1.0,
+    target_total_capacity: float | None = None,
 ) -> None:
     """
     Modify generator capacities so the installed capacity mix matches target shares.
@@ -141,6 +151,17 @@ def modify_generator_capacity_mix(
         print("Target shares must sum to a positive value; skipping modification.")
         return
 
+    zero_share_carriers = [carrier for carrier, spec in normalized_mix.items() if spec["share"] <= 0]
+    if zero_share_carriers:
+        zero_share_mask = n.generators.carrier.isin(zero_share_carriers)
+        zero_share_capacity = float(n.generators.loc[zero_share_mask, "p_nom"].sum())
+        if zero_share_capacity > 0:
+            print(
+                f"Removing capacity from zero-share carriers {zero_share_carriers}: "
+                f"{zero_share_capacity:.2f} MW"
+            )
+        n.generators.loc[zero_share_mask, "p_nom"] = 0.0
+
     carrier_to_generators: dict[str, pd.Index] = {}
     current_capacities: dict[str, float] = {}
     for carrier_name in normalized_mix:
@@ -154,8 +175,13 @@ def modify_generator_capacity_mix(
         return
 
     total_current_capacity = sum(current_capacities.get(carrier, 0.0) for carrier in carriers_to_modify)
+    if target_total_capacity is None:
+        target_total_capacity = total_current_capacity * capacity_scale
+
     print("Modifying generator capacity mix while keeping the total capacity constant.")
     print(f"Current total capacity of selected carriers: {total_current_capacity:.2f} MW")
+    print(f"Capacity scale applied to selected carriers: {capacity_scale:.3f}")
+    print(f"Target total capacity of selected carriers: {target_total_capacity:.2f} MW")
 
     for carrier in carriers_to_modify:
         spec = normalized_mix[carrier]
@@ -193,7 +219,7 @@ def modify_generator_capacity_mix(
         outside_capacity = current_capacity - selected_capacity
 
         normalized_share = share_map[carrier] / total_share
-        target_capacity = total_current_capacity * normalized_share
+        target_capacity = target_total_capacity * normalized_share
         target_selected_capacity = target_capacity - outside_capacity
 
         if target_selected_capacity < 0:
@@ -291,6 +317,7 @@ if __name__ == "__main__":
     # The name for the new scenario
     scenario_config_name = scenario_config.get("scenario_config_name", args.scenario_config_name)
     cluster = str(scenario_config.get("cluster", args.cluster))
+    capacity_scale = float(scenario_config.get("capacity_scale", 1.0))
     capacity_mix = scenario_config.get("capacity_mix", {})
 
 
@@ -305,7 +332,12 @@ if __name__ == "__main__":
 
     # 3. Modify the network
     print("--- Applying modifications ---")
-    modify_generator_capacity_mix(n_scenario, target_mix=capacity_mix)
+
+    modify_generator_capacity_mix(
+        n_scenario,
+        target_mix=capacity_mix,
+        capacity_scale=capacity_scale,
+    )
 
     # 4. Create the path for the output file
     output_path = f"{home}/pypsa-eur/resources/{scenario_config_name}/networks/"
