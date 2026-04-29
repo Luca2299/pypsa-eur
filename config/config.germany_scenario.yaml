@@ -35,7 +35,9 @@ electricity:
       PV: solar
   extendable_carriers:
     # only renewables are extendable
-    Generator: [solar, onwind, offwind-ac, offwind-dc]
+    #Generator: [solar, onwind, offwind-ac, offwind-dc]
+    Generator: []
+
 
 atlite:
   default_cutout: "europe-2025-sarah3-era5"
