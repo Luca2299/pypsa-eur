@@ -85,8 +85,6 @@ def reduce_generator_capacity(n: pypsa.Network, factor: float) -> None:
     """Scale all generator nameplate capacities by a global factor."""
     if factor <= 0:
         raise ValueError("capacity_scale must be greater than 0.")
-
-    print(f"Applying global generator capacity scale: {factor:.3f}")
     n.generators.loc[:, "p_nom"] *= factor
 
 def _normalize_capacity_mix(
@@ -178,10 +176,8 @@ def modify_generator_capacity_mix(
     if target_total_capacity is None:
         target_total_capacity = total_current_capacity * capacity_scale
 
-    print("Modifying generator capacity mix while keeping the total capacity constant.")
     print(f"Current total capacity of selected carriers: {total_current_capacity:.2f} MW")
-    print(f"Capacity scale applied to selected carriers: {capacity_scale:.3f}")
-    print(f"Target total capacity of selected carriers: {target_total_capacity:.2f} MW")
+    print(f"Scale capacity of selected carriers by {capacity_scale:.3f} to {target_total_capacity:.2f} MW")
 
     for carrier in carriers_to_modify:
         spec = normalized_mix[carrier]
@@ -236,11 +232,7 @@ def modify_generator_capacity_mix(
 
         scale_factor = target_selected_capacity / selected_capacity
 
-        print(
-            f"Carrier '{carrier}': current {current_capacity:.2f} MW -> target {target_capacity:.2f} MW "
-            f"({normalized_share:.1%} share); selected band {selected_capacity:.2f} MW -> "
-            f"{target_selected_capacity:.2f} MW (factor {scale_factor:.4f})"
-        )
+        print(f"{carrier}: modified from {selected_capacity:.2f} MW to {target_selected_capacity:.2f} MW")
 
         n.generators.loc[selected, "p_nom"] *= scale_factor
 
@@ -275,8 +267,6 @@ def modify_fossil_fuel_capacity(n: pypsa.Network, factor: float = 0.8, latitude_
 
     # Calculate the latitude threshold from the quantile
     latitude_threshold = fossil_gens_locations['y'].quantile(latitude_quantile)
-    
-    print(f"Modifying fossil fuel capacity by a factor of {factor} for generators south of latitude {latitude_threshold:.2f} ({latitude_quantile:.0%} quantile).")
 
     # Define southern buses based on the calculated threshold
     buses = n.buses.index[n.buses.y < latitude_threshold]
@@ -292,8 +282,8 @@ def modify_fossil_fuel_capacity(n: pypsa.Network, factor: float = 0.8, latitude_
     n.generators.loc[fossil_gens, "p_nom"] *= factor
     summed_capacity_modified = n.generators.loc[fossil_gens, "p_nom"].sum()
 
-    print(f"Base fossil fuel capacity in the south: {summed_capacity / factor:.2f} MW")
-    print(f"Total modified fossil fuel capacity in the south: {summed_capacity_modified:.2f} MW")
+    print(f"Base fossil fuel capacity: {summed_capacity / factor:.2f} MW")
+    print(f"Modified fossil fuel capacity: {summed_capacity_modified:.2f} MW")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -326,15 +316,19 @@ if __name__ == "__main__":
     base_network_path = f"{home}/pypsa-eur/resources/{base_config_name}/networks/base_s_{cluster}_elec_.nc"
     print(f"Loading base network from: {base_network_path}")
     n = pypsa.Network(base_network_path)
+    
+    # Modify the base network first
+    n.lines["s_nom_extendable"] = False
+    output_path = f"{home}/pypsa-eur/resources/{base_config_name}/networks/"
+    os.makedirs(output_path, exist_ok=True)
+    n.export_to_netcdf(base_network_path)
+    print(f"Exported base network without extendable lines to {base_network_path}")
 
     # 2. Make a copy to create the scenario
     n_scenario = n.copy()
 
     # 3. Modify the network
     print("--- Applying modifications ---")
-
-    n_scenario.lines["s_nom_extendable"] = False
-
     modify_generator_capacity_mix(
         n_scenario,
         target_mix=capacity_mix,
@@ -345,9 +339,7 @@ if __name__ == "__main__":
     output_path = f"{home}/pypsa-eur/resources/{scenario_config_name}/networks/"
     os.makedirs(output_path, exist_ok=True)
     
-    scenario_network_path = f"{output_path}base_s_{cluster}_elec_.nc"
-
     # 5. Export the modified network
-    print(f"Exporting scenario network to: {scenario_network_path}")
+    scenario_network_path = f"{output_path}base_s_{cluster}_elec_.nc"
     n_scenario.export_to_netcdf(scenario_network_path)
-    print("Scenario network created successfully. On " + ctime())
+    print(f"Exported scenario network to: {scenario_network_path} On " + ctime())
