@@ -333,6 +333,8 @@ if __name__ == "__main__":
     # 3. Modify the network
     print("--- Applying modifications ---")
 
+    n_scenario.lines["s_nom_extendable"] = False
+
     modify_generator_capacity_mix(
         n_scenario,
         target_mix=capacity_mix,

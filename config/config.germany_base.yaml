@@ -54,6 +54,9 @@ renewable:
 transmission_projects:
   enable: false
 
+lines:
+  max_extension: 0
+
 # Warning: takes a lot of time to solve!!
 # Dynamic line rating (variability due to weather conditions) 
 #lines:

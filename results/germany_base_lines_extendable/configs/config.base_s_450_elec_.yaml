@@ -1,5 +1,5 @@
 run:
-  name: germany_scenario
+  name: germany_base
   disable_progressbar: true
   shared_resources:
     policy: false
@@ -264,33 +264,6 @@ transmission_projects:
   - in_permitting
   - confirmed
   new_link_capacity: zero
-lines:
-  max_extension: 0
-  types:
-    63.0: 94-AL1/15-ST1A 20.0
-    66.0: 94-AL1/15-ST1A 20.0
-    90.0: 184-AL1/30-ST1A 110.0
-    110.0: 184-AL1/30-ST1A 110.0
-    132.0: 243-AL1/39-ST1A 110.0
-    150.0: 243-AL1/39-ST1A 110.0
-    220.0: Al/St 240/40 2-bundle 220.0
-    300.0: Al/St 240/40 3-bundle 300.0
-    330.0: Al/St 240/40 3-bundle 300.0
-    380.0: Al/St 240/40 4-bundle 380.0
-    400.0: Al/St 240/40 4-bundle 380.0
-    500.0: Al/St 240/40 4-bundle 380.0
-    750.0: Al/St 560/50 4-bundle 750.0
-  s_max_pu: 0.7
-  s_nom_max: .inf
-  length_factor: 1.25
-  reconnect_crimea: true
-  under_construction: keep
-  dynamic_line_rating:
-    activate: false
-    cutout: default
-    correction_factor: 0.95
-    max_voltage_difference: false
-    max_line_rating: false
 load:
   supplement_synthetic: false
   fill_gaps:
@@ -308,14 +281,18 @@ solving:
   solver:
     name: highs
     options: highs-default
+  check_objective:
+    enable: false
+    expected_value: null
+    atol: 1000000
+    rtol: 0.01
   options:
+    clip_p_max_pu: 0.01
     load_shedding:
-      enable: true
-      marginal_cost: 3000
+      enable: false
       default_cost: 100000
       all_carriers: true
       carriers: {}
-    clip_p_max_pu: 0.01
     load_sinks:
       enable: false
       default_cost: 100000
@@ -352,11 +329,6 @@ solving:
     store_model: false
     model_kwargs:
       solver_dir: ''
-  check_objective:
-    enable: false
-    expected_value: null
-    atol: 1000000
-    rtol: 0.01
   agg_p_nom_limits:
     agg_offwind: false
     agg_solar: false
@@ -474,6 +446,33 @@ conventional:
   fuel_price_rolling_window: 6
   nuclear:
     p_max_pu: data/nuclear_p_max_pu.csv
+lines:
+  types:
+    63.0: 94-AL1/15-ST1A 20.0
+    66.0: 94-AL1/15-ST1A 20.0
+    90.0: 184-AL1/30-ST1A 110.0
+    110.0: 184-AL1/30-ST1A 110.0
+    132.0: 243-AL1/39-ST1A 110.0
+    150.0: 243-AL1/39-ST1A 110.0
+    220.0: Al/St 240/40 2-bundle 220.0
+    300.0: Al/St 240/40 3-bundle 300.0
+    330.0: Al/St 240/40 3-bundle 300.0
+    380.0: Al/St 240/40 4-bundle 380.0
+    400.0: Al/St 240/40 4-bundle 380.0
+    500.0: Al/St 240/40 4-bundle 380.0
+    750.0: Al/St 560/50 4-bundle 750.0
+  s_max_pu: 0.7
+  s_nom_max: .inf
+  max_extension: 20000
+  length_factor: 1.25
+  reconnect_crimea: true
+  under_construction: keep
+  dynamic_line_rating:
+    activate: false
+    cutout: default
+    correction_factor: 0.95
+    max_voltage_difference: false
+    max_line_rating: false
 links:
   p_max_pu: 1.0
   p_min_pu: -1.0
