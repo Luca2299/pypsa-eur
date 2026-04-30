@@ -28,10 +28,10 @@ INFO:linopy.constants: Optimization successful:
 Status: ok
 Termination condition: unknown
 Solution: 212988 primals, 451638 duals
-Objective: 3.23e+10
+Objective: 1.65e+10
 Solver model: available
 Solver message: Unknown
 
 INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Line-fix-s-lower, Line-fix-s-upper, Link-ext-p-lower, Link-ext-p-upper, Store-ext-e-lower, Store-ext-e-upper, Kirchhoff-Voltage-Law, Store-energy_balance, Line-loss_upper, Line-loss_tangents-1--1, Line-loss_tangents-1-1, Line-loss_tangents-2--1, Line-loss_tangents-2-1 were not assigned to the network.
-INFO:__main__:Maximum memory usage: (1671.06640625, 1777544018.58646)
-INFO:pypsa.network.io:Exported network 'Unnamed Network' saved to 'results/germany_scenario/networks/base_s_450_elec_.nc contains: lines, carriers, buses, stores, links, sub_networks, generators, loads
+INFO:__main__:Maximum memory usage: (1651.859375, 1777554047.6325457)
+INFO:pypsa.network.io:Exported network 'Unnamed Network' saved to 'results/germany_scenario/networks/base_s_450_elec_.nc contains: sub_networks, lines, carriers, generators, buses, links, loads, stores
