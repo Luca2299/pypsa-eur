@@ -27,6 +27,11 @@ no-offwind:
     - onwind
     - hydro
 
+windy: 
+    snapshots:
+    start: "2025-04-14"
+    end: "2025-04-15"
+
 # scenarios for different seasons 
 winter: 
   snapshots:
