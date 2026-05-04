@@ -1,9 +1,8 @@
 # yaml-language-server: $schema=./schema.default.json
-# Minimal Germany single-day configuration
 
 run:
-  name: "germany_basecase"
-  disable_progressbarcd : true
+  name: "germany_scenario_notwindy"
+  disable_progressbar: true
   shared_resources:
     policy: false
 
@@ -11,14 +10,15 @@ scenario:
   clusters:
   - "450" #max clusters
   opts:
-  - "windy"
-  - "not-windy"
-  - "wind-variability"
-  - "present"
+  - []
   planning_horizons:
   - 2025
 
 countries: ['DE']
+
+snapshots:
+  start: "2025-04-08"
+  end: "2025-04-09"
 
 electricity:
   custom_powerplants: false
@@ -32,9 +32,9 @@ electricity:
     technology_mapping:
       Offshore: offwind-ac # assuming that all offshore wind is AC
       PV: solar
-  extendable_carriers: 
-    Generator: [] # no extandable generators to match the status quo
-    
+  extendable_carriers:
+    Generator: [solar, onwind, offwind-ac, offwind-dc, OCGT, CCGT, lignite, oil, coal, hard_coal]
+
 atlite:
   default_cutout: "europe-2025-sarah3-era5"
 
@@ -47,6 +47,7 @@ renewable:
   solar-hsat:
     corine: false
 
+
 load:
 # Whether to supplement missing data for selected time period 
 # should be supplemented by synthetic data from Zenodo.
@@ -56,3 +57,16 @@ solving:
   solver:
     name: highs
     options: highs-default
+  options:
+    load_shedding:
+      enable: true
+      #marginal_cost: 3000 # default is 1000
+
+  check_objective:
+    enable: false
+
+# removed 22.04.
+#data:
+#  cutout:
+#    source: archive
+#    version: v1.0

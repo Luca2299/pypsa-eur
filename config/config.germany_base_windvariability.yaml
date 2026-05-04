@@ -2,7 +2,7 @@
 # Minimal Germany single-day configuration
 
 run:
-  name: "germany_base"
+  name: "germany_base_notwindy"
   disable_progressbar: true
   shared_resources:
     policy: false
@@ -18,8 +18,8 @@ scenario:
 countries: ['DE']
 
 snapshots:
-  start: "2025-05-14"
-  end: "2025-05-15"
+  start: "2025-04-08"
+  end: "2025-04-09"
 
 electricity:
   custom_powerplants: false
