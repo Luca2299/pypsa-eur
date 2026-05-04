@@ -15,6 +15,71 @@ import os
 def load_scenario_configuration(config_path: str) -> dict:
     with open(config_path, "r", encoding="utf-8") as handle:
         return json.load(handle)
+    
+
+def modify_load(n: pypsa.Network, factor: float = 1.1, latitude_quantile: float = 0.25) -> None:
+    """
+    Modifies the load by multiplying it with a factor.
+
+    Parameters
+    ----------
+    n : pypsa.Network
+        The PyPSA network to modify.
+    factor : float, optional
+        The factor by which to multiply the load, by default 1.1.
+    latitude_quantile : float, optional
+        The quantile to define the southern region, by default 0.25 (bottom 25%).
+    """
+    print(f"Modifying load by a factor of {factor}")
+    
+    # Calculate the latitude threshold from the quantile
+    latitude_threshold = n.buses.y.quantile(latitude_quantile)
+    print(f"Modifying load for buses south of latitude {latitude_threshold:.2f} ({latitude_quantile:.0%} quantile).")
+    
+    # Define buses based on the calculated threshold
+    buses = n.buses.index[n.buses.y < latitude_threshold]
+    loads = n.loads.index[n.loads.bus.isin(buses)]
+    print(f"Found {len(loads)} loads in the south to modify.")
+    summed_load = n.loads.loc[loads, "p_set"].sum()
+    
+    # Modify the load
+    n.loads.loc[loads, "p_set"] *= factor
+    summed_load_modified = n.loads.loc[loads, "p_set"].sum()
+    print(f"Base load in the south: {summed_load / factor:.2f} MW")
+    print(f"Total modified load in the south: {summed_load_modified:.2f} MW")
+
+def modify_offshore_capacity(n: pypsa.Network, factor: float = 1.2) -> None:
+    """
+    Modifies the nominal capacity of offshore wind generators.
+
+    Parameters
+    ----------
+    n : pypsa.Network
+        The PyPSA network to modify.
+    factor : float, optional
+        The factor by which to multiply the capacity, by default 1.2.
+    """
+    print(f"Modifying offshore capacity by a factor of {factor}")
+    offshore_carriers = ["offwind-ac", "offwind-dc"]
+    offshore_gens = n.generators.index[n.generators.carrier.isin(offshore_carriers)]
+    n.generators.loc[offshore_gens, "p_nom"] *= factor
+
+def modify_onshore_capacity(n: pypsa.Network, factor: float = 1.2) -> None:
+    """
+    Modifies the nominal capacity of onshore wind generators.
+
+    Parameters
+    ----------
+    n : pypsa.Network
+        The PyPSA network to modify.
+    factor : float, optional
+        The factor by which to multiply the capacity, by default 1.2.
+    """
+    print(f"Modifying onshore capacity by a factor of {factor}")
+    onshore_carriers = ["onwind"]
+    onshore_gens = n.generators.index[n.generators.carrier.isin(onshore_carriers)]
+    n.generators.loc[onshore_gens, "p_nom"] *= factor
+
 
 def reduce_generator_capacity(n: pypsa.Network, factor: float) -> None:
     """Scale all generator nameplate capacities by a global factor."""
@@ -177,6 +242,49 @@ def modify_generator_capacity_mix(
     )
     print(f"Modified total capacity of selected carriers: {modified_total_capacity:.2f} MW")
 
+def modify_fossil_fuel_capacity(n: pypsa.Network, factor: float = 0.8, latitude_quantile: float = 0.25) -> None:
+    """
+    Modifies the nominal capacity of fossil fuel generators in the south, defined by a latitude quantile.
+
+    Parameters
+    ----------
+    n : pypsa.Network
+        The PyPSA network to modify.
+    factor : float, optional
+        The factor by which to multiply the capacity, by default 0.8.
+    latitude_quantile : float, optional
+        The quantile to define the southern region, by default 0.25 (bottom 25%).
+    """
+    fossil_carriers = ['CCGT', 'OCGT', 'gas', 'lignite', 'hard coal', 'coal', 'oil']
+    
+    # First, find all fossil fuel generators to determine the latitude threshold
+    fossil_gens_all = n.generators[n.generators.carrier.isin(fossil_carriers)]
+    fossil_gens_locations = fossil_gens_all.join(n.buses, on='bus', rsuffix='_bus')
+    
+    if fossil_gens_locations.empty:
+        print("No fossil fuel generators found in the network.")
+        return
+
+    # Calculate the latitude threshold from the quantile
+    latitude_threshold = fossil_gens_locations['y'].quantile(latitude_quantile)
+
+    # Define southern buses based on the calculated threshold
+    buses = n.buses.index[n.buses.y < latitude_threshold]
+    
+    fossil_gens = n.generators.index[
+        (n.generators.carrier.isin(fossil_carriers)) &
+        (n.generators.bus.isin(buses))
+    ]
+
+    print(f"Found {len(fossil_gens)} fossil fuel generators in the south to modify.")
+
+    summed_capacity = n.generators.loc[fossil_gens, "p_nom"].sum()
+    n.generators.loc[fossil_gens, "p_nom"] *= factor
+    summed_capacity_modified = n.generators.loc[fossil_gens, "p_nom"].sum()
+
+    print(f"Base fossil fuel capacity: {summed_capacity / factor:.2f} MW")
+    print(f"Modified fossil fuel capacity: {summed_capacity_modified:.2f} MW")
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Create a modified scenario network from a base network."
@@ -201,7 +309,6 @@ if __name__ == "__main__":
     cluster = str(scenario_config.get("cluster", args.cluster))
     capacity_scale = float(scenario_config.get("capacity_scale", 1.0))
     capacity_mix = scenario_config.get("capacity_mix", {})
-    extendable_lines = scenario_config.get("extendable_lines", False)
 
 
     # 1. Load the base network
@@ -211,10 +318,7 @@ if __name__ == "__main__":
     n = pypsa.Network(base_network_path)
     
     # Modify the base network first
-    if not extendable_lines:
-        print("Setting all transmission lines to non-extendable in the base network.")
-        n.lines["s_nom_extendable"] = False
-    
+    n.lines["s_nom_extendable"] = False
     output_path = f"{home}/pypsa-eur/resources/{base_config_name}/networks/"
     os.makedirs(output_path, exist_ok=True)
     n.export_to_netcdf(base_network_path)
@@ -230,12 +334,6 @@ if __name__ == "__main__":
         target_mix=capacity_mix,
         capacity_scale=capacity_scale,
     )
-
-    if not extendable_lines:
-        print("Setting all transmission lines to non-extendable in the base network.")
-        n_scenario.lines["s_nom_extendable"] = False
-    else:
-        print("Keeping transmission lines extendable in the scenario network.")
 
     # 4. Create the path for the output file
     output_path = f"{home}/pypsa-eur/resources/{scenario_config_name}/networks/"
