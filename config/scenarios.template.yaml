@@ -29,14 +29,33 @@ no-offwind:
 
 windy: 
     snapshots:
-    start: "2025-04-14"
-    end: "2025-04-15"
+      start: "2025-10-26"
+      end: "2025-10-27"
+
+not-windy: 
+    snapshots:
+      start: "2025-04-08"
+      end: "2025-04-09"
+
+wind-variability: 
+    snapshots:
+      start: "2025-10-06"
+      end: "2025-10-07"
+
+future: 
+  transmission_projects:
+    enable: true
+
+present:
+  transmission_projects:
+    enable: false
+
 
 # scenarios for different seasons 
 winter: 
   snapshots:
     start: "2025-01-14"
-    end: "2026-01-15"
+    end: "2025-01-15"
 
 spring:
   snapshots:
