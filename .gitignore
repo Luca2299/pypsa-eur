@@ -17,11 +17,9 @@ gurobi.log
 .idea
 
 /bak
-/resources/germany_24h
-/resources/germany-*
-#/resources
+/resources/test
 #/resources*
-/results/germany
+/results/test
 #/networks
 /benchmarks
 /logs

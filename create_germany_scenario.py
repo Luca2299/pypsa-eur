@@ -181,23 +181,20 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Create a modified scenario network from a base network."
     )
-    parser.add_argument("--base-config-name", default="germany_base")
-    parser.add_argument("--scenario-config-name", default="germany_scenario_1")
+    parser.add_argument("--base-network-path", required=True, help="Path to the base network file.")
+    parser.add_argument("--capacity-mix-name", required=True, help="Name of the capacity mix (e.g., 'stress', 'balanced').")
     parser.add_argument("--cluster", default="450")
-    parser.add_argument("--home", default="/home/lucakristin/Desktop")
-    parser.add_argument("--scenario-config-file", default=None)
+    parser.add_argument("--home", default="/home/lucakristin/Desktop/my_pypsa")
     args = parser.parse_args()
 
     # --- Configuration ---
-    # The base configuration to start from
-    scenario_config = {}
-    if args.scenario_config_file:
-        print(f"Loading scenario config from: {args.scenario_config_file}")
-        scenario_config = load_scenario_configuration(args.scenario_config_file)
+    scenario_config_path = f"{args.home}/pypsa-eur/config/scenario_configs/germany_scenario_{args.capacity_mix_name}.json"
+    
+    print(f"Loading scenario config from: {scenario_config_path}")
+    scenario_config = load_scenario_configuration(scenario_config_path)
 
-    base_config_name = scenario_config.get("base_config_name", args.base_config_name)
-    # The name for the new scenario
-    scenario_config_name = scenario_config.get("scenario_config_name", args.scenario_config_name)
+    base_network_path = args.base_network_path
+    scenario_config_name = f"germany_scenario_{args.capacity_mix_name}"
     cluster = str(scenario_config.get("cluster", args.cluster))
     capacity_scale = float(scenario_config.get("capacity_scale", 1.0))
     capacity_mix = scenario_config.get("capacity_mix", {})
@@ -206,7 +203,6 @@ if __name__ == "__main__":
 
     # 1. Load the base network
     home = args.home
-    base_network_path = f"{home}/pypsa-eur/resources/{base_config_name}/networks/base_s_{cluster}_elec_.nc"
     print(f"Loading base network from: {base_network_path}")
     n = pypsa.Network(base_network_path)
     
@@ -215,7 +211,7 @@ if __name__ == "__main__":
         print("Setting all transmission lines to non-extendable in the base network.")
         n.lines["s_nom_extendable"] = False
     
-    output_path = f"{home}/pypsa-eur/resources/{base_config_name}/networks/"
+    output_path = os.path.dirname(base_network_path)
     os.makedirs(output_path, exist_ok=True)
     n.export_to_netcdf(base_network_path)
     print(f"Exported base network without extendable lines to {base_network_path}")

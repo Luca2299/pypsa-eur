@@ -1,0 +1,20 @@
+{
+  "name": "balanced",
+  "extendable_lines": false,
+  "capacity_scale": "1",
+  "capacity_mix": {
+    "solar": { "share": 35.0},
+    "onwind": { "share": 35.0, "max_latitude": 54.7284, "min_latitude": 52.0}, 
+    "offwind-ac": { "share": 15.0},
+    "hydro": { "share": 2.99 },
+    "biomass": { "share": 1.0 },
+    "CCGT": { "share": 10.0, "max_latitude": 52.0, "min_latitude": 47.5859},
+    "waste": { "share": 1.0 },
+    "coal": { "share": 0.0},
+    "lignite": { "share": 0.0},
+    "OCGT": { "share": 0.0},
+    "oil": { "share": 0.0 },
+    "geothermal": { "share": 0.01 },
+    "offwind-dc": { "share": 0.0 }
+  }
+}
