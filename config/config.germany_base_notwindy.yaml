@@ -1,7 +1,8 @@
 # yaml-language-server: $schema=./schema.default.json
+# Minimal Germany single-day configuration
 
 run:
-  name: "germany_scenarios"
+  name: "germany_base_notwindy"
   disable_progressbar: true
   shared_resources:
     policy: false
@@ -10,15 +11,15 @@ scenario:
   clusters:
   - "450" #max clusters
   opts:
-  - "windy"
-  - "not-windy"
-  - "wind-variability"
-  - "future"
-  - "present"
+  - "" # base electricity model
   planning_horizons:
   - 2025
 
 countries: ['DE']
+
+snapshots:
+  start: "2025-04-08"
+  end: "2025-04-09"
 
 electricity:
   custom_powerplants: false
@@ -32,9 +33,10 @@ electricity:
     technology_mapping:
       Offshore: offwind-ac # assuming that all offshore wind is AC
       PV: solar
-  extendable_carriers:
-    Generator: [solar, onwind, offwind-ac, offwind-dc, OCGT, CCGT, lignite, oil, coal, hard_coal]
+  extendable_carriers: 
+    Generator: [] # no extandable generators to match the status quo
 
+    
 atlite:
   default_cutout: "europe-2025-sarah3-era5"
 
@@ -47,6 +49,23 @@ renewable:
   solar-hsat:
     corine: false
 
+# In the first simulation I had this enabled, 
+# but then it does not show the state of the lines right now 
+transmission_projects:
+  enable: false
+
+lines:
+  max_extension: 0
+
+# Warning: takes a lot of time to solve!!
+# Dynamic line rating (variability due to weather conditions) 
+#lines:
+#  dynamic_line_rating:
+#    activate: true
+#    max_line_rating: 1.3 
+    # means that under the most favorable conditions, 
+    # the model will allow a line's capacity 
+    #to be increased to 130% of its standard, static rating
 
 load:
 # Whether to supplement missing data for selected time period 
@@ -57,11 +76,12 @@ solving:
   solver:
     name: highs
     options: highs-default
-  options:
-    load_shedding:
-      enable: true
-      #marginal_cost: 3000 # default is 1000
 
+#solving:
+  #options:
+    #load_shedding:
+      #enable: true
+      #marginal_cost: 3000 # default is 1000
   check_objective:
     enable: false
 

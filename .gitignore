@@ -39,6 +39,7 @@ _build
 
 config/config.yaml
 config/scenarios.yaml
+/config/my_tests
 
 /data/links_p_nom.csv
 /data/*totals.csv

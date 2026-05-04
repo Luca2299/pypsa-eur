@@ -2,7 +2,7 @@
 # Minimal Germany single-day configuration
 
 run:
-  name: "germany_scenario_1"
+  name: "germany_base_windy"
   disable_progressbar: true
   shared_resources:
     policy: false
@@ -18,8 +18,8 @@ scenario:
 countries: ['DE']
 
 snapshots:
-  start: "2025-05-14"
-  end: "2025-05-15"
+  start: "2025-10-26"
+  end: "2025-10-27"
 
 electricity:
   custom_powerplants: false
@@ -33,9 +33,10 @@ electricity:
     technology_mapping:
       Offshore: offwind-ac # assuming that all offshore wind is AC
       PV: solar
-  extendable_carriers:
-    Generator: [solar, onwind, offwind-ac, offwind-dc, OCGT, CCGT, lignite, oil, coal, hard_coal]
+  extendable_carriers: 
+    Generator: [] # no extandable generators to match the status quo
 
+    
 atlite:
   default_cutout: "europe-2025-sarah3-era5"
 
@@ -52,6 +53,9 @@ renewable:
 # but then it does not show the state of the lines right now 
 transmission_projects:
   enable: false
+
+lines:
+  max_extension: 0
 
 # Warning: takes a lot of time to solve!!
 # Dynamic line rating (variability due to weather conditions) 
@@ -73,6 +77,11 @@ solving:
     name: highs
     options: highs-default
 
+#solving:
+  #options:
+    #load_shedding:
+      #enable: true
+      #marginal_cost: 3000 # default is 1000
   check_objective:
     enable: false
 

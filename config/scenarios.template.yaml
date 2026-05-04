@@ -27,20 +27,25 @@ no-offwind:
     - onwind
     - hydro
 
+test: 
+  snapshots:
+    start: "2025-05-14"
+    end: "2025-05-15"
+
 windy: 
-    snapshots:
-      start: "2025-10-26"
-      end: "2025-10-27"
+  snapshots:
+    start: "2025-10-26"
+    end: "2025-10-27"
 
 not-windy: 
-    snapshots:
-      start: "2025-04-08"
-      end: "2025-04-09"
+  snapshots:
+    start: "2025-04-08"
+    end: "2025-04-09"
 
 wind-variability: 
-    snapshots:
-      start: "2025-10-06"
-      end: "2025-10-07"
+  snapshots:
+    start: "2025-10-06"
+    end: "2025-10-07"
 
 future: 
   transmission_projects:
