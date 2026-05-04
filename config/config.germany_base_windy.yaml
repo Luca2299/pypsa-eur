@@ -1,3 +1,4 @@
+
 # yaml-language-server: $schema=./schema.default.json
 # Minimal Germany single-day configuration
 
@@ -23,7 +24,7 @@ snapshots:
 
 electricity:
   custom_powerplants: false
-  renewable_carriers: [solar, onwind, offwind-ac, offwind-dc]
+  #renewable_carriers: [solar, onwind, offwind-ac, offwind-dc, hydro]
   estimate_renewable_capacities:
     enable: true
     from_powerplantmatching: true
@@ -54,8 +55,9 @@ renewable:
 transmission_projects:
   enable: false
 
-lines:
-  max_extension: 0
+
+#lines:
+  #max_extension: 0
 
 # Warning: takes a lot of time to solve!!
 # Dynamic line rating (variability due to weather conditions) 
