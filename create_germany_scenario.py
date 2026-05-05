@@ -180,51 +180,65 @@ def modify_generator_capacity_mix(
 def main():
     # --- BEGIN: Argument Parsing ---
     parser = argparse.ArgumentParser(description="Create a custom network scenario for Germany.")
-    parser.add_argument("--wind-condition", type=str, required=True, choices=["windy", "notwindy", "windvariability"], help="Wind condition for the base network.")
-    parser.add_argument("--capacity-scenario", type=str, required=True, help="Name of the capacity scenario (e.g., 'scenario1').")
+    parser.add_argument("--wind-condition", type=str, nargs='+', required=True, help="One or more wind conditions for the base network.")
+    parser.add_argument("--capacity-scenario", type=str, nargs='+', required=True, help="One or more capacity scenarios (e.g., 'germany_scenario1').")
     parser.add_argument("--home", type=str, required=True, help="Home directory path.")
     parser.add_argument("--cluster", type=str, default="450", help="Number of clusters (default: 450).")
     parser.add_argument("--base-folder", type=str, default="germany_base_", help="Base folder name (default: 'germany_base_').")
     args = parser.parse_args()
     # --- END: Argument Parsing ---
 
-    # --- BEGIN: Path Construction ---
-    network_path = os.path.join(args.home, "pypsa-eur", "results", f"{args.base_folder}{args.wind_condition}", "networks", f"base_s_{args.cluster}_elec_.nc")
-    
-    export_folder = os.path.join(args.home, "pypsa-eur", "resources", f"{args.capacity_scenario}_{args.wind_condition}", "networks")
-    os.makedirs(export_folder, exist_ok=True)
-    export_path = os.path.join(export_folder, f"base_s_{args.cluster}_elec_.nc")
+    for capacity_scenario in args.capacity_scenario:
+        for wind_condition in args.wind_condition:
+            print(f"[{ctime()}] Processing scenario: {capacity_scenario} with wind condition: {wind_condition}")
 
-    config_path = os.path.join(args.home, "pypsa-eur", "config", "scenario_configs", f"{args.capacity_scenario}.json")
-    # --- END: Path Construction ---
+            # --- BEGIN: Path Construction ---
+            network_path = os.path.join(args.home, "pypsa-eur", "results", f"{args.base_folder}{wind_condition}", "networks", f"base_s_{args.cluster}_elec_.nc")
+            
+            export_folder = os.path.join(args.home, "pypsa-eur", "resources", f"{capacity_scenario}_{wind_condition}", "networks")
+            os.makedirs(export_folder, exist_ok=True)
+            export_path = os.path.join(export_folder, f"base_s_{args.cluster}_elec_.nc")
 
-    # --- BEGIN: Load Network and Configuration ---
-    print(f"[{ctime()}] Loading base network from: {network_path}")
-    n = pypsa.Network(network_path)
-    
-    print(f"[{ctime()}] Loading scenario configuration from: {config_path}")
-    scenario_config = load_scenario_configuration(config_path)
-    # --- END: Load Network and Configuration ---
+            config_path = os.path.join(args.home, "pypsa-eur", "config", "scenario_configs", f"{capacity_scenario}.json")
+            # --- END: Path Construction ---
 
-    # --- BEGIN: Network Modification ---
-    print(f"[{ctime()}] Modifying generator capacities for scenario '{args.capacity_scenario}'.")
-    modify_generator_capacity_mix(
-        n,
-        target_mix=scenario_config["capacity_mix"],
-        capacity_scale=float(scenario_config.get("capacity_scale", 1.0)),
-    )
+            # --- BEGIN: Load Network and Configuration ---
+            print(f"[{ctime()}] Loading base network from: {network_path}")
+            n = pypsa.Network(network_path)
+            
+            print(f"[{ctime()}] Loading scenario configuration from: {config_path}")
+            scenario_config = load_scenario_configuration(config_path)
+            # --- END: Load Network and Configuration ---
 
-    extendable_lines = scenario_config.get("extendable_lines", False)
-    print(f"[{ctime()}] Setting line property 's_nom_extendable' to {extendable_lines}.")
-    for component in n.iterate_components(["Line", "Link"]):
-        component.df["s_nom_extendable"] = extendable_lines
-    # --- END: Network Modification ---
+            extendable_lines = scenario_config.get("extendable_lines", False)
 
-    # --- BEGIN: Export Scenario ---
-    print(f"[{ctime()}] Exporting modified network to: {export_path}")
-    n.export_to_netcdf(export_path)
-    print(f"[{ctime()}] Scenario generation complete.")
-    # --- END: Export Scenario ---
+            if not extendable_lines:
+                print(f"[{ctime()}] Setting 's_nom_extendable' to False on base network and saving.")
+                for component in n.iterate_components(["Line", "Link"]):
+                    component.df["s_nom_extendable"] = False
+                n.export_to_netcdf(network_path)
+                n_scenario = n.copy()
+            else:
+                n_scenario = n.copy()
+
+            # --- BEGIN: Network Modification ---
+            print(f"[{ctime()}] Modifying generator capacities for scenario '{capacity_scenario}'.")
+            modify_generator_capacity_mix(
+                n_scenario,
+                target_mix=scenario_config["capacity_mix"],
+                capacity_scale=float(scenario_config.get("capacity_scale", 1.0)),
+            )
+
+            print(f"[{ctime()}] Setting line property 's_nom_extendable' to {extendable_lines}.")
+            for component in n_scenario.iterate_components(["Line", "Link"]):
+                component.df["s_nom_extendable"] = extendable_lines
+            # --- END: Network Modification ---
+
+            # --- BEGIN: Export Scenario ---
+            print(f"[{ctime()}] Exporting modified network to: {export_path}")
+            n_scenario.export_to_netcdf(export_path)
+            print(f"[{ctime()}] Scenario generation complete for {capacity_scenario} with {wind_condition}.")
+            # --- END: Export Scenario ---
 
 if __name__ == "__main__":
     main()
