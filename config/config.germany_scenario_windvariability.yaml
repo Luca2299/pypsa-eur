@@ -10,7 +10,7 @@ scenario:
   clusters:
   - "450" #max clusters
   opts:
-  - []
+  - ""
   planning_horizons:
   - 2025
 
@@ -33,7 +33,7 @@ electricity:
       Offshore: offwind-ac # assuming that all offshore wind is AC
       PV: solar
   extendable_carriers:
-    Generator: [solar, onwind, offwind-ac, offwind-dc, OCGT, CCGT, lignite, oil, coal, hard_coal]
+    Generator: []
 
 atlite:
   default_cutout: "europe-2025-sarah3-era5"
@@ -61,12 +61,5 @@ solving:
     load_shedding:
       enable: true
       #marginal_cost: 3000 # default is 1000
-
   check_objective:
     enable: false
-
-# removed 22.04.
-#data:
-#  cutout:
-#    source: archive
-#    version: v1.0
