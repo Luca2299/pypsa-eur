@@ -177,67 +177,54 @@ def modify_generator_capacity_mix(
     )
     print(f"Modified total capacity of selected carriers: {modified_total_capacity:.2f} MW")
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description="Create a modified scenario network from a base network."
-    )
-    parser.add_argument("--base-network-path", required=True, help="Path to the base network file.")
-    parser.add_argument("--capacity-mix-name", required=True, help="Name of the capacity mix (e.g., 'stress', 'balanced').")
-    parser.add_argument("--cluster", default="450")
-    parser.add_argument("--home", default="/home/lucakristin/Desktop/my_pypsa")
+def main():
+    # --- BEGIN: Argument Parsing ---
+    parser = argparse.ArgumentParser(description="Create a custom network scenario for Germany.")
+    parser.add_argument("--wind-condition", type=str, required=True, choices=["windy", "notwindy", "windvariability"], help="Wind condition for the base network.")
+    parser.add_argument("--capacity-scenario", type=str, required=True, help="Name of the capacity scenario (e.g., 'scenario1').")
+    parser.add_argument("--home", type=str, required=True, help="Home directory path.")
+    parser.add_argument("--cluster", type=str, default="450", help="Number of clusters (default: 450).")
+    parser.add_argument("--base-folder", type=str, default="germany_base_", help="Base folder name (default: 'germany_base_').")
     args = parser.parse_args()
+    # --- END: Argument Parsing ---
 
-    # --- Configuration ---
-    scenario_config_path = f"{args.home}/pypsa-eur/config/scenario_configs/germany_scenario_{args.capacity_mix_name}.json"
+    # --- BEGIN: Path Construction ---
+    network_path = os.path.join(args.home, "pypsa-eur", "results", f"{args.base_folder}{args.wind_condition}", "networks", f"base_s_{args.cluster}_elec_.nc")
     
-    print(f"Loading scenario config from: {scenario_config_path}")
-    scenario_config = load_scenario_configuration(scenario_config_path)
+    export_folder = os.path.join(args.home, "pypsa-eur", "resources", f"{args.capacity_scenario}_{args.wind_condition}", "networks")
+    os.makedirs(export_folder, exist_ok=True)
+    export_path = os.path.join(export_folder, f"base_s_{args.cluster}_elec_.nc")
 
-    base_network_path = args.base_network_path
-    scenario_config_name = f"germany_scenario_{args.capacity_mix_name}"
-    cluster = str(scenario_config.get("cluster", args.cluster))
-    capacity_scale = float(scenario_config.get("capacity_scale", 1.0))
-    capacity_mix = scenario_config.get("capacity_mix", {})
-    extendable_lines = scenario_config.get("extendable_lines", False)
+    config_path = os.path.join(args.home, "pypsa-eur", "config", "scenario_configs", f"{args.capacity_scenario}.json")
+    # --- END: Path Construction ---
 
-
-    # 1. Load the base network
-    home = args.home
-    print(f"Loading base network from: {base_network_path}")
-    n = pypsa.Network(base_network_path)
+    # --- BEGIN: Load Network and Configuration ---
+    print(f"[{ctime()}] Loading base network from: {network_path}")
+    n = pypsa.Network(network_path)
     
-    # Modify the base network first
-    if not extendable_lines:
-        print("Setting all transmission lines to non-extendable in the base network.")
-        n.lines["s_nom_extendable"] = False
-    
-    output_path = os.path.dirname(base_network_path)
-    os.makedirs(output_path, exist_ok=True)
-    n.export_to_netcdf(base_network_path)
-    print(f"Exported base network without extendable lines to {base_network_path}")
+    print(f"[{ctime()}] Loading scenario configuration from: {config_path}")
+    scenario_config = load_scenario_configuration(config_path)
+    # --- END: Load Network and Configuration ---
 
-    # 2. Make a copy to create the scenario
-    n_scenario = n.copy()
-
-    # 3. Modify the network
-    print("--- Applying modifications ---")
+    # --- BEGIN: Network Modification ---
+    print(f"[{ctime()}] Modifying generator capacities for scenario '{args.capacity_scenario}'.")
     modify_generator_capacity_mix(
-        n_scenario,
-        target_mix=capacity_mix,
-        capacity_scale=capacity_scale,
+        n,
+        target_mix=scenario_config["capacity_mix"],
+        capacity_scale=float(scenario_config.get("capacity_scale", 1.0)),
     )
 
-    if not extendable_lines:
-        print("Setting all transmission lines to non-extendable in the base network.")
-        n_scenario.lines["s_nom_extendable"] = False
-    else:
-        print("Keeping transmission lines extendable in the scenario network.")
+    extendable_lines = scenario_config.get("extendable_lines", False)
+    print(f"[{ctime()}] Setting line property 's_nom_extendable' to {extendable_lines}.")
+    for component in n.iterate_components(["Line", "Link"]):
+        component.df["s_nom_extendable"] = extendable_lines
+    # --- END: Network Modification ---
 
-    # 4. Create the path for the output file
-    output_path = f"{home}/pypsa-eur/resources/{scenario_config_name}/networks/"
-    os.makedirs(output_path, exist_ok=True)
-    
-    # 5. Export the modified network
-    scenario_network_path = f"{output_path}base_s_{cluster}_elec_.nc"
-    n_scenario.export_to_netcdf(scenario_network_path)
-    print(f"Exported scenario network to: {scenario_network_path} On " + ctime())
+    # --- BEGIN: Export Scenario ---
+    print(f"[{ctime()}] Exporting modified network to: {export_path}")
+    n.export_to_netcdf(export_path)
+    print(f"[{ctime()}] Scenario generation complete.")
+    # --- END: Export Scenario ---
+
+if __name__ == "__main__":
+    main()

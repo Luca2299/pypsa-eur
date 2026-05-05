@@ -17,8 +17,8 @@ scenario:
 countries: ['DE']
 
 snapshots:
-  start: "2025-04-08"
-  end: "2025-04-09"
+  start: "2025-10-06"
+  end: "2025-10-07"
 
 electricity:
   custom_powerplants: false
