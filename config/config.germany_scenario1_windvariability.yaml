@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=./schema.default.json
 
 run:
-  name: "germany_scenario_notwindy"
+  name: "germany_scenario1_windvariability"
   disable_progressbar: true
   shared_resources:
     policy: false
@@ -17,12 +17,12 @@ scenario:
 countries: ['DE']
 
 snapshots:
-  start: "2025-04-08"
-  end: "2025-04-09"
+  start: "2025-10-06"
+  end: "2025-10-07"
 
 electricity:
   custom_powerplants: false
-  #renewable_carriers: [solar, onwind, offwind-ac, offwind-dc]
+  renewable_carriers: [solar, onwind, offwind-ac, offwind-dc]
   estimate_renewable_capacities:
     enable: true
     from_powerplantmatching: true
@@ -61,6 +61,5 @@ solving:
     load_shedding:
       enable: true
       #marginal_cost: 3000 # default is 1000
-
   check_objective:
     enable: false
