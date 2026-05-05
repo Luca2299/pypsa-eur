@@ -10,7 +10,7 @@ scenario:
   clusters:
   - "450" #max clusters
   opts:
-  - []
+  - ""
   planning_horizons:
   - 2025
 
@@ -22,7 +22,7 @@ snapshots:
 
 electricity:
   custom_powerplants: false
-  renewable_carriers: [solar, onwind, offwind-ac, offwind-dc]
+  #renewable_carriers: [solar, onwind, offwind-ac, offwind-dc]
   estimate_renewable_capacities:
     enable: true
     from_powerplantmatching: true
@@ -33,7 +33,7 @@ electricity:
       Offshore: offwind-ac # assuming that all offshore wind is AC
       PV: solar
   extendable_carriers:
-    Generator: [solar, onwind, offwind-ac, offwind-dc, OCGT, CCGT, lignite, oil, coal, hard_coal]
+    Generator: []
 
 atlite:
   default_cutout: "europe-2025-sarah3-era5"
@@ -64,9 +64,3 @@ solving:
 
   check_objective:
     enable: false
-
-# removed 22.04.
-#data:
-#  cutout:
-#    source: archive
-#    version: v1.0

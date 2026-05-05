@@ -1,8 +1,7 @@
 # yaml-language-server: $schema=./schema.default.json
-# Minimal Germany single-day configuration
 
 run:
-  name: "germany_base_notwindy"
+  name: "germany_base_windvariability"
   disable_progressbar: true
   shared_resources:
     policy: false
@@ -23,7 +22,7 @@ snapshots:
 
 electricity:
   custom_powerplants: false
-  renewable_carriers: [solar, onwind, offwind-ac, offwind-dc]
+  #renewable_carriers: [solar, onwind, offwind-ac, offwind-dc]
   estimate_renewable_capacities:
     enable: true
     from_powerplantmatching: true
@@ -34,7 +33,7 @@ electricity:
       Offshore: offwind-ac # assuming that all offshore wind is AC
       PV: solar
   extendable_carriers: 
-    Generator: [] # no extandable generators to match the status quo
+    Generator: [] 
 
     
 atlite:
@@ -49,23 +48,8 @@ renewable:
   solar-hsat:
     corine: false
 
-# In the first simulation I had this enabled, 
-# but then it does not show the state of the lines right now 
 transmission_projects:
   enable: false
-
-lines:
-  max_extension: 0
-
-# Warning: takes a lot of time to solve!!
-# Dynamic line rating (variability due to weather conditions) 
-#lines:
-#  dynamic_line_rating:
-#    activate: true
-#    max_line_rating: 1.3 
-    # means that under the most favorable conditions, 
-    # the model will allow a line's capacity 
-    #to be increased to 130% of its standard, static rating
 
 load:
 # Whether to supplement missing data for selected time period 
@@ -76,17 +60,6 @@ solving:
   solver:
     name: highs
     options: highs-default
-
-#solving:
-  #options:
-    #load_shedding:
-      #enable: true
-      #marginal_cost: 3000 # default is 1000
   check_objective:
     enable: false
 
-# removed 22.04.
-#data:
-#  cutout:
-#    source: archive
-#    version: v1.0
