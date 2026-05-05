@@ -1,5 +1,5 @@
 {
-  "name": "stress",
+  "name": "scenario1",
   "extendable_lines": false,
   "capacity_scale": "1",
   "capacity_mix": {
