@@ -213,10 +213,19 @@ def main():
             extendable_lines = scenario_config.get("extendable_lines", False)
 
             if not extendable_lines:
-                print(f"[{ctime()}] Setting 's_nom_extendable' to False on base network and saving.")
+                is_non_extendable = True
                 for component in n.iterate_components(["Line", "Link"]):
-                    component.df["s_nom_extendable"] = False
-                n.export_to_netcdf(network_path)
+                    if "s_nom_extendable" not in component.df or component.df["s_nom_extendable"].any():
+                        is_non_extendable = False
+                        break
+                
+                if is_non_extendable:
+                    print(f"[{ctime()}] Lines of network {network_path} are already not extendable.")
+                else:
+                    print(f"[{ctime()}] Setting 's_nom_extendable' to False on base network and saving.")
+                    for component in n.iterate_components(["Line", "Link"]):
+                        component.df["s_nom_extendable"] = False
+                    n.export_to_netcdf(network_path)
                 n_scenario = n.copy()
             else:
                 n_scenario = n.copy()
