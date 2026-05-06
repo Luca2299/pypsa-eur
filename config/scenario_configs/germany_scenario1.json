@@ -3,18 +3,20 @@
   "extendable_lines": false,
   "capacity_scale": "1",
   "capacity_mix": {
-    "solar": { "share": 25.0},
-    "onwind": { "share": 40.0, "max_latitude": 54.7284, "min_latitude": 52.0}, 
-    "offwind-ac": { "share": 25.0},
-    "hydro": { "share": 2.0 },
-    "biomass": { "share": 1.0 },
-    "CCGT": { "share": 5.0, "max_latitude": 52.0, "min_latitude": 47.5859},
-    "waste": { "share": 1.0 },
-    "coal": { "share": 0.0},
-    "lignite": { "share": 0.0},
-    "OCGT": { "share": 0.0},
-    "oil": { "share": 0.0 },
-    "geothermal": { "share": 0.01 },
-    "offwind-dc": { "share": 0.0 }
+    "onwind": { "share": 38.0 },
+    "offwind-ac": { "share": 18.0 },
+    "solar": { "share": 25.0 },
+    "offwind-dc": { "share": 0.0 },
+    "offwind-float": { "share": 4.0 },
+    "solar-hsat": { "share": 4.0 },
+    "CCGT": { "share": 3.0, "max_latitude": 52.0 },
+    "coal": { "share": 1.0 },
+    "lignite": { "share": 0.196 },
+    "OCGT": { "share": 1.0 },
+    "oil": { "share": 1.0 },
+    "ror": { "share": 1.074},
+    "biomass": { "share": 3.37 },
+    "waste": { "share": 1.35 },
+    "geothermal": { "share": 0.01 }
   }
 }
