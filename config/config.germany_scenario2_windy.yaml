@@ -10,7 +10,7 @@ scenario:
   clusters:
   - "450" #max clusters
   opts:
-  - []
+  - ""
   planning_horizons:
   - 2025
 
