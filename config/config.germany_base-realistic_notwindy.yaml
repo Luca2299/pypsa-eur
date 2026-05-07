@@ -1,0 +1,82 @@
+# yaml-language-server: $schema=./schema.default.json
+# Minimal Germany single-day configuration
+
+run:
+  name: "germany_base-realistic_notwindy"
+  disable_progressbar: true
+  shared_resources:
+    policy: false
+
+scenario:
+  clusters:
+  - "450" #max clusters
+  opts:
+  - "" # base electricity model
+  planning_horizons:
+  - 2025
+
+countries: ['DE']
+
+snapshots:
+  start: "2025-04-08"
+  end: "2025-04-09"
+
+electricity:
+  custom_powerplants: false
+  #renewable_carriers: [solar, onwind, offwind-ac, offwind-dc]
+  estimate_renewable_capacities:
+    enable: true
+    from_powerplantmatching: true
+    from_irenastat: true # added 22.04.
+    year: 2025
+    expansion_limit: false
+    technology_mapping:
+      Offshore: offwind-ac # assuming that all offshore wind is AC
+      PV: solar
+  extendable_carriers: 
+    Generator: [] # no extandable generators to match the status quo
+
+    
+atlite:
+  default_cutout: "europe-2025-sarah3-era5"
+
+# do not remove: does not work
+renewable:
+  onwind:
+    corine: false
+  solar:
+    corine: false
+  solar-hsat:
+    corine: false
+
+# In the first simulation I had this enabled, 
+# but then it does not show the state of the lines right now 
+transmission_projects:
+  enable: false
+
+#lines:
+#  max_extension: 0
+
+load:
+# Whether to supplement missing data for selected time period 
+# should be supplemented by synthetic data from Zenodo.
+  supplement_synthetic: false 
+
+solving:
+  solver:
+    name: highs
+    options: highs-default
+
+#solving:
+  #options:
+    #load_shedding:
+      #enable: true
+      #marginal_cost: 3000 # default is 1000
+  check_objective:
+    enable: false
+
+# removed 22.04.
+#data:
+#  cutout:
+#    source: archive
+#    version: v1.0
