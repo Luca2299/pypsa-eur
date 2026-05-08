@@ -17,11 +17,16 @@ scenario:
 
 countries: ['DE']
 
+# added
+#co2_budget:
+  #2025: 0.648 # from pypsa-de: https://github.com/PyPSA/pypsa-de/blob/main/config/config.de.yaml
+
 snapshots:
   start: "2025-04-08"
   end: "2025-04-09"
 
 electricity:
+  co2limit_enable: true
   custom_powerplants: false
   #renewable_carriers: [solar, onwind, offwind-ac, offwind-dc]
   estimate_renewable_capacities:
@@ -35,7 +40,6 @@ electricity:
       PV: solar
   extendable_carriers: 
     Generator: [] # no extandable generators to match the status quo
-
     
 atlite:
   default_cutout: "europe-2025-sarah3-era5"
@@ -49,13 +53,8 @@ renewable:
   solar-hsat:
     corine: false
 
-# In the first simulation I had this enabled, 
-# but then it does not show the state of the lines right now 
 transmission_projects:
   enable: false
-
-#lines:
-#  max_extension: 0
 
 load:
 # Whether to supplement missing data for selected time period 
@@ -66,17 +65,13 @@ solving:
   solver:
     name: highs
     options: highs-default
-
-#solving:
-  #options:
-    #load_shedding:
-      #enable: true
-      #marginal_cost: 3000 # default is 1000
+  options:
+    transmission_losses: true #added
+    load_shedding:
+      enable: true
+      default_cost: 10000
+      all_carriers: true
   check_objective:
     enable: false
+  
 
-# removed 22.04.
-#data:
-#  cutout:
-#    source: archive
-#    version: v1.0
