@@ -1,5 +1,5 @@
 run:
-  name: germany_base-realistic_notwindy
+  name: germany_base2_windvariability
   disable_progressbar: true
   shared_resources:
     policy: false
@@ -20,20 +20,13 @@ scenario:
   - ''
 countries:
 - DE
-co2_budget:
-  2025: 0.648
-  2020: 0.72
-  2030: 0.45
-  2035: 0.25
-  2040: 0.1
-  2045: 0.05
-  2050: 0.0
 snapshots:
-  start: '2025-04-08'
-  end: '2025-04-09'
+  start: '2025-10-06'
+  end: '2025-10-07'
   inclusive: left
 electricity:
   co2limit_enable: true
+  co2limit: 160000000.0
   custom_powerplants: false
   estimate_renewable_capacities:
     enable: true
@@ -63,7 +56,6 @@ electricity:
   base_network: osm
   gaslimit_enable: false
   gaslimit: false
-  co2limit: 77500000.0
   co2base: 1487000000.0
   operational_reserve:
     activate: false
@@ -443,6 +435,14 @@ remote:
 foresight: overnight
 enable:
   drop_leap_day: true
+co2_budget:
+  2020: 0.72
+  2025: 0.648
+  2030: 0.45
+  2035: 0.25
+  2040: 0.1
+  2045: 0.05
+  2050: 0.0
 conventional:
   unit_commitment: false
   dynamic_fuel_price: false
