@@ -407,3 +407,4 @@ Curtailment % (new):              94.83 %
 >>> Note: No generators had optimized capacity in this case,
     so old and new functions produce identical results.
 
+Verification FAILED for 'windy' network: 628 lines have different s_nom and s_nom_opt.
