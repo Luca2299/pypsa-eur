@@ -313,3 +313,97 @@ Store       Battery Storage           4.535288e+04        0.000000e+00  4.668169
 
 === Analysis Complete ===
 All results saved to: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2_
+======================================================================
+Network: Windy
+offwind-ac capacity MW: 23082.185831516847
+Total available (MWh): 488403.91
+Total dispatched (MWh): 25270.40
+Total curtailed (MWh): 463133.52
+Curtailed fraction: 0.9482592248829554
+======================================================================
+
+======================================================================
+Network: Not Windy
+offwind-ac capacity MW: 23082.185831516847
+Total available (MWh): 17195.49
+Total dispatched (MWh): 17195.48
+Total curtailed (MWh): 0.01
+Curtailed fraction: 3.324739848953066e-07
+======================================================================
+
+======================================================================
+Network: Wind Variability
+offwind-ac capacity MW: 23082.185831516847
+Total available (MWh): 358871.25
+Total dispatched (MWh): 116303.15
+Total curtailed (MWh): 242568.10
+Curtailed fraction: 0.675919556591846
+======================================================================
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2_/04_offwind_curtailment.png
+======================================================================
+Network: Windy
+offwind-ac capacity MW: 23082.19
+Total available (MWh): 488403.91
+Total dispatched (MWh): 25270.40
+Total curtailed (MWh): 463133.52
+Curtailed fraction: 0.95
+======================================================================
+
+======================================================================
+Network: Not Windy
+offwind-ac capacity MW: 23082.19
+Total available (MWh): 17195.49
+Total dispatched (MWh): 17195.48
+Total curtailed (MWh): 0.01
+Curtailed fraction: 0.00
+======================================================================
+
+======================================================================
+Network: Wind Variability
+offwind-ac capacity MW: 23082.19
+Total available (MWh): 358871.25
+Total dispatched (MWh): 116303.15
+Total curtailed (MWh): 242568.10
+Curtailed fraction: 0.68
+======================================================================
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2_/04_offwind_curtailment.png
+
+======================================================================
+NEW CURTAILMENT FUNCTION - offwind-ac
+======================================================================
+{'carrier': 'offwind-ac', 'num_generators': 31, 'installed_capacity_MW': np.float64(23082.185831516843), 'total_available_MWh': np.float64(488403.9141732763), 'total_dispatched_MWh': np.float64(25270.39708952379), 'total_curtailed_MWh': np.float64(463133.51708375255), 'curtailment_fraction': np.float64(0.9482592248829557), 'max_curtailment_MW': 19844.50766215937, 'avg_curtailment_MW': np.float64(19297.22987848969)}
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2_/08_curtailment_new_offwind-ac.png
+
+
+================================================================================
+CURTAILMENT FUNCTION COMPARISON - OLD vs NEW
+================================================================================
+
+>>> Testing carrier: offwind-ac (31 generators)
+>>> Number of generators with optimized capacity: 0
+
+                            OLD FUNCTION CALCULATION                            
+--------------------------------------------------------------------------------
+Total Available (old):        488,403.9 MWh
+Total Dispatched:              25,270.4 MWh
+Total Curtailed (old):        463,133.5 MWh
+Curtailment % (old):              94.83 %
+
+                            NEW FUNCTION CALCULATION                            
+--------------------------------------------------------------------------------
+Total Available (new):        488,403.9 MWh
+Total Dispatched:              25,270.4 MWh
+Total Curtailed (new):        463,133.5 MWh
+Curtailment % (new):              94.83 %
+
+                             DIFFERENCE (New - Old)                             
+--------------------------------------------------------------------------------
+ΔAvailable Power:                   0.0 MWh (+0.00%)
+ΔCurtailed Power:                   0.0 MWh (+0.00%)
+ΔCurtailment Fraction:           0.0000 (+0.00 pp)
+
+>>> Note: No generators had optimized capacity in this case,
+    so old and new functions produce identical results.
+
