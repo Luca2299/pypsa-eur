@@ -1,0 +1,318 @@
+Networks comparison summary
+Generated: 2026-05-12T10:51:24.339243
+
+Verification PASSED for 'windy' network: Line capacities were not extended (s_nom equals s_nom_opt).
+Verification PASSED for 'notwindy' network: Line capacities were not extended (s_nom equals s_nom_opt).
+Verification PASSED for 'windvariability' network: Line capacities were not extended (s_nom equals s_nom_opt).
+Capacity comparison for germany_scenario1_notwindy:
+                       Base      Scenario
+carrier                                  
+CCGT           30783.128330   6856.780411
+OCGT            6112.743723   2285.593470
+PHS             7361.720000   7361.720000
+biomass         8020.001833   7702.449995
+coal           20351.945000   2285.593470
+geothermal        26.900000     22.855935
+hydro            402.238150    402.238150
+lignite        19457.035000    447.976320
+offwind-ac     11163.743000  41140.682466
+offwind-dc         0.000000      0.000000
+offwind-float      0.000000      0.000000
+oil             5684.345986   2285.593470
+onwind         73332.065900  86852.551872
+ror             4014.118709   2454.727387
+solar          48771.254020  57139.836758
+solar-hsat         0.000000      0.000000
+waste           3127.659000   3085.551185
+
+Capacity comparison for germany_scenario2_notwindy:
+                       Base      Scenario
+carrier                                  
+CCGT           30783.128330  18465.748665
+OCGT            6112.743723   2308.218583
+PHS             7361.720000   7361.720000
+biomass         8020.001833  11541.092916
+coal           20351.945000   4616.437166
+geothermal        26.900000     23.082186
+hydro            402.238150    402.238150
+lignite        19457.035000   4616.437166
+offwind-ac     11163.743000  23082.185832
+offwind-dc         0.000000      0.000000
+offwind-float      0.000000      0.000000
+oil             5684.345986   2308.218583
+onwind         73332.065900  87712.306160
+ror             4014.118709   2308.218583
+solar          48771.254020  62321.901745
+solar-hsat         0.000000      0.000000
+waste           3127.659000   4616.437166
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base_/01_capacity_comparison.png
+
+=== Network Statistics ===
+
+Network: Windy
+  buses: 1350
+  lines: 628
+  generators: 3242
+  loads: 450
+  links: 1800
+  storage_units: 60
+  stores: 900
+
+Network: Not Windy
+  buses: 1350
+  lines: 628
+  generators: 3242
+  loads: 450
+  links: 1800
+  storage_units: 60
+  stores: 900
+
+Network: Wind Variability
+  buses: 1350
+  lines: 628
+  generators: 3242
+  loads: 450
+  links: 1800
+  storage_units: 60
+  stores: 900
+Plotting 'Windy' network at time 2025-10-26 16:00:00 with peak marginal price 44.17 €/MWh
+Minimum marginal price across all buses at peak time: -10.28 €/MWh
+
+Windy Marginal Price Statistics:
+count    1350.000000
+mean       12.691658
+std        10.243254
+min       -10.278510
+25%         0.133368
+50%        12.985833
+75%        20.234436
+max        44.170432
+
+Plotting 'Not Windy' network at time 2025-04-08 05:00:00 with peak marginal price 77.74 €/MWh
+Minimum marginal price across all buses at peak time: 18.96 €/MWh
+
+Not Windy Marginal Price Statistics:
+count    1350.000000
+mean       41.779992
+std         4.436310
+min        18.961542
+25%        38.156419
+50%        42.103077
+75%        43.657592
+max        77.737519
+
+Plotting 'Wind Variability' network at time 2025-10-06 17:00:00 with peak marginal price 92.19 €/MWh
+Minimum marginal price across all buses at peak time: -10.36 €/MWh
+
+Wind Variability Marginal Price Statistics:
+count    1350.000000
+mean       33.772946
+std        13.223142
+min       -10.362030
+25%        24.206180
+50%        27.062494
+75%        40.175934
+max        92.193611
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base_/02_marginal_prices.png
+No generator carrier containing 'load' found. Plot will show zeros.
+======================================================================
+ Network: Windy
+  Average loading across all lines: 24.09%
+  Max average loading: 69.94%
+  Lines with >60% avg loading: 28
+  Lines with >70% avg loading: 0
+======================================================================
+
+No generator carrier containing 'load' found. Plot will show zeros.
+======================================================================
+ Network: Not Windy
+  Average loading across all lines: 15.97%
+  Max average loading: 69.97%
+  Lines with >60% avg loading: 6
+  Lines with >70% avg loading: 0
+======================================================================
+
+No generator carrier containing 'load' found. Plot will show zeros.
+======================================================================
+ Network: Wind Variability
+  Average loading across all lines: 23.58%
+  Max average loading: 69.92%
+  Lines with >60% avg loading: 10
+  Lines with >70% avg loading: 0
+======================================================================
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base_/03_load_shedding.png
+======================================================================
+Network: Windy
+offwind-ac capacity MW: 11163.743
+Total available (MWh): 236217.48034710326
+Total dispatched (MWh): 24906.580774420603
+Total curtailed (MWh): 211310.89957268265
+Curtailed fraction: 0.8945608058395073
+======================================================================
+
+======================================================================
+Network: Not Windy
+offwind-ac capacity MW: 11163.743
+Total available (MWh): 8316.629597688581
+Total dispatched (MWh): 8316.62325268521
+Total curtailed (MWh): 0.0063450033712678655
+Curtailed fraction: 7.629296575900549e-07
+======================================================================
+
+======================================================================
+Network: Wind Variability
+offwind-ac capacity MW: 11163.743
+Total available (MWh): 173568.7610145298
+Total dispatched (MWh): 84196.70247083632
+Total curtailed (MWh): 89372.05854369348
+Curtailed fraction: 0.5149086622575589
+======================================================================
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base_/04_offwind_curtailment.png
+======================================================================
+Network: Windy
+onwind capacity MW: 73332.0659
+Total available (MWh): 1520776.2036497495
+Total dispatched (MWh): 1020954.5297537451
+Total curtailed (MWh): 499821.67389600433
+Curtailed fraction: 0.32866221387240907
+======================================================================
+
+======================================================================
+Network: Not Windy
+onwind capacity MW: 73332.0659
+Total available (MWh): 49435.39764776793
+Total dispatched (MWh): 49434.94489360011
+Total curtailed (MWh): 0.4527541678226328
+Curtailed fraction: 9.158501587234125e-06
+======================================================================
+
+======================================================================
+Network: Wind Variability
+onwind capacity MW: 73332.0659
+Total available (MWh): 804830.798401218
+Total dispatched (MWh): 699707.793155437
+Total curtailed (MWh): 105123.00524578097
+Curtailed fraction: 0.13061503791182685
+======================================================================
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base_/05_onwind_curtailment.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base_/06_power_dispatch.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base_/07_energy_production.png
+
+=== Energy Production Summary ===
+                   Windy      Not Windy  Wind Variability
+carrier                                                  
+onwind      1.020955e+06   49434.944894     699707.793155
+coal        5.365307e+04  381837.367283     262362.965289
+lignite     8.700092e-03  345395.177764     110910.246504
+solar       6.549729e+04  247321.887944      47793.186709
+biomass     1.407690e+04  191861.916002     119403.491197
+ror         3.950972e+04   63871.346957      26137.861239
+offwind-ac  2.490658e+04    8316.623253      84196.702471
+CCGT        4.806987e-02    4907.098348      35550.540064
+waste       1.220310e+02   21766.335528      11997.487770
+OCGT        5.546704e-02      36.269026       2900.433541
+geothermal  4.673510e+02     645.589078        530.004601
+oil         2.242822e-02       0.341609          0.164206
+
+
+
+=== CO2 Emissions Summary ===
+Total CO2 emissions at the Windy day: 41140.11 kg CO2
+Total CO2 emissions at the Not Windy day: 729431.81 kg CO2
+Total CO2 emissions at the Wind Variability day: 367574.78 kg CO2
+
+
+
+=== Network Statistics ===
+
+Network: Windy
+                                  Optimal Capacity  Installed Capacity        Supply    Withdrawal  Energy Balance  Transmission  Capacity Factor   Curtailment  Capital Expenditure  Operational Expenditure       Revenue  Market Value
+Generator   Combined-Cycle Gas        3.078313e+04        3.078313e+04  4.807000e-02  0.000000e+00    4.807000e-02       0.00000     6.497065e-08  738795.03185         1.066291e+07             2.235180e+00  4.906000e-01     10.220000
+            Offshore Wind (AC)        1.116374e+04        1.116374e+04  2.490658e+04  0.000000e+00    2.490658e+04       0.00000     9.295934e-02  211310.89957         9.110722e+06             6.251256e+02  6.409346e+02      0.025734
+            Onshore Wind              7.333207e+04        7.333207e+04  1.020955e+06  0.000000e+00    1.020955e+06       0.00000     5.800978e-01  499821.67390         2.387208e+07             2.537279e+04  2.709601e+06      2.653988
+            Open-Cycle Gas            6.112744e+03        6.112744e+03  5.547000e-02  0.000000e+00    5.547000e-02       0.00000     3.778990e-07  146705.79388         9.566474e+05             3.276780e+00  4.461500e-01      8.047619
+            Run of River              4.014119e+03        4.014119e+03  3.950972e+04  0.000000e+00    3.950972e+04       0.00000     4.101120e-01     569.66604         4.303464e+06             3.940010e+02  6.359596e+05     16.096282
+            Solar                     4.877125e+04        4.877125e+04  6.549729e+04  0.000000e+00    6.549729e+04       0.00000     5.595620e-02    3239.13267         4.930238e+06             1.312223e+03  4.132482e+05      6.309394
+            biomass                   8.020002e+03        8.020002e+03  1.407690e+04  0.000000e+00    1.407690e+04       0.00000     7.313433e-02  178403.14542         8.160028e+06             2.836151e+05  3.283856e+05     23.327976
+            coal                      2.035194e+04        2.035194e+04  5.365307e+04  0.000000e+00    5.365307e+04       0.00000     1.098443e-01  434793.61309         2.364078e+07             1.041993e+06  1.528809e+06     28.494338
+            geothermal                2.690000e+01        2.690000e+01  4.673510e+02  0.000000e+00    4.673510e+02       0.00000     7.239019e-01     178.24898         0.000000e+00             4.789990e+00  7.169058e+03     15.339771
+            lignite                   1.945703e+04        1.945703e+04  8.700000e-03  0.000000e+00    8.700000e-03       0.00000     1.850231e-08  466968.83130         2.260126e+07             2.340700e-01  5.748000e-02      6.666667
+            oil                       5.684346e+03        5.684346e+03  2.243000e-02  0.000000e+00    2.243000e-02       0.00000     1.636072e-07  136424.28124         7.682257e+05             2.797160e+00  1.622200e-01      7.268817
+            waste                     3.127659e+03        3.127659e+03  1.220310e+02  0.000000e+00    1.220310e+02       0.00000     1.625698e-03   74941.78499         8.797504e+06             4.164146e+03  4.331453e+03     35.494655
+Line        AC                        1.507647e+06        1.507647e+06  4.226340e+06  4.333443e+06   -1.071029e+05  107102.93706     2.365658e-01       0.00000         8.617290e+06             0.000000e+00 -3.228004e+05     -0.076378
+Link        H2 Electrolysis           1.806179e+02        0.000000e+00  0.000000e+00  4.334648e+03   -4.334648e+03       0.00000     9.999580e-01       0.00000         7.827730e+04             4.557235e+01  9.359030e+04           NaN
+            H2 Fuel Cell              7.447056e+02        0.000000e+00  0.000000e+00  3.031653e+03   -3.031653e+03       0.00000     1.696226e-01       0.00000         0.000000e+00             3.048402e+01  1.476806e+04           NaN
+            battery charger           2.497960e+02        0.000000e+00  0.000000e+00  5.348002e+03   -5.348002e+03       0.00000     8.920617e-01       0.00000         8.310990e+03             5.145529e+01  1.185565e+05           NaN
+            battery discharger        2.549469e+02        0.000000e+00  0.000000e+00  5.239950e+03   -5.239950e+03       0.00000     8.563793e-01       0.00000         0.000000e+00             5.219750e+01  1.061775e+05           NaN
+Load        -                         0.000000e+00        0.000000e+00  0.000000e+00  1.179665e+06   -1.179665e+06       0.00000              NaN       0.00000         0.000000e+00             0.000000e+00 -9.286080e+06           NaN
+StorageUnit Pumped Hydro Storage      7.361720e+03        7.361720e+03  1.998976e+04  2.746215e+04   -7.472389e+03       0.00000     2.685735e-01  184153.66882         4.678988e+06             2.263715e+02  8.155443e+04      4.079810
+            Reservoir & Dam           4.022382e+02        4.022382e+02  2.942387e+03  0.000000e+00    2.942387e+03       0.00000     3.047932e-01    6711.32874         2.556559e+05             2.980578e+01  5.108161e+04     17.360605
+Store       Battery Storage           2.785833e+02        0.000000e+00  7.825939e+02  7.825939e+02    0.000000e+00       0.00000     4.211106e-01       0.00000         6.167834e+03             0.000000e+00  6.161360e+03      7.872997
+            Hydrogen Storage          1.663022e+03        0.000000e+00  1.789155e+03  1.789155e+03    0.000000e+00       0.00000     4.667760e-01       0.00000         5.123228e+02             0.000000e+00  5.058446e+02      0.282728
+
+
+
+Network: Not Windy
+                                  Optimal Capacity  Installed Capacity        Supply    Withdrawal  Energy Balance  Transmission  Capacity Factor   Curtailment  Capital Expenditure  Operational Expenditure       Revenue  Market Value
+Generator   Combined-Cycle Gas        3.078313e+04        3.078313e+04  4.907098e+03  0.000000e+00    4.907098e+03       0.00000         0.006642  733887.98157         1.066291e+07             2.160163e+05  2.263540e+05     46.127881
+            Offshore Wind (AC)        1.116374e+04        1.116374e+04  8.316623e+03  0.000000e+00    8.316623e+03       0.00000         0.031040       0.00635         9.101919e+06             2.094763e+02  2.632678e+05     31.655617
+            Onshore Wind              7.333207e+04        7.333207e+04  4.943494e+04  0.000000e+00    4.943494e+04       0.00000         0.028089       0.45275         2.387208e+07             1.231127e+03  1.556644e+06     31.488729
+            Open-Cycle Gas            6.112744e+03        6.112744e+03  3.626903e+01  0.000000e+00    3.626903e+01       0.00000         0.000247  146669.58033         9.566474e+05             2.138057e+03  2.489134e+03     68.629714
+            Run of River              4.014119e+03        4.014119e+03  6.387135e+04  0.000000e+00    6.387135e+04       0.00000         0.662986       0.53659         4.303464e+06             6.370061e+02  2.276488e+06     35.641766
+            Solar                     4.877125e+04        4.877125e+04  2.473219e+05  0.000000e+00    2.473219e+05       0.00000         0.211294       0.63895         4.930238e+06             4.953043e+03  6.853182e+06     27.709567
+            biomass                   8.020002e+03        8.020002e+03  1.918619e+05  0.000000e+00    1.918619e+05       0.00000         0.996789     618.12799         8.160028e+06             3.865834e+06  6.223505e+06     32.437415
+            coal                      2.035194e+04        2.035194e+04  3.818374e+05  0.000000e+00    3.818374e+05       0.00000         0.781738  106609.31272         2.364078e+07             8.198307e+06  1.197251e+07     31.355006
+            geothermal                2.690000e+01        2.690000e+01  6.455891e+02  0.000000e+00    6.455891e+02       0.00000         0.999983       0.01092         0.000000e+00             6.520060e+00  2.279699e+04     35.311931
+            lignite                   1.945703e+04        1.945703e+04  3.453952e+05  0.000000e+00    3.453952e+05       0.00000         0.739654  121573.66224         2.260126e+07             8.762756e+06  1.027345e+07     29.744060
+            oil                       5.684346e+03        5.684346e+03  3.416100e-01  0.000000e+00    3.416100e-01       0.00000         0.000003  136423.96205         7.682257e+05             4.260422e+01  1.108200e+01     32.449051
+            waste                     3.127659e+03        3.127659e+03  2.176634e+04  0.000000e+00    2.176634e+04       0.00000         0.289971   53297.48047         8.797504e+06             7.427414e+05  8.633062e+05     39.662448
+Line        AC                        1.507647e+06        1.507647e+06  2.516917e+06  2.664692e+06   -1.477745e+05  147774.46883         0.143204       0.00000         8.617290e+06             0.000000e+00 -4.029827e+06     -1.601097
+Link        H2 Electrolysis           1.751000e-01        0.000000e+00  0.000000e+00  2.015790e+00   -2.015790e+00       0.00000         0.479669       0.00000         7.588655e+01             2.019000e-02 -6.257718e+01           NaN
+            H2 Fuel Cell              7.492000e-02        0.000000e+00  0.000000e+00  1.409850e+00   -1.409850e+00       0.00000         0.784036       0.00000         0.000000e+00             1.408000e-02 -6.082661e+01           NaN
+            battery charger           6.785972e+02        0.000000e+00  0.000000e+00  4.540771e+03   -4.540771e+03       0.00000         0.278809       0.00000         2.257769e+04             4.365103e+01 -1.535372e+05           NaN
+            battery discharger        6.925903e+02        0.000000e+00  0.000000e+00  4.449029e+03   -4.449029e+03       0.00000         0.267656       0.00000         0.000000e+00             4.546442e+01 -2.050643e+05           NaN
+Load        -                         0.000000e+00        0.000000e+00  0.000000e+00  1.300023e+06   -1.300023e+06       0.00000              NaN       0.00000         0.000000e+00             0.000000e+00 -4.279463e+07           NaN
+StorageUnit Pumped Hydro Storage      7.361720e+03        7.361720e+03  3.104180e+04  4.138912e+04   -1.034733e+04       0.00000         0.409952  187028.60599         4.678988e+06             3.055736e+02  1.187052e+05      3.824044
+            Reservoir & Dam           4.022382e+02        4.022382e+02  5.760189e+03  0.000000e+00    5.760189e+03       0.00000         0.596681    3893.52611         2.556559e+05             5.751338e+01  2.253421e+05     39.120599
+Store       Battery Storage           2.243117e+03        0.000000e+00  4.425985e+03  4.425985e+03    1.000000e-05       0.00000         0.499310       0.00000         4.966262e+04             0.000000e+00  4.958642e+04     11.203477
+            Hydrogen Storage          2.520150e+02        0.000000e+00  1.465800e-01  1.465800e-01    0.000000e+00       0.00000         0.500000       0.00000         7.763760e+01             0.000000e+00  1.800000e-04      0.001637
+
+
+
+Network: Wind Variability
+                                  Optimal Capacity  Installed Capacity        Supply    Withdrawal  Energy Balance  Transmission  Capacity Factor   Curtailment  Capital Expenditure  Operational Expenditure       Revenue  Market Value
+Generator   Combined-Cycle Gas        3.078313e+04        3.078313e+04  3.555054e+04  0.000000e+00    3.555054e+04       0.00000         0.048120  703244.53986         1.066291e+07             1.687770e+06  1.960404e+06     55.144149
+            Offshore Wind (AC)        1.116374e+04        1.116374e+04  8.419670e+04  0.000000e+00    8.419670e+04       0.00000         0.314249   89372.05854         9.111059e+06             2.077939e+03  5.916635e+05      7.027157
+            Onshore Wind              7.333207e+04        7.333207e+04  6.997078e+05  0.000000e+00    6.997078e+05       0.00000         0.397568  105123.00525         2.387208e+07             1.741936e+04  8.577265e+06     12.258353
+            Open-Cycle Gas            6.112744e+03        6.112744e+03  2.900434e+03  0.000000e+00    2.900434e+03       0.00000         0.019770  143805.41581         9.566474e+05             1.709703e+05  1.883969e+05     64.954753
+            Run of River              4.014119e+03        4.014119e+03  2.613786e+04  0.000000e+00    2.613786e+04       0.00000         0.271312      81.40181         4.303464e+06             2.606730e+02  1.147467e+06     43.900560
+            Solar                     4.877125e+04        4.877125e+04  4.779319e+04  0.000000e+00    4.779319e+04       0.00000         0.040831    3073.95193         4.930238e+06             9.583747e+02  9.897971e+05     20.710005
+            biomass                   8.020002e+03        8.020002e+03  1.194035e+05  0.000000e+00    1.194035e+05       0.00000         0.620342   73076.55280         8.160028e+06             2.399754e+06  4.188590e+06     35.079292
+            coal                      2.035194e+04        2.035194e+04  2.623630e+05  0.000000e+00    2.623630e+05       0.00000         0.537137  226083.71471         2.364078e+07             5.535814e+06  9.037507e+06     34.446579
+            geothermal                2.690000e+01        2.690000e+01  5.300046e+02  0.000000e+00    5.300046e+02       0.00000         0.820949     115.59540         0.000000e+00             5.446810e+00  2.271452e+04     42.857202
+            lignite                   1.945703e+04        1.945703e+04  1.109102e+05  0.000000e+00    1.109102e+05       0.00000         0.237511  356058.59350         2.260126e+07             2.804007e+06  2.944558e+06     26.549017
+            oil                       5.684346e+03        5.684346e+03  1.642100e-01  0.000000e+00    1.642100e-01       0.00000         0.000001  136424.13946         7.682257e+05             2.047951e+01  4.704740e+00     28.659357
+            waste                     3.127659e+03        3.127659e+03  1.199749e+04  0.000000e+00    1.199749e+04       0.00000         0.159831   63066.32823         8.797504e+06             4.093946e+05  5.920556e+05     49.348300
+Line        AC                        1.507647e+06        1.507647e+06  3.981856e+06  4.209046e+06   -2.271896e+05  227189.56715         0.226371       0.00000         8.617290e+06             0.000000e+00 -1.412361e+06     -0.354699
+Link        H2 Electrolysis           1.005900e-01        0.000000e+00  0.000000e+00  1.261650e+00   -1.261650e+00       0.00000         0.522617       0.00000         4.359286e+01             1.264000e-02 -2.450421e+01           NaN
+            H2 Fuel Cell              4.878000e-02        0.000000e+00  0.000000e+00  8.824000e-01   -8.824000e-01       0.00000         0.753793       0.00000         0.000000e+00             8.820000e-03 -2.931734e+01           NaN
+            battery charger           2.190750e+03        0.000000e+00  0.000000e+00  2.222918e+04   -2.222918e+04       0.00000         0.422785       0.00000         7.288871e+04             2.221814e+02  3.765644e+04           NaN
+            battery discharger        2.235925e+03        0.000000e+00  0.000000e+00  2.178006e+04   -2.178006e+04       0.00000         0.405873       0.00000         0.000000e+00             2.238099e+02 -3.902591e+05           NaN
+Load        -                         0.000000e+00        0.000000e+00  0.000000e+00  1.368958e+06   -1.368958e+06       0.00000              NaN       0.00000         0.000000e+00             0.000000e+00 -3.944927e+07           NaN
+StorageUnit Pumped Hydro Storage      7.361720e+03        7.361720e+03  2.233557e+04  2.978080e+04   -7.445231e+03       0.00000         0.294974  184126.51129         4.678988e+06             2.188117e+02  2.296215e+05     10.280533
+            Reservoir & Dam           4.022382e+02        4.022382e+02  2.364540e+03  0.000000e+00    2.364540e+03       0.00000         0.244936    7289.17536         2.556559e+05             2.360907e+01  1.052228e+05     44.500310
+Store       Battery Storage           1.791124e+04        0.000000e+00  1.851382e+04  1.851382e+04    0.000000e+00       0.00000         0.548550       0.00000         3.965548e+05             0.000000e+00  3.965161e+05     21.417304
+            Hydrogen Storage          1.259254e+02        0.000000e+00  1.684700e-01  1.684600e-01    0.000000e+00       0.00000         0.500000       0.00000         3.879349e+01             0.000000e+00  1.100000e-04           NaN
+
+
+
+=== Analysis Complete ===
+All results saved to: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base_
+Verification PASSED for 'windy' network: Line capacities were not extended (s_nom equals s_nom_opt).
+Verification PASSED for 'notwindy' network: Line capacities were not extended (s_nom equals s_nom_opt).
+Verification PASSED for 'windvariability' network: Line capacities were not extended (s_nom equals s_nom_opt).

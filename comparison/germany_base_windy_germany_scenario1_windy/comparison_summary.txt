@@ -1,0 +1,141 @@
+Network comparison summary
+Generated: 2026-05-12T11:43:50.725923
+
+Left network: germany_base_windy
+Right network: germany_scenario1_windy
+Analysis output directory: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/comparison/germany_base_windy_germany_scenario1_windy
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/comparison/germany_base_windy_germany_scenario1_windy/01_capacity_difference.png
+
+=== Capacity Difference ===
+               Germany Base Windy  Germany Scenario1 Windy    Difference
+carrier                                                                 
+offwind-ac           11163.743000             41140.682466  29976.939466
+CCGT                 30783.128330              6856.780411 -23926.347919
+lignite              19457.035000               447.976320 -19009.058680
+coal                 20351.945000              2285.593470 -18066.351530
+onwind               73332.065900             86852.551872  13520.485972
+solar                48771.254020             57139.836758   8368.582738
+OCGT                  6112.743723              2285.593470  -3827.150253
+oil                   5684.345986              2285.593470  -3398.752516
+ror                   4014.118709              2454.727387  -1559.391322
+biomass               8020.001833              7702.449995   -317.551838
+waste                 3127.659000              3085.551185    -42.107815
+geothermal              26.900000                22.855935     -4.044065
+PHS                   7361.720000              7361.720000      0.000000
+hydro                  402.238150               402.238150      0.000000
+offwind-float            0.000000                 0.000000      0.000000
+offwind-dc               0.000000                 0.000000      0.000000
+solar-hsat               0.000000                 0.000000      0.000000
+
+
+
+=== Marginal Price Difference ===
+Selected snapshot: 2025-10-26 18:00:00
+count    1350.000000
+mean       -8.081072
+std         9.257886
+min       -35.834936
+25%       -15.193227
+50%        -5.672515
+75%        -0.000108
+max        19.010182
+Line-loading difference stats:
+count    628.000000
+mean       0.043977
+std        0.100005
+min       -0.560991
+25%       -0.003918
+50%        0.036901
+75%        0.091713
+max        0.445111
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/comparison/germany_base_windy_germany_scenario1_windy/02_price_and_loading_difference.png
+
+
+
+=== Load Shedding Difference ===
+Worst snapshot: 2025-10-26 00:00:00
+count    1350.0
+mean        0.0
+std         0.0
+min         0.0
+25%         0.0
+50%         0.0
+75%         0.0
+max         0.0
+Total shed difference [MW]: 0.0
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/comparison/germany_base_windy_germany_scenario1_windy/03_load_shedding_difference.png
+
+
+Carrier: offwind-ac
+Available Δ     634292.379273
+Dispatched Δ     31326.217418
+Curtailed Δ     602966.161855
+Carrier: onwind
+Available Δ     280390.755056
+Dispatched Δ      1867.561994
+Curtailed Δ     278523.193062
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/comparison/germany_base_windy_germany_scenario1_windy/04_wind_curtailment_difference.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/comparison/germany_base_windy_germany_scenario1_windy/05_dispatch_difference.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/comparison/germany_base_windy_germany_scenario1_windy/06_energy_difference.png
+
+=== Dispatch Difference ===
+carrier
+onwind            1867.561994
+offwind-ac       31326.217418
+offwind-float        0.000000
+solar             2719.380719
+solar-hsat           0.000000
+hydro                0.000000
+ror                516.266783
+biomass         -14034.688707
+geothermal         178.239663
+lignite             -0.008558
+coal            -53646.025424
+oil                 -0.021983
+waste             -122.030411
+OCGT                -0.054449
+CCGT                -0.047272
+
+=== Energy Difference ===
+               Germany Base Windy  Germany Scenario1 Windy    Difference
+carrier                                                                 
+coal                 5.365307e+04             7.041488e+00 -53646.025424
+offwind-ac           2.490658e+04             5.623280e+04  31326.217418
+biomass              1.407690e+04             4.220986e+01 -14034.688707
+solar                6.549729e+04             6.821667e+04   2719.380719
+onwind               1.020955e+06             1.022822e+06   1867.561994
+ror                  3.950972e+04             4.002598e+04    516.266783
+geothermal           4.673510e+02             6.455907e+02    178.239663
+waste                1.220310e+02             5.988160e-04   -122.030411
+OCGT                 5.546704e-02             1.017675e-03     -0.054449
+CCGT                 4.806987e-02             7.974896e-04     -0.047272
+oil                  2.242822e-02             4.451316e-04     -0.021983
+lignite              8.700092e-03             1.419211e-04     -0.008558
+hydro                0.000000e+00             0.000000e+00      0.000000
+offwind-float        0.000000e+00             0.000000e+00      0.000000
+solar-hsat           0.000000e+00             0.000000e+00      0.000000
+
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/comparison/germany_base_windy_germany_scenario1_windy/07_emissions_difference.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/comparison/germany_base_windy_germany_scenario1_windy/08_summary_statistics_difference.png
+
+=== Emissions Difference ===
+Germany Base Windy         41140.114777
+Germany Scenario1 Windy       82.702940
+Difference                -41057.411837
+
+=== Summary Statistics Difference ===
+                Germany Base Windy  Germany Scenario1 Windy    Difference
+buses                 1.350000e+03             1.350000e+03      0.000000
+lines                 6.280000e+02             6.280000e+02      0.000000
+links                 1.800000e+03             1.800000e+03      0.000000
+generators            3.242000e+03             3.242000e+03      0.000000
+loads                 4.500000e+02             4.500000e+02      0.000000
+storage_units         6.000000e+01             6.000000e+01      0.000000
+stores                9.000000e+02             9.000000e+02      0.000000
+generation_MWh        1.219188e+06             1.187992e+06 -31195.210228
+load_MWh              1.179665e+06             1.179665e+06      0.000000
+emissions_kg          4.114011e+04             8.270294e+01 -41057.411837
+
+=== Analysis Complete ===
+All results saved to: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/comparison/germany_base_windy_germany_scenario1_windy
