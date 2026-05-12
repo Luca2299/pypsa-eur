@@ -162,7 +162,29 @@ if __name__ == "__main__":
     start = time.time()
 
     kwargs = dict(nprocesses=nprocesses, disable_progressbar=noprogress)
-    availability = cutout.availabilitymatrix(regions, excluder, **kwargs)
+    # Diagnostic wrapper: try availabilitymatrix and on failure inspect CRS
+    logger.info("Excluder CRS: %s", getattr(excluder, "crs", None))
+    logger.info("Regions CRS: %s", getattr(regions, "crs", None))
+    try:
+        availability = cutout.availabilitymatrix(regions, excluder, **kwargs)
+    except Exception as exc:  # pragma: no cover - diagnostic
+        logger.exception("availabilitymatrix failed: %s", exc)
+        # Inspect rasters stored in the excluder and attempt reprojection
+        try:
+            rasters = getattr(excluder, "rasters", [])
+            for idx, r in enumerate(rasters):
+                try:
+                    raster_crs = getattr(r, "crs", None)
+                    logger.info("Testing raster %d CRS: %s (type=%s)", idx, raster_crs, type(r))
+                    # try reprojection of first region geometry to reveal pyproj errors
+                    sample_geom = regions.geometry.iloc[0:1]
+                    sample_geom.to_crs(raster_crs)
+                    logger.info("Reproject to raster %d succeeded", idx)
+                except Exception as re:
+                    logger.exception("Reproject to raster %d failed: %s", idx, re)
+        except Exception as inner:
+            logger.exception("Error while inspecting excluder rasters: %s", inner)
+        raise
 
     duration = time.time() - start
     logger.info(
