@@ -41,6 +41,7 @@ electricity:
       PV: solar
   extendable_carriers: 
     Generator: [] # no extandable generators to match the status quo
+  transmission_limit: v1.0 # no line expansion to match the status quo
     
 atlite:
   default_cutout: "europe-2025-sarah3-era5"
