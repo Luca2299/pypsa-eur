@@ -1,43 +1,100 @@
+import argparse
+
+from pandera import parser
+import pypsa
+import os
 
 
-
-# --- Fix Step: If verification fails, disable line extension on the base network ---
-for name, n in networks.items():
-    if "s_nom_opt" in n.lines and not n.lines.s_nom.equals(n.lines.s_nom_opt):
-        print(f"Fixing base network for '{name}'...")
-        
-        # Construct the path to the original base network in the 'resources' directory
-        base_network_path = f"{home}/pypsa-eur/resources/{folder}{name}/networks/base_s_{cluster}_elec_.nc"
-        
-        # Check if the file exists before trying to modify it
-        if not os.path.exists(base_network_path):
-            print(f"ERROR: Base network file not found at {base_network_path}. Skipping fix.")
-            continue
-
-        # Load the original base network
-        base_n = pypsa.Network(base_network_path)
-        
-        # Set s_nom_extendable to False
-        for component in base_n.iterate_components(["Line", "Link"]):
-            if "s_nom_extendable" in component.df.columns:
-                component.df["s_nom_extendable"] = False
-            
-        # Save the corrected network back to its original location
-        base_n.export_to_netcdf(base_network_path)
-        print(f"'{name}' base network at {base_network_path} has been updated to disable line extensions.")
-        print("Warning: Remember to rerun solve to apply the changes!")
-    else:
-        print(f"No fix needed for '{name}' network; line extension verification passed.")
+def load_network(home, folder, name, cluster):
+    # Construct the path to the original base network in the 'resources' directory
+    print(f"Attempting to load base network from: {home}/pypsa-eur/resources/{folder}{name}/networks/base_s_{cluster}_elec_.nc")
+    network_path = f"{home}/pypsa-eur/resources/{folder}{name}/networks/base_s_{cluster}_elec_.nc"
+    if not os.path.exists(network_path):
+        print(f"ERROR: Base network file not found at {network_path}. Cannot load network.")
+        return None
+    else: 
+        n = pypsa.Network(network_path)
+        return n, network_path
 
 
-
-# --- Verification Step: Check if lines were extended ---
-for name, n in networks.items():
-    if "s_nom_opt" in n.lines:
-        if n.lines.s_nom.equals(n.lines.s_nom_opt):
-            log_print(f"Verification PASSED for '{name}' network: Line capacities were not extended (s_nom equals s_nom_opt).")
+def disable_line_extension(network, extendable_lines):
+    if extendable_lines == False:
+        if "s_nom_opt" in network.lines and not network.lines.s_nom.equals(network.lines.s_nom_opt):
+            # Set s_nom_extendable to False
+            for component in network.iterate_components(["Line", "Link"]):
+                if "s_nom_extendable" in component.df.columns:
+                    component.df["s_nom_extendable"] = False
+            print("Line extension disabled: 's_nom_extendable' set to False for all lines and links.")
         else:
-            diff_count = (n.lines.s_nom != n.lines.s_nom_opt).sum()
-            log_print(f"Verification FAILED for '{name}' network: {diff_count} lines have different s_nom and s_nom_opt.")
+            print("No line extension detected or 's_nom_opt' column missing; no changes made to line extension settings.")
+    return network
+             
+
+def modify_carrier_capacity(network, carrier_name, new_capacity):
+    chosen_generators = network.generators.index[network.generators.carrier == carrier_name]
+    current_capacities = network.generators.loc[chosen_generators, "p_nom"]
+    factor = new_capacity / current_capacities.sum()
+    
+    network.generators.loc[chosen_generators, "p_nom"] *= factor
+    new_capacity_sum = network.generators.loc[chosen_generators, "p_nom"].sum()
+
+    print(f"Modified '{carrier_name}' generator capacities from {current_capacities.sum():.2f} MW to {new_capacity_sum:.2f} MW.")
+
+    return network
+
+def modify_coal_costs(network, factor):
+    carrier_name = "coal"
+    # Use the generators DataFrame directly to avoid deprecated APIs.
+    if hasattr(network, "generators"):
+        g = network.generators
+        if "carrier" in g.columns and "capital_cost" in g.columns:
+            mask = g["carrier"] == carrier_name
+            if mask.any():
+                original_costs = g.loc[mask, "capital_cost"].copy()
+                g.loc[mask, "capital_cost"] *= factor
+                print(f"Modified capital costs for '{carrier_name}' generators from {original_costs.iloc[0]:.2f} to {g.loc[mask, 'capital_cost'].iloc[0]:.2f}.")
+            else:
+                print(f"No '{carrier_name}' generators found to modify costs.")
+        else:
+            print("Generator dataframe missing required columns; skipping coal cost modification.")
     else:
-        log_print(f"Verification NOTE for '{name}' network: No 's_nom_opt' column found; assuming lines were not extendable.")
+        print("No generator component found on the network; skipping coal cost modification.")
+    return network
+
+
+def main():
+    # --- BEGIN: Argument Parsing ---
+    parser = argparse.ArgumentParser(description="Create a custom network scenario for Germany.")
+    parser.add_argument("--name", type=str, nargs='+', required=True, help="One or more wind conditions for the base network.")
+    parser.add_argument("--folder", type=str, default="germany_base_", help="Base folder name (default: 'germany_base_').")
+    parser.add_argument("--capacity", type=float, default=50000.0, help="Desired new capacity for the specified carrier in MW (default: 50000.0 MW).")
+    parser.add_argument("--carrier", type=str, default="solar", help="Carrier name to modify (default: 'solar').")
+    parser.add_argument("--coal-costs-factor", type=float, default=0.2, help="Factor to modify capital costs for the specified carrier (default: 0.2).")
+    parser.add_argument("--extendable-lines", type=bool, default=False, help="Whether lines are extendable (default: False).")
+
+    args = parser.parse_args()
+    # --- END: Argument Parsing ---
+
+    home = "/home/lucakristin/Desktop/my_pypsa"
+    cluster = "450"
+    folder = args.folder
+    name = args.name[0]  # Take the first provided wind condition
+    carrier_name = args.carrier
+    new_capacity = args.capacity  # Desired new capacity in MW
+    extendable_lines = args.extendable_lines
+    coal_costs_factor = args.coal_costs_factor
+
+    n, n_path = load_network(home, folder, name, cluster)
+    n_original = n.copy()  # Keep a copy of the original network for comparison
+
+    n_original.export_to_netcdf(f"{home}/pypsa-eur/resources/{folder}{name}/networks/base_s_{cluster}_elec_original.nc")
+
+    n = disable_line_extension(n, extendable_lines)
+    n = modify_carrier_capacity(n, carrier_name, new_capacity)
+    n = modify_coal_costs(n, factor=coal_costs_factor)
+
+    # Save the corrected network back to its original location
+    n.export_to_netcdf(n_path)
+    
+if __name__ == "__main__":
+    main()

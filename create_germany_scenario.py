@@ -177,6 +177,7 @@ def modify_generator_capacity_mix(
     )
     print(f"Modified total capacity of selected carriers: {modified_total_capacity:.2f} MW")
 
+
 def main():
     # --- BEGIN: Argument Parsing ---
     parser = argparse.ArgumentParser(description="Create a custom network scenario for Germany.")
