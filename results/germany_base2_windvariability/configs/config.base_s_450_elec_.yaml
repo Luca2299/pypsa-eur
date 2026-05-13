@@ -45,6 +45,7 @@ electricity:
     - battery
     - H2
     Link: []
+  transmission_limit: v1.0
   voltages:
   - 220.0
   - 300.0
@@ -96,7 +97,6 @@ electricity:
   autarky:
     enable: false
     by_country: false
-  transmission_limit: vopt
 atlite:
   default_cutout: europe-2025-sarah3-era5
   nprocesses: 1
