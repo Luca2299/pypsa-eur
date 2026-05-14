@@ -28,6 +28,11 @@ snapshots:
 electricity:
   co2limit_enable: true
   co2limit:  160000000.0     # default value: 77500000.0 -> total co2 emission wothout limit (not windy day): 713738.14
+  operational_reserve:
+    activate: true
+    epsilon_load: 0.02
+    epsilon_vres: 0.02
+    contingency: 4000
   custom_powerplants: false
   #renewable_carriers: [solar, onwind, offwind-ac, offwind-dc]
   estimate_renewable_capacities:
