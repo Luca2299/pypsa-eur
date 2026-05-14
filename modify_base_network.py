@@ -89,9 +89,9 @@ def main():
 
     n_original.export_to_netcdf(f"{home}/pypsa-eur/resources/{folder}{name}/networks/base_s_{cluster}_elec_original.nc")
 
-    n = disable_line_extension(n, extendable_lines)
+    #n = disable_line_extension(n, extendable_lines)
     n = modify_carrier_capacity(n, carrier_name, new_capacity)
-    n = modify_coal_costs(n, factor=coal_costs_factor)
+    #n = modify_coal_costs(n, factor=coal_costs_factor)
 
     # Save the corrected network back to its original location
     n.export_to_netcdf(n_path)
