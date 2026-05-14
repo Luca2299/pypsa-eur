@@ -1,0 +1,180 @@
+Networks comparison summary
+
+Windy line capacities:
+  Line extension detected: 's_nom_opt' differs from 's_nom'.
+
+Not Windy line capacities:
+  Line extension detected: 's_nom_opt' differs from 's_nom'.
+
+Wind Variability line capacities:
+  Line extension detected: 's_nom_opt' differs from 's_nom'.
+
+=== Network Statistics ===
+
+Network: Windy
+  buses: 1350
+  lines: 642
+  generators: 4655
+  loads: 450
+  links: 1818
+  storage_units: 61
+  stores: 900
+
+Network: Not Windy
+  buses: 1350
+  lines: 642
+  generators: 4655
+  loads: 450
+  links: 1818
+  storage_units: 61
+  stores: 900
+
+Network: Wind Variability
+  buses: 1350
+  lines: 628
+  generators: 4592
+  loads: 450
+  links: 1800
+  storage_units: 60
+  stores: 900
+Plotting 'Windy' network at time 2025-10-26 17:00:00 with peak marginal price 19.99 €/MWh
+Minimum marginal price across all buses at peak time: -0.36 €/MWh
+
+Windy Marginal Price Statistics:
+count    1350.000000
+mean        8.787911
+std         5.821773
+min        -0.361866
+25%         1.669626
+50%        10.617643
+75%        13.267116
+max        19.990408
+
+Plotting 'Not Windy' network at time 2025-04-08 23:00:00 with peak marginal price 59.46 €/MWh
+Minimum marginal price across all buses at peak time: 51.03 €/MWh
+
+Not Windy Marginal Price Statistics:
+count    1350.000000
+mean       54.585954
+std         2.694709
+min        51.030535
+25%        52.369775
+50%        53.376919
+75%        58.070889
+max        59.459309
+
+Plotting 'Wind Variability' network at time 2025-10-06 17:00:00 with peak marginal price 36.00 €/MWh
+Minimum marginal price across all buses at peak time: 22.40 €/MWh
+
+Wind Variability Marginal Price Statistics:
+count    1350.000000
+mean       27.156095
+std         3.629017
+min        22.397614
+25%        24.547490
+50%        25.838386
+75%        28.856860
+max        35.995983
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario-ext_/02_marginal_prices.png
+======================================================================
+ Network: Windy
+  Average loading across all lines: 24.36%
+  Max average loading: 384.80%
+  Lines with >60% avg loading: 30
+  Lines with >70% avg loading: 10
+======================================================================
+
+======================================================================
+ Network: Not Windy
+  Average loading across all lines: 13.89%
+  Max average loading: 228.78%
+  Lines with >60% avg loading: 3
+  Lines with >70% avg loading: 2
+======================================================================
+
+======================================================================
+ Network: Wind Variability
+  Average loading across all lines: 31.33%
+  Max average loading: 246.14%
+  Lines with >60% avg loading: 75
+  Lines with >70% avg loading: 42
+======================================================================
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario-ext_/03_load_shedding.png
+======================================================================
+Network: Windy
+offwind-ac capacity MW: 11163.74
+Total available (MWh): 236195.49
+Total dispatched (MWh): 76270.82
+Total curtailed (MWh): 159924.68
+Curtailed fraction: 0.68
+======================================================================
+
+======================================================================
+Network: Not Windy
+offwind-ac capacity MW: 11163.74
+Total available (MWh): 8535.52
+Total dispatched (MWh): 8535.52
+Total curtailed (MWh): 0.00
+Curtailed fraction: 0.00
+======================================================================
+
+======================================================================
+Network: Wind Variability
+offwind-ac capacity MW: 11163.74
+Total available (MWh): 173568.76
+Total dispatched (MWh): 166532.95
+Total curtailed (MWh): 7035.81
+Curtailed fraction: 0.04
+======================================================================
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario-ext_/04_offwind_curtailment.png
+======================================================================
+Network: Windy
+onwind capacity MW: 73332.07
+Total available (MWh): 1521325.24
+Total dispatched (MWh): 994492.39
+Total curtailed (MWh): 526832.85
+Curtailed fraction: 0.35
+======================================================================
+
+======================================================================
+Network: Not Windy
+onwind capacity MW: 73332.07
+Total available (MWh): 49327.93
+Total dispatched (MWh): 49327.83
+Total curtailed (MWh): 0.10
+Curtailed fraction: 0.00
+======================================================================
+
+======================================================================
+Network: Wind Variability
+onwind capacity MW: 73332.07
+Total available (MWh): 804830.80
+Total dispatched (MWh): 761677.93
+Total curtailed (MWh): 43152.87
+Curtailed fraction: 0.05
+======================================================================
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario-ext_/05_onwind_curtailment.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario-ext_/06_power_dispatch.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario-ext_/07_energy_production.png
+
+=== Energy Production Summary ===
+                    Windy      Not Windy  Wind Variability
+carrier                                                   
+onwind      994492.391694   49327.830918     761677.932725
+coal            32.199416  361848.104086     288397.161559
+solar       121443.666943  438260.105658      50865.940291
+biomass         17.260393  185818.902439     110017.125850
+offwind-ac   76270.815570    8535.516438     166532.947575
+ror          40029.785229   63871.747946      26208.577185
+CCGT             0.001225  129209.185637          0.168961
+lignite          0.000210   78029.168249      36318.206753
+waste            0.000894    4251.078812          0.187919
+geothermal     645.578658     645.597229        645.597022
+OCGT             0.001553       0.557703          0.178409
+oil              0.000687       0.115224          0.061099
+
+

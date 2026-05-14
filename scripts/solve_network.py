@@ -850,7 +850,8 @@ def add_operational_reserve_margin(n, sns, config):
         0, np.inf, coords=[sns, n.generators.index], name="Generator-r"
     )
     reserve = n.model["Generator-r"]
-    summed_reserve = reserve.sum("Generator")
+    generator_dim = next(dim for dim in reserve.dims if dim != "snapshot")
+    summed_reserve = reserve.sum(generator_dim)
 
     # Share of extendable renewable capacities
     ext_i = n.generators.query("p_nom_extendable").index
@@ -858,11 +859,12 @@ def add_operational_reserve_margin(n, sns, config):
     if not ext_i.empty and not vres_i.empty:
         capacity_factor = n.generators_t.p_max_pu[vres_i.intersection(ext_i)]
         p_nom_vres = n.model["Generator-p_nom"].loc[vres_i.intersection(ext_i)]
-        if not PYPSA_V1:
-            p_nom_vres = p_nom_vres.rename({"Generator-ext": "Generator"})
+        p_nom_dim = next(dim for dim in p_nom_vres.dims if dim != "snapshot")
+        if p_nom_dim != generator_dim:
+            p_nom_vres = p_nom_vres.rename({p_nom_dim: generator_dim})
         lhs = summed_reserve + (
             p_nom_vres * (-EPSILON_VRES * xr.DataArray(capacity_factor))
-        ).sum("Generator")
+        ).sum(generator_dim)
 
         # Total demand per t
         demand = get_as_dense(n, "Load", "p_set").sum(axis=1)
@@ -884,15 +886,17 @@ def add_operational_reserve_margin(n, sns, config):
 
     dispatch = n.model["Generator-p"]
     reserve = n.model["Generator-r"]
-
-    capacity_variable = n.model["Generator-p_nom"]
-    if not PYPSA_V1:
-        capacity_variable = capacity_variable.rename({"Generator-ext": "Generator"})
     capacity_fixed = n.generators.p_nom[fix_i]
 
     p_max_pu = get_as_dense(n, "Generator", "p_max_pu")
 
-    lhs = dispatch + reserve - capacity_variable * xr.DataArray(p_max_pu[ext_i])
+    lhs = dispatch + reserve
+    if not ext_i.empty:
+        capacity_variable = n.model["Generator-p_nom"]
+        capacity_dim = next(dim for dim in capacity_variable.dims if dim != "snapshot")
+        if capacity_dim != generator_dim:
+            capacity_variable = capacity_variable.rename({capacity_dim: generator_dim})
+        lhs = lhs - capacity_variable * xr.DataArray(p_max_pu[ext_i])
 
     rhs = (p_max_pu[fix_i] * capacity_fixed).reindex(columns=gen_i, fill_value=0)
 
