@@ -27,6 +27,11 @@ snapshots:
 electricity:
   co2limit_enable: true
   co2limit: 160000000.0
+  operational_reserve:
+    activate: true
+    epsilon_load: 0.02
+    epsilon_vres: 0.02
+    contingency: 4000
   custom_powerplants: false
   estimate_renewable_capacities:
     enable: true
@@ -58,11 +63,6 @@ electricity:
   gaslimit_enable: false
   gaslimit: false
   co2base: 1487000000.0
-  operational_reserve:
-    activate: false
-    epsilon_load: 0.02
-    epsilon_vres: 0.02
-    contingency: 4000
   max_hours:
     battery: 6
     li-ion: 6
