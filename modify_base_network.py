@@ -1,4 +1,5 @@
 import argparse
+from importlib.resources import path
 
 from pandera import parser
 import pypsa
@@ -7,15 +8,21 @@ import os
 
 def load_network(home, folder, name, cluster):
     # Construct the path to the original base network in the 'resources' directory
-    print(f"Attempting to load base network from: {home}/pypsa-eur/resources/{folder}{name}/networks/base_s_{cluster}_elec_.nc")
     network_path = f"{home}/pypsa-eur/resources/{folder}{name}/networks/base_s_{cluster}_elec_.nc"
-    if not os.path.exists(network_path):
-        print(f"ERROR: Base network file not found at {network_path}. Cannot load network.")
-        return None
-    else: 
-        n = pypsa.Network(network_path)
-        return n, network_path
+    original_path = f"{home}/pypsa-eur/resources/{folder}{name}/networks/base_s_{cluster}_elec_original.nc"
 
+    if not os.path.exists(original_path):
+        if not os.path.exists(network_path):
+            print(f"ERROR: Base network file not found at {network_path}. Cannot load network.")
+            return None
+        else:
+            n = pypsa.Network(network_path)
+    else:
+        n = pypsa.Network(original_path)
+        n_original = n.copy()  # Keep a copy of the original network for comparison
+        n_original.export_to_netcdf(original_path)
+
+    return n, network_path
 
 def disable_line_extension(network, extendable_lines):
     if extendable_lines == False:
@@ -47,12 +54,12 @@ def modify_coal_costs(network, factor):
     # Use the generators DataFrame directly to avoid deprecated APIs.
     if hasattr(network, "generators"):
         g = network.generators
-        if "carrier" in g.columns and "capital_cost" in g.columns:
+        if "carrier" in g.columns and "marginal_cost" in g.columns:
             mask = g["carrier"] == carrier_name
             if mask.any():
-                original_costs = g.loc[mask, "capital_cost"].copy()
-                g.loc[mask, "capital_cost"] *= factor
-                print(f"Modified capital costs for '{carrier_name}' generators from {original_costs.iloc[0]:.2f} to {g.loc[mask, 'capital_cost'].iloc[0]:.2f}.")
+                original_costs = g.loc[mask, "marginal_cost"].copy()
+                g.loc[mask, "marginal_cost"] *= factor
+                print(f"Modified marginal costs for '{carrier_name}' generators from {original_costs.iloc[0]:.2f} to {g.loc[mask, 'marginal_cost'].iloc[0]:.2f}.")
             else:
                 print(f"No '{carrier_name}' generators found to modify costs.")
         else:
@@ -69,7 +76,7 @@ def main():
     parser.add_argument("--folder", type=str, default="germany_base_", help="Base folder name (default: 'germany_base_').")
     parser.add_argument("--capacity", type=float, default=50000.0, help="Desired new capacity for the specified carrier in MW (default: 50000.0 MW).")
     parser.add_argument("--carrier", type=str, default="solar", help="Carrier name to modify (default: 'solar').")
-    parser.add_argument("--coal-costs-factor", type=float, default=0.2, help="Factor to modify capital costs for the specified carrier (default: 0.2).")
+    parser.add_argument("--coal-costs-factor", type=float, default=0.2, help="Factor to modify marginal costs for the specified carrier (default: 0.2).")
     parser.add_argument("--extendable-lines", type=bool, default=False, help="Whether lines are extendable (default: False).")
 
     args = parser.parse_args()
@@ -85,9 +92,6 @@ def main():
     coal_costs_factor = args.coal_costs_factor
 
     n, n_path = load_network(home, folder, name, cluster)
-    n_original = n.copy()  # Keep a copy of the original network for comparison
-
-    n_original.export_to_netcdf(f"{home}/pypsa-eur/resources/{folder}{name}/networks/base_s_{cluster}_elec_original.nc")
 
     #n = disable_line_extension(n, extendable_lines)
     n = modify_carrier_capacity(n, carrier_name, new_capacity)
