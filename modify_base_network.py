@@ -17,10 +17,11 @@ def load_network(home, folder, name, cluster):
             return None
         else:
             n = pypsa.Network(network_path)
+            n_original = n.copy()  # Keep a copy of the original network for comparison
+            n_original.export_to_netcdf(original_path)
     else:
-        n = pypsa.Network(original_path)
-        n_original = n.copy()  # Keep a copy of the original network for comparison
-        n_original.export_to_netcdf(original_path)
+        n_original = pypsa.Network(original_path)
+        n = n_original.copy()  # Load the original network for modification
 
     return n, network_path
 
@@ -76,8 +77,6 @@ def main():
     parser.add_argument("--folder", type=str, default="germany_base_", help="Base folder name (default: 'germany_base_').")
     parser.add_argument("--capacity", type=float, default=50000.0, help="Desired new capacity for the specified carrier in MW (default: 50000.0 MW).")
     parser.add_argument("--carrier", type=str, default="solar", help="Carrier name to modify (default: 'solar').")
-    parser.add_argument("--coal-costs-factor", type=float, default=0.2, help="Factor to modify marginal costs for the specified carrier (default: 0.2).")
-    parser.add_argument("--extendable-lines", type=bool, default=False, help="Whether lines are extendable (default: False).")
 
     args = parser.parse_args()
     # --- END: Argument Parsing ---
@@ -88,14 +87,9 @@ def main():
     name = args.name[0]  # Take the first provided wind condition
     carrier_name = args.carrier
     new_capacity = args.capacity  # Desired new capacity in MW
-    extendable_lines = args.extendable_lines
-    coal_costs_factor = args.coal_costs_factor
 
     n, n_path = load_network(home, folder, name, cluster)
-
-    #n = disable_line_extension(n, extendable_lines)
     n = modify_carrier_capacity(n, carrier_name, new_capacity)
-    #n = modify_coal_costs(n, factor=coal_costs_factor)
 
     # Save the corrected network back to its original location
     n.export_to_netcdf(n_path)
