@@ -13,256 +13,694 @@ Wind Variability line capacities:
 
 Network: Windy
   buses: 1350
-  lines: 628
-  generators: 4592
+  lines: 642
+  generators: 4655
   loads: 450
-  links: 1800
-  storage_units: 60
+  links: 1818
+  storage_units: 61
   stores: 900
 
 Network: Not Windy
   buses: 1350
-  lines: 628
-  generators: 4592
+  lines: 642
+  generators: 4655
   loads: 450
-  links: 1800
-  storage_units: 60
+  links: 1818
+  storage_units: 61
   stores: 900
 
 Network: Wind Variability
   buses: 1350
-  lines: 628
-  generators: 4592
+  lines: 642
+  generators: 4655
   loads: 450
-  links: 1800
-  storage_units: 60
+  links: 1818
+  storage_units: 61
   stores: 900
-Plotting 'Windy' network at time 2025-10-26 16:00:00 with peak marginal price 253.92 €/MWh
-Minimum marginal price across all buses at peak time: -19.12 €/MWh
+Plotting 'Windy' network at time 2025-10-26 22:00:00 with peak marginal price 63.05 €/MWh
+Minimum marginal price across all buses at peak time: -13.16 €/MWh
 
 Windy Marginal Price Statistics:
 count    1350.000000
-mean       17.040302
-std        18.115447
-min       -19.121476
-25%         0.802762
-50%        15.349809
-75%        25.521340
-max       253.915883
+mean        6.970778
+std         8.097327
+min       -13.159782
+25%         0.093760
+50%         2.304813
+75%        12.838984
+max        63.051392
 
-Plotting 'Not Windy' network at time 2025-04-08 05:00:00 with peak marginal price 143.43 €/MWh
-Minimum marginal price across all buses at peak time: 21.44 €/MWh
+Plotting 'Not Windy' network at time 2025-04-08 05:00:00 with peak marginal price 122.47 €/MWh
+Minimum marginal price across all buses at peak time: 37.45 €/MWh
 
 Not Windy Marginal Price Statistics:
 count    1350.000000
-mean       58.324722
-std         7.929503
-min        21.442339
-25%        53.494954
-50%        56.740081
-75%        61.404945
-max       143.429463
+mean       56.682428
+std         4.673645
+min        37.449273
+25%        53.493252
+50%        56.490712
+75%        59.671397
+max       122.472063
 
-Plotting 'Wind Variability' network at time 2025-10-06 06:00:00 with peak marginal price 1112.26 €/MWh
-Minimum marginal price across all buses at peak time: -29.24 €/MWh
+Plotting 'Wind Variability' network at time 2025-10-06 02:00:00 with peak marginal price 97.94 €/MWh
+Minimum marginal price across all buses at peak time: -20.05 €/MWh
 
 Wind Variability Marginal Price Statistics:
 count    1350.000000
-mean       40.993829
-std        67.923926
-min       -29.239795
-25%        15.260142
-50%        28.588249
-75%        42.472070
-max      1112.255027
+mean       18.917583
+std        13.799114
+min       -20.045387
+25%         7.579814
+50%        17.346162
+75%        29.091109
+max        97.936975
 
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/02_marginal_prices.png
-Plotting 'Windy' network at time 2025-10-26 16:00:00 with peak marginal price 253.92 €/MWh
-Minimum marginal price across all buses at peak time: -19.12 €/MWh
+Plotting 'Windy' network at time 2025-10-26 22:00:00 with peak marginal price 63.05 €/MWh
+Minimum marginal price across all buses at peak time: -13.16 €/MWh
+Plotting 'Windy' network at time 2025-10-26 22:00:00 with peak marginal price 63.05 €/MWh
+Minimum marginal price across all buses at peak time: -13.16 €/MWh
 
 Windy Marginal Price Statistics:
 count    1350.000000
-mean       17.040302
-std        18.115447
-min       -19.121476
-25%         0.802762
-50%        15.349809
-75%        25.521340
-max       253.915883
+mean        6.970778
+std         8.097327
+min       -13.159782
+25%         0.093760
+50%         2.304813
+75%        12.838984
+max        63.051392
 
-Plotting 'Not Windy' network at time 2025-04-08 05:00:00 with peak marginal price 143.43 €/MWh
-Minimum marginal price across all buses at peak time: 21.44 €/MWh
+Plotting 'Not Windy' network at time 2025-04-08 05:00:00 with peak marginal price 122.47 €/MWh
+Minimum marginal price across all buses at peak time: 37.45 €/MWh
 
 Not Windy Marginal Price Statistics:
 count    1350.000000
-mean       58.324722
-std         7.929503
-min        21.442339
-25%        53.494954
-50%        56.740081
-75%        61.404945
-max       143.429463
+mean       56.682428
+std         4.673645
+min        37.449273
+25%        53.493252
+50%        56.490712
+75%        59.671397
+max       122.472063
 
-Plotting 'Wind Variability' network at time 2025-10-06 06:00:00 with peak marginal price 1112.26 €/MWh
-Minimum marginal price across all buses at peak time: -29.24 €/MWh
+Plotting 'Wind Variability' network at time 2025-10-06 02:00:00 with peak marginal price 97.94 €/MWh
+Minimum marginal price across all buses at peak time: -20.05 €/MWh
 
 Wind Variability Marginal Price Statistics:
 count    1350.000000
-mean       40.993829
-std        67.923926
-min       -29.239795
-25%        15.260142
-50%        28.588249
-75%        42.472070
-max      1112.255027
+mean       18.917583
+std        13.799114
+min       -20.045387
+25%         7.579814
+50%        17.346162
+75%        29.091109
+max        97.936975
 
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/02_marginal_prices.png
-Plotting 'Windy' network at time 2025-10-26 16:00:00 with peak marginal price 253.92 €/MWh
-Minimum marginal price across all buses at peak time: -19.12 €/MWh
+Plotting 'Windy' network at time 2025-10-26 22:00:00 with peak marginal price 63.05 €/MWh
+Minimum marginal price across all buses at peak time: -13.16 €/MWh
 
 Windy Marginal Price Statistics:
 count    1350.000000
-mean       17.040302
-std        18.115447
-min       -19.121476
-25%         0.802762
-50%        15.349809
-75%        25.521340
-max       253.915883
+mean        6.970778
+std         8.097327
+min       -13.159782
+25%         0.093760
+50%         2.304813
+75%        12.838984
+max        63.051392
 
-Plotting 'Not Windy' network at time 2025-04-08 05:00:00 with peak marginal price 143.43 €/MWh
-Minimum marginal price across all buses at peak time: 21.44 €/MWh
+Plotting 'Not Windy' network at time 2025-04-08 05:00:00 with peak marginal price 122.47 €/MWh
+Minimum marginal price across all buses at peak time: 37.45 €/MWh
 
 Not Windy Marginal Price Statistics:
 count    1350.000000
-mean       58.324722
-std         7.929503
-min        21.442339
-25%        53.494954
-50%        56.740081
-75%        61.404945
-max       143.429463
+mean       56.682428
+std         4.673645
+min        37.449273
+25%        53.493252
+50%        56.490712
+75%        59.671397
+max       122.472063
 
-Plotting 'Wind Variability' network at time 2025-10-06 06:00:00 with peak marginal price 1112.26 €/MWh
-Minimum marginal price across all buses at peak time: -29.24 €/MWh
+Plotting 'Wind Variability' network at time 2025-10-06 02:00:00 with peak marginal price 97.94 €/MWh
+Minimum marginal price across all buses at peak time: -20.05 €/MWh
 
 Wind Variability Marginal Price Statistics:
 count    1350.000000
-mean       40.993829
-std        67.923926
-min       -29.239795
-25%        15.260142
-50%        28.588249
-75%        42.472070
-max      1112.255027
+mean       18.917583
+std        13.799114
+min       -20.045387
+25%         7.579814
+50%        17.346162
+75%        29.091109
+max        97.936975
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/02_marginal_prices.png
+Plotting 'Windy' network at time 2025-10-26 22:00:00 with peak marginal price 63.05 €/MWh
+Minimum marginal price across all buses at peak time: -13.16 €/MWh
+
+Windy Marginal Price Statistics:
+count    1350.000000
+mean        6.970778
+std         8.097327
+min       -13.159782
+25%         0.093760
+50%         2.304813
+75%        12.838984
+max        63.051392
+
+Plotting 'Not Windy' network at time 2025-04-08 05:00:00 with peak marginal price 122.47 €/MWh
+Minimum marginal price across all buses at peak time: 37.45 €/MWh
+
+Not Windy Marginal Price Statistics:
+count    1350.000000
+mean       56.682428
+std         4.673645
+min        37.449273
+25%        53.493252
+50%        56.490712
+75%        59.671397
+max       122.472063
+
+Plotting 'Wind Variability' network at time 2025-10-06 02:00:00 with peak marginal price 97.94 €/MWh
+Minimum marginal price across all buses at peak time: -20.05 €/MWh
+
+Wind Variability Marginal Price Statistics:
+count    1350.000000
+mean       18.917583
+std        13.799114
+min       -20.045387
+25%         7.579814
+50%        17.346162
+75%        29.091109
+max        97.936975
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/02_marginal_prices.png
+Plotting 'Windy' network at time 2025-10-26 22:00:00 with peak marginal price 63.05 €/MWh
+Minimum marginal price across all buses at peak time: -13.16 €/MWh
+
+Windy Marginal Price Statistics:
+count    1350.000000
+mean        6.970778
+std         8.097327
+min       -13.159782
+25%         0.093760
+50%         2.304813
+75%        12.838984
+max        63.051392
+
+Plotting 'Not Windy' network at time 2025-04-08 05:00:00 with peak marginal price 122.47 €/MWh
+Minimum marginal price across all buses at peak time: 37.45 €/MWh
+
+Not Windy Marginal Price Statistics:
+count    1350.000000
+mean       56.682428
+std         4.673645
+min        37.449273
+25%        53.493252
+50%        56.490712
+75%        59.671397
+max       122.472063
+
+Plotting 'Wind Variability' network at time 2025-10-06 02:00:00 with peak marginal price 97.94 €/MWh
+Minimum marginal price across all buses at peak time: -20.05 €/MWh
+
+Wind Variability Marginal Price Statistics:
+count    1350.000000
+mean       18.917583
+std        13.799114
+min       -20.045387
+25%         7.579814
+50%        17.346162
+75%        29.091109
+max        97.936975
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/02_marginal_prices.png
+Plotting 'Windy' network at time 2025-10-26 22:00:00 with peak marginal price 63.05 €/MWh
+Minimum marginal price across all buses at peak time: -13.16 €/MWh
+
+Windy Marginal Price Statistics:
+count    1350.000000
+mean        6.970778
+std         8.097327
+min       -13.159782
+25%         0.093760
+50%         2.304813
+75%        12.838984
+max        63.051392
+
+Plotting 'Not Windy' network at time 2025-04-08 05:00:00 with peak marginal price 122.47 €/MWh
+Minimum marginal price across all buses at peak time: 37.45 €/MWh
+
+Not Windy Marginal Price Statistics:
+count    1350.000000
+mean       56.682428
+std         4.673645
+min        37.449273
+25%        53.493252
+50%        56.490712
+75%        59.671397
+max       122.472063
+
+Plotting 'Wind Variability' network at time 2025-10-06 02:00:00 with peak marginal price 97.94 €/MWh
+Minimum marginal price across all buses at peak time: -20.05 €/MWh
+
+Wind Variability Marginal Price Statistics:
+count    1350.000000
+mean       18.917583
+std        13.799114
+min       -20.045387
+25%         7.579814
+50%        17.346162
+75%        29.091109
+max        97.936975
 
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/02_marginal_prices.png
 ======================================================================
  Network: Windy
-  Average loading across all lines: 15.52%
-  Max average loading: 66.46%
+  Average loading across all lines: 15.31%
+  Max average loading: 68.81%
   Lines with >60% avg loading: 4
   Lines with >70% avg loading: 0
 ======================================================================
 
 ======================================================================
  Network: Not Windy
-  Average loading across all lines: 11.85%
-  Max average loading: 52.28%
+  Average loading across all lines: 11.33%
+  Max average loading: 52.19%
   Lines with >60% avg loading: 0
   Lines with >70% avg loading: 0
 ======================================================================
 
 ======================================================================
  Network: Wind Variability
-  Average loading across all lines: 17.02%
-  Max average loading: 62.65%
-  Lines with >60% avg loading: 1
+  Average loading across all lines: 15.01%
+  Max average loading: 68.81%
+  Lines with >60% avg loading: 4
   Lines with >70% avg loading: 0
 ======================================================================
 
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/03_load_shedding.png
 ======================================================================
+ Network: Windy
+  Average loading across all lines: 15.31%
+  Max average loading: 68.81%
+  Lines with >60% avg loading: 4
+  Lines with >70% avg loading: 0
+======================================================================
+
+======================================================================
+ Network: Not Windy
+  Average loading across all lines: 11.33%
+  Max average loading: 52.19%
+  Lines with >60% avg loading: 0
+  Lines with >70% avg loading: 0
+======================================================================
+
+======================================================================
+ Network: Wind Variability
+  Average loading across all lines: 15.01%
+  Max average loading: 68.81%
+  Lines with >60% avg loading: 4
+  Lines with >70% avg loading: 0
+======================================================================
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/03_load_shedding.png
+======================================================================
+ Network: Windy
+  Average loading across all lines: 15.31%
+  Max average loading: 68.81%
+  Lines with >60% avg loading: 4
+  Lines with >70% avg loading: 0
+======================================================================
+
+======================================================================
+ Network: Not Windy
+  Average loading across all lines: 11.33%
+  Max average loading: 52.19%
+  Lines with >60% avg loading: 0
+  Lines with >70% avg loading: 0
+======================================================================
+
+======================================================================
+ Network: Wind Variability
+  Average loading across all lines: 15.01%
+  Max average loading: 68.81%
+  Lines with >60% avg loading: 4
+  Lines with >70% avg loading: 0
+======================================================================
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/03_load_shedding.png
+======================================================================
+ Network: Windy
+  Average loading across all lines: 15.31%
+  Max average loading: 68.81%
+  Lines with >60% avg loading: 4
+  Lines with >70% avg loading: 0
+======================================================================
+
+======================================================================
+ Network: Not Windy
+  Average loading across all lines: 11.33%
+  Max average loading: 52.19%
+  Lines with >60% avg loading: 0
+  Lines with >70% avg loading: 0
+======================================================================
+
+======================================================================
+ Network: Wind Variability
+  Average loading across all lines: 15.01%
+  Max average loading: 68.81%
+  Lines with >60% avg loading: 4
+  Lines with >70% avg loading: 0
+======================================================================
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/03_load_shedding.png
+======================================================================
+ Network: Windy
+  Average loading across all lines: 15.31%
+  Max average loading: 68.81%
+  Lines with >60% avg loading: 4
+  Lines with >70% avg loading: 0
+======================================================================
+
+======================================================================
+ Network: Not Windy
+  Average loading across all lines: 11.33%
+  Max average loading: 52.19%
+  Lines with >60% avg loading: 0
+  Lines with >70% avg loading: 0
+======================================================================
+
+======================================================================
+ Network: Wind Variability
+  Average loading across all lines: 15.01%
+  Max average loading: 68.81%
+  Lines with >60% avg loading: 4
+  Lines with >70% avg loading: 0
+======================================================================
+
+======================================================================
+ Network: Windy
+  Average loading across all lines: 15.31%
+  Max average loading: 68.81%
+  Lines with >60% avg loading: 4
+  Lines with >70% avg loading: 0
+======================================================================
+
+======================================================================
+ Network: Not Windy
+  Average loading across all lines: 11.33%
+  Max average loading: 52.19%
+  Lines with >60% avg loading: 0
+  Lines with >70% avg loading: 0
+======================================================================
+
+======================================================================
+ Network: Wind Variability
+  Average loading across all lines: 15.01%
+  Max average loading: 68.81%
+  Lines with >60% avg loading: 4
+  Lines with >70% avg loading: 0
+======================================================================
+
+======================================================================
+ Network: Windy
+  Average loading across all lines: 15.31%
+  Max average loading: 68.81%
+  Lines with >60% avg loading: 4
+  Lines with >70% avg loading: 0
+======================================================================
+
+======================================================================
+ Network: Not Windy
+  Average loading across all lines: 11.33%
+  Max average loading: 52.19%
+  Lines with >60% avg loading: 0
+  Lines with >70% avg loading: 0
+======================================================================
+
+======================================================================
+ Network: Wind Variability
+  Average loading across all lines: 15.01%
+  Max average loading: 68.81%
+  Lines with >60% avg loading: 4
+  Lines with >70% avg loading: 0
+======================================================================
+
+======================================================================
+ Network: Windy
+  Average loading across all lines: 15.31%
+  Max average loading: 68.81%
+  Lines with >60% avg loading: 4
+  Lines with >70% avg loading: 0
+======================================================================
+
+======================================================================
+ Network: Not Windy
+  Average loading across all lines: 11.33%
+  Max average loading: 52.19%
+  Lines with >60% avg loading: 0
+  Lines with >70% avg loading: 0
+======================================================================
+
+======================================================================
+ Network: Wind Variability
+  Average loading across all lines: 15.01%
+  Max average loading: 68.81%
+  Lines with >60% avg loading: 4
+  Lines with >70% avg loading: 0
+======================================================================
+
+======================================================================
+ Network: Windy
+  Average loading across all lines: 15.31%
+  Max average loading: 68.81%
+  Lines with >60% avg loading: 4
+  Lines with >70% avg loading: 0
+======================================================================
+
+======================================================================
+ Network: Not Windy
+  Average loading across all lines: 11.33%
+  Max average loading: 52.19%
+  Lines with >60% avg loading: 0
+  Lines with >70% avg loading: 0
+======================================================================
+
+======================================================================
+ Network: Wind Variability
+  Average loading across all lines: 15.01%
+  Max average loading: 68.81%
+  Lines with >60% avg loading: 4
+  Lines with >70% avg loading: 0
+======================================================================
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/03_load_shedding.png
+Plotting 'Windy' network at time 2025-10-26 22:00:00 with peak marginal price 63.05 €/MWh
+Minimum marginal price across all buses at peak time: -13.16 €/MWh
+
+Windy Marginal Price Statistics:
+count    1350.000000
+mean        6.970778
+std         8.097327
+min       -13.159782
+25%         0.093760
+50%         2.304813
+75%        12.838984
+max        63.051392
+
+Plotting 'Not Windy' network at time 2025-04-08 05:00:00 with peak marginal price 122.47 €/MWh
+Minimum marginal price across all buses at peak time: 37.45 €/MWh
+
+Not Windy Marginal Price Statistics:
+count    1350.000000
+mean       56.682428
+std         4.673645
+min        37.449273
+25%        53.493252
+50%        56.490712
+75%        59.671397
+max       122.472063
+
+Plotting 'Wind Variability' network at time 2025-10-06 02:00:00 with peak marginal price 97.94 €/MWh
+Minimum marginal price across all buses at peak time: -20.05 €/MWh
+
+Wind Variability Marginal Price Statistics:
+count    1350.000000
+mean       18.917583
+std        13.799114
+min       -20.045387
+25%         7.579814
+50%        17.346162
+75%        29.091109
+max        97.936975
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/02_marginal_prices.png
+Plotting 'Windy' network at time 2025-10-26 22:00:00 with peak marginal price 63.05 €/MWh
+Minimum marginal price across all buses at peak time: -13.16 €/MWh
+
+Windy Marginal Price Statistics:
+count    1350.000000
+mean        6.970778
+std         8.097327
+min       -13.159782
+25%         0.093760
+50%         2.304813
+75%        12.838984
+max        63.051392
+
+Plotting 'Not Windy' network at time 2025-04-08 05:00:00 with peak marginal price 122.47 €/MWh
+Minimum marginal price across all buses at peak time: 37.45 €/MWh
+
+Not Windy Marginal Price Statistics:
+count    1350.000000
+mean       56.682428
+std         4.673645
+min        37.449273
+25%        53.493252
+50%        56.490712
+75%        59.671397
+max       122.472063
+
+Plotting 'Wind Variability' network at time 2025-10-06 02:00:00 with peak marginal price 97.94 €/MWh
+Minimum marginal price across all buses at peak time: -20.05 €/MWh
+
+Wind Variability Marginal Price Statistics:
+count    1350.000000
+mean       18.917583
+std        13.799114
+min       -20.045387
+25%         7.579814
+50%        17.346162
+75%        29.091109
+max        97.936975
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/02_marginal_prices.png
+Plotting 'Windy' network at time 2025-10-26 22:00:00 with peak marginal price 63.05 €/MWh
+Minimum marginal price across all buses at peak time: -13.16 €/MWh
+
+Windy Marginal Price Statistics:
+count    1350.000000
+mean        6.970778
+std         8.097327
+min       -13.159782
+25%         0.093760
+50%         2.304813
+75%        12.838984
+max        63.051392
+
+Plotting 'Not Windy' network at time 2025-04-08 05:00:00 with peak marginal price 122.47 €/MWh
+Minimum marginal price across all buses at peak time: 37.45 €/MWh
+
+Not Windy Marginal Price Statistics:
+count    1350.000000
+mean       56.682428
+std         4.673645
+min        37.449273
+25%        53.493252
+50%        56.490712
+75%        59.671397
+max       122.472063
+
+Plotting 'Wind Variability' network at time 2025-10-06 02:00:00 with peak marginal price 97.94 €/MWh
+Minimum marginal price across all buses at peak time: -20.05 €/MWh
+
+Wind Variability Marginal Price Statistics:
+count    1350.000000
+mean       18.917583
+std        13.799114
+min       -20.045387
+25%         7.579814
+50%        17.346162
+75%        29.091109
+max        97.936975
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/02_marginal_prices.png
+======================================================================
 Network: Windy
 offwind-ac capacity MW: 11163.74
-Total available (MWh): 236217.48
-Total dispatched (MWh): 37499.90
-Total curtailed (MWh): 198717.58
-Curtailed fraction: 0.84
+Total available (MWh): 236195.49
+Total dispatched (MWh): 150823.45
+Total curtailed (MWh): 85372.05
+Curtailed fraction: 0.36
 ======================================================================
 
 ======================================================================
 Network: Not Windy
 offwind-ac capacity MW: 11163.74
-Total available (MWh): 8316.63
-Total dispatched (MWh): 8316.62
-Total curtailed (MWh): 0.01
+Total available (MWh): 8535.52
+Total dispatched (MWh): 8535.51
+Total curtailed (MWh): 0.00
 Curtailed fraction: 0.00
 ======================================================================
 
 ======================================================================
 Network: Wind Variability
 offwind-ac capacity MW: 11163.74
-Total available (MWh): 173568.76
-Total dispatched (MWh): 69168.05
-Total curtailed (MWh): 104400.71
-Curtailed fraction: 0.60
+Total available (MWh): 172266.22
+Total dispatched (MWh): 116491.09
+Total curtailed (MWh): 55775.13
+Curtailed fraction: 0.32
 ======================================================================
 
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/04_offwind_curtailment.png
 ======================================================================
 Network: Windy
 onwind capacity MW: 73332.07
-Total available (MWh): 1520776.20
-Total dispatched (MWh): 891757.66
-Total curtailed (MWh): 629018.54
-Curtailed fraction: 0.41
+Total available (MWh): 1521325.24
+Total dispatched (MWh): 920872.83
+Total curtailed (MWh): 600452.42
+Curtailed fraction: 0.39
 ======================================================================
 
 ======================================================================
 Network: Not Windy
 onwind capacity MW: 73332.07
-Total available (MWh): 49435.40
-Total dispatched (MWh): 49435.00
-Total curtailed (MWh): 0.40
+Total available (MWh): 49327.93
+Total dispatched (MWh): 49327.64
+Total curtailed (MWh): 0.29
 Curtailed fraction: 0.00
 ======================================================================
 
 ======================================================================
 Network: Wind Variability
 onwind capacity MW: 73332.07
-Total available (MWh): 804830.80
-Total dispatched (MWh): 627686.43
-Total curtailed (MWh): 177144.37
-Curtailed fraction: 0.22
+Total available (MWh): 806978.51
+Total dispatched (MWh): 732683.41
+Total curtailed (MWh): 74295.10
+Curtailed fraction: 0.09
 ======================================================================
 
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/05_onwind_curtailment.png
 ======================================================================
 Network: Windy
 solar capacity MW: 86408.00
-Total available (MWh): 121780.28
-Total dispatched (MWh): 109658.49
-Total curtailed (MWh): 12121.79
+Total available (MWh): 121768.29
+Total dispatched (MWh): 110008.98
+Total curtailed (MWh): 11759.30
 Curtailed fraction: 0.10
 ======================================================================
 
 ======================================================================
 Network: Not Windy
 solar capacity MW: 86408.00
-Total available (MWh): 438181.16
-Total dispatched (MWh): 438048.79
-Total curtailed (MWh): 132.37
+Total available (MWh): 438260.27
+Total dispatched (MWh): 438259.83
+Total curtailed (MWh): 0.45
 Curtailed fraction: 0.00
 ======================================================================
 
 ======================================================================
 Network: Wind Variability
 solar capacity MW: 86408.00
-Total available (MWh): 90121.28
-Total dispatched (MWh): 83814.86
-Total curtailed (MWh): 6306.42
-Curtailed fraction: 0.07
+Total available (MWh): 90080.07
+Total dispatched (MWh): 80016.71
+Total curtailed (MWh): 10063.36
+Curtailed fraction: 0.11
 ======================================================================
 
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/05_solar_curtailment.png
@@ -272,24 +710,24 @@ Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base
 === Energy Production Summary ===
                     Windy      Not Windy  Wind Variability
 carrier                                                   
-onwind      891757.662632   49434.998816     627686.430574
-solar       109658.493065  438048.790985      83814.861702
-coal        102874.846124  291254.743196     223876.245631
-biomass      38043.343011  189052.241738     110102.967891
-lignite       2886.891292  124086.081099     149480.514605
-CCGT           235.855601  138389.162877      65857.468318
-ror          39367.558978   63869.595498      26076.924715
-offwind-ac   37499.900053    8316.624031      69168.049141
-OCGT           610.842198    2469.177443      33914.778713
-waste         3552.284328   12751.476744      16591.156770
-oil            147.166053       0.684168       7656.838866
-geothermal     512.975335     645.589503        458.409410
+onwind      920872.828759   49327.643430     732683.410197
+solar       110008.982503  438259.825436      80016.707647
+coal          8308.032097  275069.788296     252691.623169
+biomass       1638.875429  189924.346627     117295.211084
+offwind-ac  150823.445481    8535.513750     116491.092484
+lignite          0.000782  138915.982596      65441.954148
+CCGT             3.098795  137856.729364       2695.391553
+ror          38777.018916   63871.505216      26026.754297
+waste            0.003608   13757.312668      10184.789078
+geothermal     425.089760     645.592675        645.595469
+OCGT            67.719365     519.437396        249.394903
+oil              0.002567       0.343555          0.158681
 
 
 
 === CO2 Emissions Summary ===
-Total CO2 emissions at the Windy day: 87488.48 kg CO2
+Total CO2 emissions at the Windy day: 6463.17 kg CO2
 Total CO2 emissions at the Not Windy day: 438356.16 kg CO2
-Total CO2 emissions at the Wind Variability day: 414339.49 kg CO2
+Total CO2 emissions at the Wind Variability day: 296027.00 kg CO2
 
 
