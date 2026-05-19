@@ -1,0 +1,13 @@
+{
+  "name": "scenarioAgora2030",
+  "capacity_mix_absolute": {
+    "onwind": "80",
+    "offwind-ac": "25",
+    "solar": "150",
+    "CCGT": "15",
+    "coal": "10",
+    "lignite": "10",
+    "OCGT": "3.0",
+    "oil": "2.5"
+  }
+}

@@ -50,7 +50,6 @@ def _normalize_capacity_mix(
 
     return normalized_mix
 
-
 def modify_generator_capacity_mix(
     n: pypsa.Network,
     target_mix: dict[str, dict[str, float | None]] | list[tuple[str, float]],

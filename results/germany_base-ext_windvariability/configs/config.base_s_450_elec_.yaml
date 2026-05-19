@@ -1,5 +1,5 @@
 run:
-  name: germany_scenario-ext_windvariability
+  name: germany_base-ext_windvariability
   disable_progressbar: true
   shared_resources:
     policy: false
@@ -254,7 +254,7 @@ renewable:
     eia_correct_by_capacity: false
     eia_approximate_missing: false
 transmission_projects:
-  enable: true
+  enable: false
   include:
     tyndp2020: true
     nep: true

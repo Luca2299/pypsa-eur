@@ -2,7 +2,7 @@
 # Minimal Germany single-day configuration
 
 run:
-  name: "germany_base2_notwindy"
+  name: "germany_scenarioAgora2030_notwindy"
   disable_progressbar: true
   shared_resources:
     policy: false

@@ -1,5 +1,5 @@
 run:
-  name: germany_scenario-ext_windvariability
+  name: germany_base-ext_windy
   disable_progressbar: true
   shared_resources:
     policy: false
@@ -21,8 +21,8 @@ scenario:
 countries:
 - DE
 snapshots:
-  start: '2025-10-06'
-  end: '2025-10-07'
+  start: '2025-10-26'
+  end: '2025-10-27'
   inclusive: left
 electricity:
   co2limit_enable: true
@@ -254,7 +254,7 @@ renewable:
     eia_correct_by_capacity: false
     eia_approximate_missing: false
 transmission_projects:
-  enable: true
+  enable: false
   include:
     tyndp2020: true
     nep: true
