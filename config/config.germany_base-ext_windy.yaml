@@ -2,7 +2,7 @@
 # Minimal Germany single-day configuration
 
 run:
-  name: "germany_base2_windy"
+  name: "germany_base-ext_windy"
   disable_progressbar: true
   shared_resources:
     policy: false
