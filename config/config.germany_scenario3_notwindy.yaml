@@ -1,8 +1,8 @@
 # yaml-language-server: $schema=./schema.default.json
-# Base network but with transmission project and line expansion
+# Minimal Germany single-day configuration
 
 run:
-  name: "germany_scenario-ext_windvariability"
+  name: "germany_base2_notwindy"
   disable_progressbar: true
   shared_resources:
     policy: false
@@ -22,8 +22,8 @@ countries: ['DE']
   #2025: 0.648 # from pypsa-de: https://github.com/PyPSA/pypsa-de/blob/main/config/config.de.yaml
 
 snapshots:
-  start: "2025-10-06"
-  end: "2025-10-07"
+  start: "2025-04-08"
+  end: "2025-04-09"
 
 electricity:
   co2limit_enable: true
@@ -46,8 +46,8 @@ electricity:
       PV: solar
   extendable_carriers: 
     Generator: [] # no extandable generators to match the status quo
-  transmission_limit: vopt
-
+  transmission_limit: v1.0 # no line expansion to match the status quo
+    
 atlite:
   default_cutout: "europe-2025-sarah3-era5"
 
@@ -61,7 +61,7 @@ renewable:
     corine: false
 
 transmission_projects:
-  enable: true
+  enable: false
 
 load:
 # Whether to supplement missing data for selected time period 
