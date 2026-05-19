@@ -1,8 +1,8 @@
 # yaml-language-server: $schema=./schema.default.json
-# Base network but with transmission project and line expansion
+# Minimal Germany single-day configuration
 
 run:
-  name: "germany_scenario-ext_windvariability"
+  name: "germany_base-ext_windvariability"
   disable_progressbar: true
   shared_resources:
     policy: false
@@ -61,7 +61,7 @@ renewable:
     corine: false
 
 transmission_projects:
-  enable: true
+  enable: false
 
 load:
 # Whether to supplement missing data for selected time period 
