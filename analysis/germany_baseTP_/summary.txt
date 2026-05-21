@@ -77,552 +77,71 @@ min       -20.045387
 max        97.936975
 
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/02_marginal_prices.png
-Plotting 'Windy' network at time 2025-10-26 22:00:00 with peak marginal price 63.05 €/MWh
-Minimum marginal price across all buses at peak time: -13.16 €/MWh
-Plotting 'Windy' network at time 2025-10-26 22:00:00 with peak marginal price 63.05 €/MWh
-Minimum marginal price across all buses at peak time: -13.16 €/MWh
-
-Windy Marginal Price Statistics:
-count    1350.000000
-mean        6.970778
-std         8.097327
-min       -13.159782
-25%         0.093760
-50%         2.304813
-75%        12.838984
-max        63.051392
-
-Plotting 'Not Windy' network at time 2025-04-08 05:00:00 with peak marginal price 122.47 €/MWh
-Minimum marginal price across all buses at peak time: 37.45 €/MWh
-
-Not Windy Marginal Price Statistics:
-count    1350.000000
-mean       56.682428
-std         4.673645
-min        37.449273
-25%        53.493252
-50%        56.490712
-75%        59.671397
-max       122.472063
-
-Plotting 'Wind Variability' network at time 2025-10-06 02:00:00 with peak marginal price 97.94 €/MWh
-Minimum marginal price across all buses at peak time: -20.05 €/MWh
-
-Wind Variability Marginal Price Statistics:
-count    1350.000000
-mean       18.917583
-std        13.799114
-min       -20.045387
-25%         7.579814
-50%        17.346162
-75%        29.091109
-max        97.936975
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/02_marginal_prices.png
-Plotting 'Windy' network at time 2025-10-26 22:00:00 with peak marginal price 63.05 €/MWh
-Minimum marginal price across all buses at peak time: -13.16 €/MWh
-
-Windy Marginal Price Statistics:
-count    1350.000000
-mean        6.970778
-std         8.097327
-min       -13.159782
-25%         0.093760
-50%         2.304813
-75%        12.838984
-max        63.051392
-
-Plotting 'Not Windy' network at time 2025-04-08 05:00:00 with peak marginal price 122.47 €/MWh
-Minimum marginal price across all buses at peak time: 37.45 €/MWh
-
-Not Windy Marginal Price Statistics:
-count    1350.000000
-mean       56.682428
-std         4.673645
-min        37.449273
-25%        53.493252
-50%        56.490712
-75%        59.671397
-max       122.472063
-
-Plotting 'Wind Variability' network at time 2025-10-06 02:00:00 with peak marginal price 97.94 €/MWh
-Minimum marginal price across all buses at peak time: -20.05 €/MWh
-
-Wind Variability Marginal Price Statistics:
-count    1350.000000
-mean       18.917583
-std        13.799114
-min       -20.045387
-25%         7.579814
-50%        17.346162
-75%        29.091109
-max        97.936975
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/02_marginal_prices.png
-Plotting 'Windy' network at time 2025-10-26 22:00:00 with peak marginal price 63.05 €/MWh
-Minimum marginal price across all buses at peak time: -13.16 €/MWh
-
-Windy Marginal Price Statistics:
-count    1350.000000
-mean        6.970778
-std         8.097327
-min       -13.159782
-25%         0.093760
-50%         2.304813
-75%        12.838984
-max        63.051392
-
-Plotting 'Not Windy' network at time 2025-04-08 05:00:00 with peak marginal price 122.47 €/MWh
-Minimum marginal price across all buses at peak time: 37.45 €/MWh
-
-Not Windy Marginal Price Statistics:
-count    1350.000000
-mean       56.682428
-std         4.673645
-min        37.449273
-25%        53.493252
-50%        56.490712
-75%        59.671397
-max       122.472063
-
-Plotting 'Wind Variability' network at time 2025-10-06 02:00:00 with peak marginal price 97.94 €/MWh
-Minimum marginal price across all buses at peak time: -20.05 €/MWh
-
-Wind Variability Marginal Price Statistics:
-count    1350.000000
-mean       18.917583
-std        13.799114
-min       -20.045387
-25%         7.579814
-50%        17.346162
-75%        29.091109
-max        97.936975
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/02_marginal_prices.png
-Plotting 'Windy' network at time 2025-10-26 22:00:00 with peak marginal price 63.05 €/MWh
-Minimum marginal price across all buses at peak time: -13.16 €/MWh
-
-Windy Marginal Price Statistics:
-count    1350.000000
-mean        6.970778
-std         8.097327
-min       -13.159782
-25%         0.093760
-50%         2.304813
-75%        12.838984
-max        63.051392
-
-Plotting 'Not Windy' network at time 2025-04-08 05:00:00 with peak marginal price 122.47 €/MWh
-Minimum marginal price across all buses at peak time: 37.45 €/MWh
-
-Not Windy Marginal Price Statistics:
-count    1350.000000
-mean       56.682428
-std         4.673645
-min        37.449273
-25%        53.493252
-50%        56.490712
-75%        59.671397
-max       122.472063
-
-Plotting 'Wind Variability' network at time 2025-10-06 02:00:00 with peak marginal price 97.94 €/MWh
-Minimum marginal price across all buses at peak time: -20.05 €/MWh
-
-Wind Variability Marginal Price Statistics:
-count    1350.000000
-mean       18.917583
-std        13.799114
-min       -20.045387
-25%         7.579814
-50%        17.346162
-75%        29.091109
-max        97.936975
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/02_marginal_prices.png
-Plotting 'Windy' network at time 2025-10-26 22:00:00 with peak marginal price 63.05 €/MWh
-Minimum marginal price across all buses at peak time: -13.16 €/MWh
-
-Windy Marginal Price Statistics:
-count    1350.000000
-mean        6.970778
-std         8.097327
-min       -13.159782
-25%         0.093760
-50%         2.304813
-75%        12.838984
-max        63.051392
-
-Plotting 'Not Windy' network at time 2025-04-08 05:00:00 with peak marginal price 122.47 €/MWh
-Minimum marginal price across all buses at peak time: 37.45 €/MWh
-
-Not Windy Marginal Price Statistics:
-count    1350.000000
-mean       56.682428
-std         4.673645
-min        37.449273
-25%        53.493252
-50%        56.490712
-75%        59.671397
-max       122.472063
-
-Plotting 'Wind Variability' network at time 2025-10-06 02:00:00 with peak marginal price 97.94 €/MWh
-Minimum marginal price across all buses at peak time: -20.05 €/MWh
-
-Wind Variability Marginal Price Statistics:
-count    1350.000000
-mean       18.917583
-std        13.799114
-min       -20.045387
-25%         7.579814
-50%        17.346162
-75%        29.091109
-max        97.936975
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/02_marginal_prices.png
-======================================================================
- Network: Windy
-  Average loading across all lines: 15.31%
-  Max average loading: 68.81%
-  Lines with >60% avg loading: 4
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Not Windy
-  Average loading across all lines: 11.33%
-  Max average loading: 52.19%
-  Lines with >60% avg loading: 0
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Wind Variability
-  Average loading across all lines: 15.01%
-  Max average loading: 68.81%
-  Lines with >60% avg loading: 4
-  Lines with >70% avg loading: 0
-======================================================================
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/03_load_shedding.png
-======================================================================
- Network: Windy
-  Average loading across all lines: 15.31%
-  Max average loading: 68.81%
-  Lines with >60% avg loading: 4
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Not Windy
-  Average loading across all lines: 11.33%
-  Max average loading: 52.19%
-  Lines with >60% avg loading: 0
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Wind Variability
-  Average loading across all lines: 15.01%
-  Max average loading: 68.81%
-  Lines with >60% avg loading: 4
-  Lines with >70% avg loading: 0
-======================================================================
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/03_load_shedding.png
-======================================================================
- Network: Windy
-  Average loading across all lines: 15.31%
-  Max average loading: 68.81%
-  Lines with >60% avg loading: 4
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Not Windy
-  Average loading across all lines: 11.33%
-  Max average loading: 52.19%
-  Lines with >60% avg loading: 0
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Wind Variability
-  Average loading across all lines: 15.01%
-  Max average loading: 68.81%
-  Lines with >60% avg loading: 4
-  Lines with >70% avg loading: 0
-======================================================================
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/03_load_shedding.png
-======================================================================
- Network: Windy
-  Average loading across all lines: 15.31%
-  Max average loading: 68.81%
-  Lines with >60% avg loading: 4
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Not Windy
-  Average loading across all lines: 11.33%
-  Max average loading: 52.19%
-  Lines with >60% avg loading: 0
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Wind Variability
-  Average loading across all lines: 15.01%
-  Max average loading: 68.81%
-  Lines with >60% avg loading: 4
-  Lines with >70% avg loading: 0
-======================================================================
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/03_load_shedding.png
-======================================================================
- Network: Windy
-  Average loading across all lines: 15.31%
-  Max average loading: 68.81%
-  Lines with >60% avg loading: 4
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Not Windy
-  Average loading across all lines: 11.33%
-  Max average loading: 52.19%
-  Lines with >60% avg loading: 0
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Wind Variability
-  Average loading across all lines: 15.01%
-  Max average loading: 68.81%
-  Lines with >60% avg loading: 4
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Windy
-  Average loading across all lines: 15.31%
-  Max average loading: 68.81%
-  Lines with >60% avg loading: 4
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Not Windy
-  Average loading across all lines: 11.33%
-  Max average loading: 52.19%
-  Lines with >60% avg loading: 0
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Wind Variability
-  Average loading across all lines: 15.01%
-  Max average loading: 68.81%
-  Lines with >60% avg loading: 4
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Windy
-  Average loading across all lines: 15.31%
-  Max average loading: 68.81%
-  Lines with >60% avg loading: 4
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Not Windy
-  Average loading across all lines: 11.33%
-  Max average loading: 52.19%
-  Lines with >60% avg loading: 0
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Wind Variability
-  Average loading across all lines: 15.01%
-  Max average loading: 68.81%
-  Lines with >60% avg loading: 4
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Windy
-  Average loading across all lines: 15.31%
-  Max average loading: 68.81%
-  Lines with >60% avg loading: 4
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Not Windy
-  Average loading across all lines: 11.33%
-  Max average loading: 52.19%
-  Lines with >60% avg loading: 0
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Wind Variability
-  Average loading across all lines: 15.01%
-  Max average loading: 68.81%
-  Lines with >60% avg loading: 4
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Windy
-  Average loading across all lines: 15.31%
-  Max average loading: 68.81%
-  Lines with >60% avg loading: 4
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Not Windy
-  Average loading across all lines: 11.33%
-  Max average loading: 52.19%
-  Lines with >60% avg loading: 0
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Wind Variability
-  Average loading across all lines: 15.01%
-  Max average loading: 68.81%
-  Lines with >60% avg loading: 4
-  Lines with >70% avg loading: 0
-======================================================================
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/03_load_shedding.png
-Plotting 'Windy' network at time 2025-10-26 22:00:00 with peak marginal price 63.05 €/MWh
-Minimum marginal price across all buses at peak time: -13.16 €/MWh
-
-Windy Marginal Price Statistics:
-count    1350.000000
-mean        6.970778
-std         8.097327
-min       -13.159782
-25%         0.093760
-50%         2.304813
-75%        12.838984
-max        63.051392
-
-Plotting 'Not Windy' network at time 2025-04-08 05:00:00 with peak marginal price 122.47 €/MWh
-Minimum marginal price across all buses at peak time: 37.45 €/MWh
-
-Not Windy Marginal Price Statistics:
-count    1350.000000
-mean       56.682428
-std         4.673645
-min        37.449273
-25%        53.493252
-50%        56.490712
-75%        59.671397
-max       122.472063
-
-Plotting 'Wind Variability' network at time 2025-10-06 02:00:00 with peak marginal price 97.94 €/MWh
-Minimum marginal price across all buses at peak time: -20.05 €/MWh
-
-Wind Variability Marginal Price Statistics:
-count    1350.000000
-mean       18.917583
-std        13.799114
-min       -20.045387
-25%         7.579814
-50%        17.346162
-75%        29.091109
-max        97.936975
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/02_marginal_prices.png
-Plotting 'Windy' network at time 2025-10-26 22:00:00 with peak marginal price 63.05 €/MWh
-Minimum marginal price across all buses at peak time: -13.16 €/MWh
-
-Windy Marginal Price Statistics:
-count    1350.000000
-mean        6.970778
-std         8.097327
-min       -13.159782
-25%         0.093760
-50%         2.304813
-75%        12.838984
-max        63.051392
-
-Plotting 'Not Windy' network at time 2025-04-08 05:00:00 with peak marginal price 122.47 €/MWh
-Minimum marginal price across all buses at peak time: 37.45 €/MWh
-
-Not Windy Marginal Price Statistics:
-count    1350.000000
-mean       56.682428
-std         4.673645
-min        37.449273
-25%        53.493252
-50%        56.490712
-75%        59.671397
-max       122.472063
-
-Plotting 'Wind Variability' network at time 2025-10-06 02:00:00 with peak marginal price 97.94 €/MWh
-Minimum marginal price across all buses at peak time: -20.05 €/MWh
-
-Wind Variability Marginal Price Statistics:
-count    1350.000000
-mean       18.917583
-std        13.799114
-min       -20.045387
-25%         7.579814
-50%        17.346162
-75%        29.091109
-max        97.936975
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/02_marginal_prices.png
-Plotting 'Windy' network at time 2025-10-26 22:00:00 with peak marginal price 63.05 €/MWh
-Minimum marginal price across all buses at peak time: -13.16 €/MWh
-
-Windy Marginal Price Statistics:
-count    1350.000000
-mean        6.970778
-std         8.097327
-min       -13.159782
-25%         0.093760
-50%         2.304813
-75%        12.838984
-max        63.051392
-
-Plotting 'Not Windy' network at time 2025-04-08 05:00:00 with peak marginal price 122.47 €/MWh
-Minimum marginal price across all buses at peak time: 37.45 €/MWh
-
-Not Windy Marginal Price Statistics:
-count    1350.000000
-mean       56.682428
-std         4.673645
-min        37.449273
-25%        53.493252
-50%        56.490712
-75%        59.671397
-max       122.472063
-
-Plotting 'Wind Variability' network at time 2025-10-06 02:00:00 with peak marginal price 97.94 €/MWh
-Minimum marginal price across all buses at peak time: -20.05 €/MWh
-
-Wind Variability Marginal Price Statistics:
-count    1350.000000
-mean       18.917583
-std        13.799114
-min       -20.045387
-25%         7.579814
-50%        17.346162
-75%        29.091109
-max        97.936975
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/02_marginal_prices.png
 ======================================================================
 Network: Windy
-offwind-ac capacity MW: 11163.74
+count    24.000000
+mean      6.509903
+std       0.673684
+min       5.428793
+25%       5.947791
+50%       6.457675
+75%       7.018104
+max       7.478472
+======================================================================
+
+======================================================================
+Network: Not Windy
+count    24.000000
+mean     52.700794
+std       4.731218
+min      42.288407
+25%      49.172356
+50%      55.447094
+75%      55.765594
+max      56.682428
+======================================================================
+
+======================================================================
+Network: Wind Variability
+count    24.000000
+mean     26.375339
+std       4.274675
+min      18.003592
+25%      25.431200
+50%      25.776130
+75%      30.292436
+max      31.464335
+======================================================================
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/02_average_marginal_prices.png
+======================================================================
+ Network: Windy
+  Average loading across all lines: 15.31%
+  Max average loading: 68.81%
+  Lines with >60% avg loading: 4
+  Lines with >70% avg loading: 0
+======================================================================
+
+======================================================================
+ Network: Not Windy
+  Average loading across all lines: 11.33%
+  Max average loading: 52.19%
+  Lines with >60% avg loading: 0
+  Lines with >70% avg loading: 0
+======================================================================
+
+======================================================================
+ Network: Wind Variability
+  Average loading across all lines: 15.01%
+  Max average loading: 68.81%
+  Lines with >60% avg loading: 4
+  Lines with >70% avg loading: 0
+======================================================================
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/03_load_shedding.png
+======================================================================
+Network: Windy
+Offshore wind (AC) capacity MW: 11163.74
 Total available (MWh): 236195.49
 Total dispatched (MWh): 150823.45
 Total curtailed (MWh): 85372.05
@@ -631,7 +150,7 @@ Curtailed fraction: 0.36
 
 ======================================================================
 Network: Not Windy
-offwind-ac capacity MW: 11163.74
+Offshore wind (AC) capacity MW: 11163.74
 Total available (MWh): 8535.52
 Total dispatched (MWh): 8535.51
 Total curtailed (MWh): 0.00
@@ -640,7 +159,7 @@ Curtailed fraction: 0.00
 
 ======================================================================
 Network: Wind Variability
-offwind-ac capacity MW: 11163.74
+Offshore wind (AC) capacity MW: 11163.74
 Total available (MWh): 172266.22
 Total dispatched (MWh): 116491.09
 Total curtailed (MWh): 55775.13
@@ -650,7 +169,7 @@ Curtailed fraction: 0.32
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/04_offwind_curtailment.png
 ======================================================================
 Network: Windy
-onwind capacity MW: 73332.07
+Onshore wind capacity MW: 73332.07
 Total available (MWh): 1521325.24
 Total dispatched (MWh): 920872.83
 Total curtailed (MWh): 600452.42
@@ -659,7 +178,7 @@ Curtailed fraction: 0.39
 
 ======================================================================
 Network: Not Windy
-onwind capacity MW: 73332.07
+Onshore wind capacity MW: 73332.07
 Total available (MWh): 49327.93
 Total dispatched (MWh): 49327.64
 Total curtailed (MWh): 0.29
@@ -668,7 +187,7 @@ Curtailed fraction: 0.00
 
 ======================================================================
 Network: Wind Variability
-onwind capacity MW: 73332.07
+Onshore wind capacity MW: 73332.07
 Total available (MWh): 806978.51
 Total dispatched (MWh): 732683.41
 Total curtailed (MWh): 74295.10
@@ -678,7 +197,7 @@ Curtailed fraction: 0.09
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/05_onwind_curtailment.png
 ======================================================================
 Network: Windy
-solar capacity MW: 86408.00
+Solar PV capacity MW: 86408.00
 Total available (MWh): 121768.29
 Total dispatched (MWh): 110008.98
 Total curtailed (MWh): 11759.30
@@ -687,7 +206,7 @@ Curtailed fraction: 0.10
 
 ======================================================================
 Network: Not Windy
-solar capacity MW: 86408.00
+Solar PV capacity MW: 86408.00
 Total available (MWh): 438260.27
 Total dispatched (MWh): 438259.83
 Total curtailed (MWh): 0.45
@@ -696,7 +215,7 @@ Curtailed fraction: 0.00
 
 ======================================================================
 Network: Wind Variability
-solar capacity MW: 86408.00
+Solar PV capacity MW: 86408.00
 Total available (MWh): 90080.07
 Total dispatched (MWh): 80016.71
 Total curtailed (MWh): 10063.36
@@ -708,20 +227,19 @@ Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_/07_energy_production.png
 
 === Energy Production Summary ===
-                    Windy      Not Windy  Wind Variability
-carrier                                                   
-onwind      920872.828759   49327.643430     732683.410197
-solar       110008.982503  438259.825436      80016.707647
-coal          8308.032097  275069.788296     252691.623169
-biomass       1638.875429  189924.346627     117295.211084
-offwind-ac  150823.445481    8535.513750     116491.092484
-lignite          0.000782  138915.982596      65441.954148
-CCGT             3.098795  137856.729364       2695.391553
-ror          38777.018916   63871.505216      26026.754297
-waste            0.003608   13757.312668      10184.789078
-geothermal     425.089760     645.592675        645.595469
-OCGT            67.719365     519.437396        249.394903
-oil              0.002567       0.343555          0.158681
+                            Windy      Not Windy  Wind Variability
+Onshore wind        920872.828759   49327.643430     732683.410197
+Solar PV            110008.982503  438259.825436      80016.707647
+Coal                  8308.032097  275069.788296     252691.623169
+Biomass               1638.875429  189924.346627     117295.211084
+Offshore wind (AC)  150823.445481    8535.513750     116491.092484
+Lignite                  0.000782  138915.982596      65441.954148
+CCGT                     3.098795  137856.729364       2695.391553
+Run-of-river         38777.018916   63871.505216      26026.754297
+Waste                    0.003608   13757.312668      10184.789078
+Geothermal             425.089760     645.592675        645.595469
+OCGT                    67.719365     519.437396        249.394903
+Oil                      0.002567       0.343555          0.158681
 
 
 
@@ -731,3 +249,95 @@ Total CO2 emissions at the Not Windy day: 438356.16 kg CO2
 Total CO2 emissions at the Wind Variability day: 296027.00 kg CO2
 
 
+
+=== Network Statistics ===
+
+Network: Windy
+                                  Optimal Capacity  Installed Capacity        Supply    Withdrawal  Energy Balance  Transmission  Capacity Factor   Curtailment  Capital Expenditure  Operational Expenditure       Revenue  Market Value
+Generator   Combined-Cycle Gas        3.078313e+04        3.078313e+04  3.098800e+00  0.000000e+00    3.098800e+00       0.00000     4.194505e-06  7.387920e+05         1.066291e+07                134.14031  1.917148e+02     61.865861
+            Offshore Wind (AC)        1.116374e+04        1.116374e+04  1.508234e+05  0.000000e+00    1.508234e+05       0.00000     5.629214e-01  8.537205e+04         8.662689e+06               3675.79934  5.492044e+03      0.036414
+            Onshore Wind              7.333207e+04        7.333207e+04  9.208728e+05  0.000000e+00    9.208728e+05       0.00000     5.232322e-01  6.004524e+05         2.387208e+07              22962.68997  7.539220e+05      0.818704
+            Open-Cycle Gas            6.112744e+03        6.112744e+03  6.771936e+01  0.000000e+00    6.771936e+01       0.00000     4.615996e-04  1.466381e+05         9.566474e+05               3991.84872  4.245411e+03     62.691240
+            Run of River              4.014119e+03        4.014119e+03  3.877702e+04  0.000000e+00    3.877702e+04       0.00000     4.025066e-01  1.302365e+03         4.303464e+06                394.59900  3.575837e+05      9.221536
+            Solar                     8.640800e+04        8.640800e+04  1.100090e+05  0.000000e+00    1.100090e+05       0.00000     5.304726e-02  1.175930e+04         8.734899e+06               2202.01014  1.657784e+05      1.506954
+            biomass                   8.020002e+03        8.020002e+03  1.638875e+03  0.000000e+00    1.638875e+03       0.00000     8.514522e-03  1.908412e+05         8.160028e+06              32761.05291  4.694916e+04     28.647182
+            coal                      2.035194e+04        2.035194e+04  8.308032e+03  0.000000e+00    8.308032e+03       0.00000     1.700909e-02  4.801386e+05         2.364078e+07             162179.47130  1.621794e+05     19.520802
+            geothermal                2.690000e+01        2.690000e+01  4.250898e+02  0.000000e+00    4.250898e+02       0.00000     6.584413e-01  2.205102e+02         0.000000e+00                  3.97130  4.203905e+03      9.889455
+            lignite                   1.945703e+04        1.945703e+04  7.800000e-04  0.000000e+00    7.800000e-04       0.00000     1.541859e-09  4.669688e+05         2.260126e+07                  0.02100  7.700000e-04      1.000000
+            load                               inf                 inf  1.100000e-04  0.000000e+00    1.100000e-04       0.00000     0.000000e+00           inf         0.000000e+00                  1.09320  7.100000e-04           NaN
+            oil                       5.684346e+03        5.684346e+03  2.570000e-03  0.000000e+00    2.570000e-03       0.00000     1.935139e-08  1.364243e+05         7.682257e+05                  0.32019  7.130000e-03      2.727273
+            waste                     3.127659e+03        3.127659e+03  3.610000e-03  0.000000e+00    3.610000e-03       0.00000     4.795919e-08  7.506381e+04         8.797504e+06                  0.12311  1.393000e-02      3.866667
+Line        AC                        1.577520e+06        1.577520e+06  2.754754e+06  2.608852e+06    1.459015e+05 -145901.48873     1.416677e-01  0.000000e+00         1.021685e+07                  0.00000  5.215065e+05      0.189311
+Link        DC                        3.800000e+04        3.800000e+04  0.000000e+00  3.856314e+05   -3.856314e+05  385631.42462     4.228415e-01  0.000000e+00         8.399618e+06               3922.06897 -1.971028e+04           NaN
+            H2 Electrolysis           2.470000e-03        0.000000e+00  0.000000e+00  3.860000e-02   -3.860000e-02       0.00000     6.518219e-01  0.000000e+00         1.069550e+00                  0.00039 -6.196000e-02           NaN
+            H2 Fuel Cell              1.200000e-03        0.000000e+00  0.000000e+00  2.703000e-02   -2.703000e-02       0.00000     9.416667e-01  0.000000e+00         0.000000e+00                  0.00027 -3.891600e-01           NaN
+            battery charger           1.798051e+02        0.000000e+00  0.000000e+00  1.069419e+03   -1.069419e+03       0.00000     2.478190e-01  0.000000e+00         5.982318e+03                  9.76425 -3.251912e+04           NaN
+            battery discharger        1.835129e+02        0.000000e+00  0.000000e+00  1.047813e+03   -1.047813e+03       0.00000     2.379063e-01  0.000000e+00         0.000000e+00                 10.63786 -6.144942e+04           NaN
+Load        -                         0.000000e+00        0.000000e+00  0.000000e+00  1.179665e+06   -1.179665e+06       0.00000              NaN  0.000000e+00         0.000000e+00                  0.00000 -3.836267e+06           NaN
+StorageUnit Pumped Hydro Storage      7.361720e+03        7.361720e+03  3.173684e+04  4.354012e+04   -1.180328e+04       0.00000     4.260607e-01  1.884846e+05         4.678988e+06                349.40455  6.242333e+04      1.966904
+            Reservoir & Dam           4.022382e+02        4.022382e+02  3.442275e+03  0.000000e+00    3.442275e+03       0.00000     3.565751e-01  6.211441e+03         2.556559e+05                 32.92551  1.659694e+04      4.821505
+Store       Battery Storage           1.036167e+03        0.000000e+00  1.036155e+03  1.036155e+03    0.000000e+00       0.00000     4.027736e-01  0.000000e+00         2.294073e+04                  0.00000  2.293998e+04     22.139537
+            Hydrogen Storage          2.413270e+00        0.000000e+00  6.700000e-04  6.700000e-04    0.000000e+00       0.00000     4.999979e-01  0.000000e+00         7.434500e-01                  0.00000  0.000000e+00           NaN
+
+
+
+Network: Not Windy
+                                  Optimal Capacity  Installed Capacity        Supply    Withdrawal  Energy Balance  Transmission  Capacity Factor   Curtailment  Capital Expenditure  Operational Expenditure       Revenue  Market Value
+Generator   Combined-Cycle Gas        3.078313e+04        3.078313e+04  1.378567e+05  0.000000e+00    1.378567e+05       0.00000         0.186597  6.009384e+05         1.066291e+07             6.078229e+06  7.446307e+06     54.014822
+            Offshore Wind (AC)        1.116374e+04        1.116374e+04  8.535514e+03  0.000000e+00    8.535514e+03       0.00000         0.031857  4.190000e-03         8.639095e+06             2.121438e+02  4.542544e+05     53.219337
+            Onshore Wind              7.333207e+04        7.333207e+04  4.932764e+04  0.000000e+00    4.932764e+04       0.00000         0.028028  2.888400e-01         2.387208e+07             1.231363e+03  2.591013e+06     52.526599
+            Open-Cycle Gas            6.112744e+03        6.112744e+03  5.194374e+02  0.000000e+00    5.194374e+02       0.00000         0.003541  1.461864e+05         9.566474e+05             3.061902e+04  4.086161e+04     78.665148
+            Run of River              4.014119e+03        4.014119e+03  6.387151e+04  0.000000e+00    6.387151e+04       0.00000         0.662988  3.783300e-01         4.303464e+06             6.497326e+02  3.004130e+06     47.033959
+            Solar                     8.640800e+04        8.640800e+04  4.382598e+05  0.000000e+00    4.382598e+05       0.00000         0.211333  4.474900e-01         8.734899e+06             8.759052e+03  1.607118e+07     36.670438
+            biomass                   8.020002e+03        8.020002e+03  1.899243e+05  0.000000e+00    1.899243e+05       0.00000         0.986722  2.555697e+03         8.160028e+06             3.825279e+06  9.359407e+06     49.279661
+            coal                      2.035194e+04        2.035194e+04  2.750698e+05  0.000000e+00    2.750698e+05       0.00000         0.563152  2.133769e+05         2.364078e+07             5.851387e+06  1.375177e+07     49.993736
+            geothermal                2.690000e+01        2.690000e+01  6.455927e+02  0.000000e+00    6.455927e+02       0.00000         0.999988  7.330000e-03         0.000000e+00             6.097580e+00  3.316453e+04     51.370678
+            lignite                   1.945703e+04        1.945703e+04  1.389160e+05  0.000000e+00    1.389160e+05       0.00000         0.297484  3.280529e+05         2.260126e+07             3.403610e+06  7.162242e+06     51.558081
+            load                               inf                 inf  1.123000e-02  0.000000e+00    1.123000e-02       0.00000         0.000000           inf         0.000000e+00             1.123307e+02  5.920700e-01     52.489362
+            oil                       5.684346e+03        5.684346e+03  3.435500e-01  0.000000e+00    3.435500e-01       0.00000         0.000003  1.364240e+05         7.682257e+05             4.284719e+01  1.716929e+01     49.992313
+            waste                     3.127659e+03        3.127659e+03  1.375731e+04  0.000000e+00    1.375731e+04       0.00000         0.183275  6.130650e+04         8.797504e+06             4.694476e+05  7.913649e+05     57.523215
+Line        AC                        1.577520e+06        1.577520e+06  1.945615e+06  1.835747e+06    1.098688e+05 -109868.83545         0.099876  0.000000e+00         1.021685e+07             0.000000e+00  6.940485e+06      3.567244
+Link        DC                        3.800000e+04        3.800000e+04  0.000000e+00  9.764019e+04   -9.764019e+04   97640.18838         0.107062  0.000000e+00         8.399618e+06             9.774618e+02 -4.886232e+06           NaN
+            H2 Electrolysis           1.556300e-01        0.000000e+00  0.000000e+00  1.543710e+00   -1.543710e+00       0.00000         0.413288  0.000000e+00         6.744897e+01             1.543000e-02 -7.260723e+01           NaN
+            H2 Fuel Cell              5.012000e-02        0.000000e+00  0.000000e+00  1.083420e+00   -1.083420e+00       0.00000         0.900638  0.000000e+00         0.000000e+00             1.087000e-02 -6.427164e+01           NaN
+            battery charger           5.775512e+03        0.000000e+00  0.000000e+00  2.403004e+04   -2.403004e+04       0.00000         0.173362  0.000000e+00         1.921577e+05             2.425759e+02 -5.931635e+05           NaN
+            battery discharger        5.894608e+03        0.000000e+00  0.000000e+00  2.354454e+04   -2.354454e+04       0.00000         0.166427  0.000000e+00         0.000000e+00             2.378808e+02 -1.287687e+06           NaN
+Load        -                         0.000000e+00        0.000000e+00  0.000000e+00  1.300023e+06   -1.300023e+06       0.00000              NaN  0.000000e+00         0.000000e+00             0.000000e+00 -6.366768e+07           NaN
+StorageUnit Pumped Hydro Storage      7.361720e+03        7.361720e+03  1.853939e+04  2.471923e+04   -6.179840e+03       0.00000         0.244840  1.828611e+05         4.678988e+06             1.845173e+02  1.673288e+05      9.025582
+            Reservoir & Dam           4.022382e+02        4.022382e+02  5.760236e+03  0.000000e+00    5.760236e+03       0.00000         0.596686  3.893479e+03         2.556559e+05             5.526173e+01  3.076798e+05     53.414436
+Store       Battery Storage           2.313954e+04        0.000000e+00  2.352508e+04  2.352508e+04    0.000000e+00       0.00000         0.559672  0.000000e+00         5.123095e+05             0.000000e+00  5.122354e+05     21.774011
+            Hydrogen Storage          2.468394e+02        0.000000e+00  1.464000e-01  1.464000e-01    0.000000e+00       0.00000         0.500000  0.000000e+00         7.604318e+01             0.000000e+00  1.000000e-05           NaN
+
+
+
+Network: Wind Variability
+                                  Optimal Capacity  Installed Capacity        Supply    Withdrawal  Energy Balance  Transmission  Capacity Factor   Curtailment  Capital Expenditure  Operational Expenditure       Revenue  Market Value
+Generator   Combined-Cycle Gas        3.078313e+04        3.078313e+04  2.695392e+03  0.000000e+00    2.695392e+03       0.00000         0.003648  7.360997e+05         1.066291e+07             1.252110e+05  1.367647e+05     50.740203
+            Offshore Wind (AC)        1.116374e+04        1.116374e+04  1.164911e+05  0.000000e+00    1.164911e+05       0.00000         0.434782  5.577513e+04         8.665885e+06             2.906903e+03  1.209396e+06     10.381879
+            Onshore Wind              7.333207e+04        7.333207e+04  7.326834e+05  0.000000e+00    7.326834e+05       0.00000         0.416305  7.429510e+04         2.387208e+07             1.835006e+04  9.854892e+06     13.450409
+            Open-Cycle Gas            6.112744e+03        6.112744e+03  2.493949e+02  0.000000e+00    2.493949e+02       0.00000         0.001700  1.464565e+05         9.566474e+05             1.470107e+04  1.608316e+04     64.488771
+            Run of River              4.014119e+03        4.014119e+03  2.602675e+04  0.000000e+00    2.602675e+04       0.00000         0.270158  1.925088e+02         4.303464e+06             2.647043e+02  8.468809e+05     32.538860
+            Solar                     8.640800e+04        8.640800e+04  8.001671e+04  0.000000e+00    8.001671e+04       0.00000         0.038585  1.006336e+04         8.734899e+06             1.596007e+03  1.464327e+06     18.300265
+            biomass                   8.020002e+03        8.020002e+03  1.172952e+05  0.000000e+00    1.172952e+05       0.00000         0.609389  7.518483e+04         8.160028e+06             2.352092e+06  3.683790e+06     31.406143
+            coal                      2.035194e+04        2.035194e+04  2.526916e+05  0.000000e+00    2.526916e+05       0.00000         0.517337  2.357551e+05         2.364078e+07             5.325156e+06  6.634935e+06     26.257043
+            geothermal                2.690000e+01        2.690000e+01  6.455955e+02  0.000000e+00    6.455955e+02       0.00000         0.999993  4.530000e-03         0.000000e+00             6.097610e+00  2.643583e+04     40.947975
+            lignite                   1.945703e+04        1.945703e+04  6.544195e+04  0.000000e+00    6.544195e+04       0.00000         0.140142  4.015269e+05         2.260126e+07             1.673898e+06  1.746527e+06     26.688184
+            load                               inf                 inf  5.590000e-03  0.000000e+00    5.590000e-03       0.00000         0.000000           inf         0.000000e+00             5.589859e+01  1.475100e-01     26.739130
+            oil                       5.684346e+03        5.684346e+03  1.586800e-01  0.000000e+00    1.586800e-01       0.00000         0.000001  1.364241e+05         7.682257e+05             1.979133e+01  3.819660e+00     24.077156
+            waste                     3.127659e+03        3.127659e+03  1.018479e+04  0.000000e+00    1.018479e+04       0.00000         0.135682  6.487903e+04         8.797504e+06             3.475393e+05  4.163230e+05     40.876938
+Line        AC                        1.577520e+06        1.577520e+06  2.654803e+06  2.581041e+06    7.376173e+04  -73761.73492         0.138293  0.000000e+00         1.021685e+07             0.000000e+00  4.645683e+06      1.749917
+Link        DC                        3.800000e+04        3.800000e+04  0.000000e+00  3.191446e+05   -3.191446e+05  319144.64952         0.349939  0.000000e+00         8.399618e+06             3.205029e+03 -6.023884e+06           NaN
+            H2 Electrolysis           9.925000e-02        0.000000e+00  0.000000e+00  1.254230e+00   -1.254230e+00       0.00000         0.526549  0.000000e+00         4.301146e+01             1.253000e-02 -2.318724e+01           NaN
+            H2 Fuel Cell              5.019000e-02        0.000000e+00  0.000000e+00  8.790800e-01   -8.790800e-01       0.00000         0.729827  0.000000e+00         0.000000e+00             8.820000e-03 -2.834404e+01           NaN
+            battery charger           6.520368e+03        0.000000e+00  0.000000e+00  4.753035e+04   -4.753035e+04       0.00000         0.303730  0.000000e+00         2.169399e+05             4.791019e+02 -2.402844e+04           NaN
+            battery discharger        6.654822e+03        0.000000e+00  0.000000e+00  4.657004e+04   -4.657004e+04       0.00000         0.291581  0.000000e+00         0.000000e+00             4.698773e+02 -9.498239e+05           NaN
+Load        -                         0.000000e+00        0.000000e+00  0.000000e+00  1.368958e+06   -1.368958e+06       0.00000              NaN  0.000000e+00         0.000000e+00             0.000000e+00 -3.389448e+07           NaN
+StorageUnit Pumped Hydro Storage      7.361720e+03        7.361720e+03  2.857337e+04  3.809787e+04   -9.524503e+03       0.00000         0.377353  1.862058e+05         4.678988e+06             2.834359e+02  3.842907e+05     13.449260
+            Reservoir & Dam           4.022382e+02        4.022382e+02  2.364533e+03  0.000000e+00    2.364533e+03       0.00000         0.244935  7.289182e+03         2.556559e+05             2.268451e+01  6.428728e+04     27.188146
+Store       Battery Storage           3.446127e+04        0.000000e+00  3.622936e+04  3.622936e+04    0.000000e+00       0.00000         0.608037  0.000000e+00         7.629724e+05             0.000000e+00  7.629349e+05     21.058472
+            Hydrogen Storage          1.231544e+02        0.000000e+00  1.586100e-01  1.586100e-01    0.000000e+00       0.00000         0.500000  0.000000e+00         3.793986e+01             0.000000e+00  5.000000e-05           NaN
+
+
+
+=== Analysis Complete ===
+All results saved to: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_baseTP_

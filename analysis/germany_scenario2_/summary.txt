@@ -1,52 +1,13 @@
 Networks comparison summary
-Generated: 2026-05-12T10:57:08.928216
 
-Verification PASSED for 'windy' network: Line capacities were not extended (s_nom equals s_nom_opt).
-Verification PASSED for 'notwindy' network: Line capacities were not extended (s_nom equals s_nom_opt).
-Verification PASSED for 'windvariability' network: Line capacities were not extended (s_nom equals s_nom_opt).
-Capacity comparison for germany_scenario1_notwindy:
-                       Base      Scenario
-carrier                                  
-CCGT           18465.748665   6856.780411
-OCGT            2308.218583   2285.593470
-PHS             7361.720000   7361.720000
-biomass        11541.092916   7702.449995
-coal            4616.437166   2285.593470
-geothermal        23.082186     22.855935
-hydro            402.238150    402.238150
-lignite         4616.437166    447.976320
-offwind-ac     23082.185832  41140.682466
-offwind-dc         0.000000      0.000000
-offwind-float      0.000000      0.000000
-oil             2308.218583   2285.593470
-onwind         87712.306160  86852.551872
-ror             2308.218583   2454.727387
-solar          62321.901745  57139.836758
-solar-hsat         0.000000      0.000000
-waste           4616.437166   3085.551185
+Windy line capacities:
+  No line extension detected
 
-Capacity comparison for germany_scenario2_notwindy:
-                       Base      Scenario
-carrier                                  
-CCGT           18465.748665  18465.748665
-OCGT            2308.218583   2308.218583
-PHS             7361.720000   7361.720000
-biomass        11541.092916  11541.092916
-coal            4616.437166   4616.437166
-geothermal        23.082186     23.082186
-hydro            402.238150    402.238150
-lignite         4616.437166   4616.437166
-offwind-ac     23082.185832  23082.185832
-offwind-dc         0.000000      0.000000
-offwind-float      0.000000      0.000000
-oil             2308.218583   2308.218583
-onwind         87712.306160  87712.306160
-ror             2308.218583   2308.218583
-solar          62321.901745  62321.901745
-solar-hsat         0.000000      0.000000
-waste           4616.437166   4616.437166
+Not Windy line capacities:
+  No line extension detected
 
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2_/01_capacity_comparison.png
+Wind Variability line capacities:
+  No line extension detected
 
 === Network Statistics ===
 
@@ -117,6 +78,43 @@ max       144.215994
 
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2_/02_marginal_prices.png
 ======================================================================
+Network: Windy
+count    24.000000
+mean     10.579771
+std       1.751546
+min       8.744426
+25%       8.993478
+50%      10.119615
+75%      11.897884
+max      13.423396
+======================================================================
+
+======================================================================
+Network: Not Windy
+count    24.000000
+mean     58.347792
+std       5.216344
+min      49.101485
+25%      53.190516
+50%      60.735305
+75%      62.046768
+max      65.278138
+======================================================================
+
+======================================================================
+Network: Wind Variability
+count    24.000000
+mean     43.193821
+std       4.182259
+min      34.923475
+25%      42.841845
+50%      42.993503
+75%      45.759057
+max      49.022087
+======================================================================
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2_/02_average_marginal_prices.png
+======================================================================
  Network: Windy
   Average loading across all lines: 23.56%
   Max average loading: 69.92%
@@ -143,78 +141,105 @@ Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scen
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2_/03_load_shedding.png
 ======================================================================
 Network: Windy
-offwind-ac capacity MW: 23082.185831516847
-Total available (MWh): 488403.9141732764
-Total dispatched (MWh): 25270.397089523787
-Total curtailed (MWh): 463133.51708375255
-Curtailed fraction: 0.9482592248829554
+Offshore wind (AC) capacity MW: 23082.19
+Total available (MWh): 488403.91
+Total dispatched (MWh): 25270.40
+Total curtailed (MWh): 463133.52
+Curtailed fraction: 0.95
 ======================================================================
 
 ======================================================================
 Network: Not Windy
-offwind-ac capacity MW: 23082.185831516847
-Total available (MWh): 17195.486304704522
-Total dispatched (MWh): 17195.480587652666
-Total curtailed (MWh): 0.005717051853937782
-Curtailed fraction: 3.324739848953066e-07
+Offshore wind (AC) capacity MW: 23082.19
+Total available (MWh): 17195.49
+Total dispatched (MWh): 17195.48
+Total curtailed (MWh): 0.01
+Curtailed fraction: 0.00
 ======================================================================
 
 ======================================================================
 Network: Wind Variability
-offwind-ac capacity MW: 23082.185831516847
-Total available (MWh): 358871.2492112648
-Total dispatched (MWh): 116303.15357082486
-Total curtailed (MWh): 242568.09564043995
-Curtailed fraction: 0.675919556591846
+Offshore wind (AC) capacity MW: 23082.19
+Total available (MWh): 358871.25
+Total dispatched (MWh): 116303.15
+Total curtailed (MWh): 242568.10
+Curtailed fraction: 0.68
 ======================================================================
 
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2_/04_offwind_curtailment.png
 ======================================================================
 Network: Windy
-onwind capacity MW: 87712.306159764
-Total available (MWh): 1818996.7286195117
-Total dispatched (MWh): 1050758.1017999873
-Total curtailed (MWh): 768238.6268195246
-Curtailed fraction: 0.42234195077555897
+Onshore wind capacity MW: 87712.31
+Total available (MWh): 1818996.73
+Total dispatched (MWh): 1050758.10
+Total curtailed (MWh): 768238.63
+Curtailed fraction: 0.42
 ======================================================================
 
 ======================================================================
 Network: Not Windy
-onwind capacity MW: 87712.306159764
-Total available (MWh): 59129.559223432414
-Total dispatched (MWh): 58894.74165780281
-Total curtailed (MWh): 234.81756562960462
-Curtailed fraction: 0.0039712382218562
+Onshore wind capacity MW: 87712.31
+Total available (MWh): 59129.56
+Total dispatched (MWh): 58894.74
+Total curtailed (MWh): 234.82
+Curtailed fraction: 0.00
 ======================================================================
 
 ======================================================================
 Network: Wind Variability
-onwind capacity MW: 87712.306159764
-Total available (MWh): 962656.1658912017
-Total dispatched (MWh): 761402.774395294
-Total curtailed (MWh): 201253.39149590774
-Curtailed fraction: 0.20906051259703162
+Onshore wind capacity MW: 87712.31
+Total available (MWh): 962656.17
+Total dispatched (MWh): 761402.77
+Total curtailed (MWh): 201253.39
+Curtailed fraction: 0.21
 ======================================================================
 
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2_/05_onwind_curtailment.png
+======================================================================
+Network: Windy
+Solar PV capacity MW: 62321.90
+Total available (MWh): 87834.21
+Total dispatched (MWh): 83125.41
+Total curtailed (MWh): 4708.81
+Curtailed fraction: 0.05
+======================================================================
+
+======================================================================
+Network: Not Windy
+Solar PV capacity MW: 62321.90
+Total available (MWh): 316038.83
+Total dispatched (MWh): 315627.11
+Total curtailed (MWh): 411.73
+Curtailed fraction: 0.00
+======================================================================
+
+======================================================================
+Network: Wind Variability
+Solar PV capacity MW: 62321.90
+Total available (MWh): 65000.11
+Total dispatched (MWh): 59265.24
+Total curtailed (MWh): 5734.87
+Curtailed fraction: 0.09
+======================================================================
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2_/05_solar_curtailment.png
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2_/06_power_dispatch.png
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2_/07_energy_production.png
 
 === Energy Production Summary ===
-                   Windy      Not Windy  Wind Variability
-carrier                                                  
-onwind      1.050758e+06   58894.741658     761402.774395
-biomass     3.324117e+04  276475.303426     161663.228621
-solar       8.312541e+04  315627.107685      59265.238970
-CCGT        1.537064e+03  269353.702355      88709.968234
-coal        1.609586e+04  103973.294233      85400.880503
-lignite     1.147775e-02  110546.317531      64016.327443
-waste       9.517420e+02  107150.512602      57853.018065
-offwind-ac  2.527040e+04   17195.480588     116303.153571
-ror         2.268130e+04   36724.863039      15010.541003
-OCGT        7.183457e-02   16998.561058      17812.179239
-oil         2.812344e-02     119.188410       2275.761856
-geothermal  3.933408e+02     419.104475        393.411319
+                           Windy      Not Windy  Wind Variability
+Onshore wind        1.050758e+06   58894.741658     761402.774395
+Biomass             3.324117e+04  276475.303426     161663.228621
+Solar PV            8.312541e+04  315627.107685      59265.238970
+CCGT                1.537064e+03  269353.702355      88709.968234
+Coal                1.609586e+04  103973.294233      85400.880503
+Lignite             1.147775e-02  110546.317531      64016.327443
+Waste               9.517420e+02  107150.512602      57853.018065
+Offshore wind (AC)  2.527040e+04   17195.480588     116303.153571
+Run-of-river        2.268130e+04   36724.863039      15010.541003
+OCGT                7.183457e-02   16998.561058      17812.179239
+Oil                 2.812344e-02     119.188410       2275.761856
+Geothermal          3.933408e+02     419.104475        393.411319
 
 
 
@@ -313,98 +338,3 @@ Store       Battery Storage           4.535288e+04        0.000000e+00  4.668169
 
 === Analysis Complete ===
 All results saved to: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2_
-======================================================================
-Network: Windy
-offwind-ac capacity MW: 23082.185831516847
-Total available (MWh): 488403.91
-Total dispatched (MWh): 25270.40
-Total curtailed (MWh): 463133.52
-Curtailed fraction: 0.9482592248829554
-======================================================================
-
-======================================================================
-Network: Not Windy
-offwind-ac capacity MW: 23082.185831516847
-Total available (MWh): 17195.49
-Total dispatched (MWh): 17195.48
-Total curtailed (MWh): 0.01
-Curtailed fraction: 3.324739848953066e-07
-======================================================================
-
-======================================================================
-Network: Wind Variability
-offwind-ac capacity MW: 23082.185831516847
-Total available (MWh): 358871.25
-Total dispatched (MWh): 116303.15
-Total curtailed (MWh): 242568.10
-Curtailed fraction: 0.675919556591846
-======================================================================
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2_/04_offwind_curtailment.png
-======================================================================
-Network: Windy
-offwind-ac capacity MW: 23082.19
-Total available (MWh): 488403.91
-Total dispatched (MWh): 25270.40
-Total curtailed (MWh): 463133.52
-Curtailed fraction: 0.95
-======================================================================
-
-======================================================================
-Network: Not Windy
-offwind-ac capacity MW: 23082.19
-Total available (MWh): 17195.49
-Total dispatched (MWh): 17195.48
-Total curtailed (MWh): 0.01
-Curtailed fraction: 0.00
-======================================================================
-
-======================================================================
-Network: Wind Variability
-offwind-ac capacity MW: 23082.19
-Total available (MWh): 358871.25
-Total dispatched (MWh): 116303.15
-Total curtailed (MWh): 242568.10
-Curtailed fraction: 0.68
-======================================================================
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2_/04_offwind_curtailment.png
-
-======================================================================
-NEW CURTAILMENT FUNCTION - offwind-ac
-======================================================================
-{'carrier': 'offwind-ac', 'num_generators': 31, 'installed_capacity_MW': np.float64(23082.185831516843), 'total_available_MWh': np.float64(488403.9141732763), 'total_dispatched_MWh': np.float64(25270.39708952379), 'total_curtailed_MWh': np.float64(463133.51708375255), 'curtailment_fraction': np.float64(0.9482592248829557), 'max_curtailment_MW': 19844.50766215937, 'avg_curtailment_MW': np.float64(19297.22987848969)}
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2_/08_curtailment_new_offwind-ac.png
-
-
-================================================================================
-CURTAILMENT FUNCTION COMPARISON - OLD vs NEW
-================================================================================
-
->>> Testing carrier: offwind-ac (31 generators)
->>> Number of generators with optimized capacity: 0
-
-                            OLD FUNCTION CALCULATION                            
---------------------------------------------------------------------------------
-Total Available (old):        488,403.9 MWh
-Total Dispatched:              25,270.4 MWh
-Total Curtailed (old):        463,133.5 MWh
-Curtailment % (old):              94.83 %
-
-                            NEW FUNCTION CALCULATION                            
---------------------------------------------------------------------------------
-Total Available (new):        488,403.9 MWh
-Total Dispatched:              25,270.4 MWh
-Total Curtailed (new):        463,133.5 MWh
-Curtailment % (new):              94.83 %
-
-                             DIFFERENCE (New - Old)                             
---------------------------------------------------------------------------------
-ΔAvailable Power:                   0.0 MWh (+0.00%)
-ΔCurtailed Power:                   0.0 MWh (+0.00%)
-ΔCurtailment Fraction:           0.0000 (+0.00 pp)
-
->>> Note: No generators had optimized capacity in this case,
-    so old and new functions produce identical results.
-
-Verification FAILED for 'windy' network: 628 lines have different s_nom and s_nom_opt.
