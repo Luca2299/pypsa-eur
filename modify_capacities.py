@@ -1,31 +1,11 @@
 import argparse
-from importlib.resources import path
 import json
-from time import ctime
-from turtle import pd
-
-from pandera import parser
-import pypsa
 import os
+from time import ctime
 
-def load_network(home, folder, name, cluster):
-    # Construct the path to the original base network in the 'resources' directory
-    network_path = f"{home}/pypsa-eur/resources/{folder}{name}/networks/base_s_{cluster}_elec_.nc"
-    original_path = f"{home}/pypsa-eur/resources/{folder}{name}/networks/base_s_{cluster}_elec_original.nc"
+import pandas as pd
+import pypsa
 
-    if not os.path.exists(original_path):
-        if not os.path.exists(network_path):
-            print(f"ERROR: Base network file not found at {network_path}. Cannot load network.")
-            return None
-        else:
-            n = pypsa.Network(network_path)
-            n_original = n.copy()  # Keep a copy of the original network for comparison
-            n_original.export_to_netcdf(original_path)
-    else:
-        n_original = pypsa.Network(original_path)
-        n = n_original.copy()  # Load the original network for modification
-
-    return n, network_path
 
 def modify_carrier_capacity(network, carrier_name, new_capacity):
     chosen_generators = network.generators.index[network.generators.carrier == carrier_name]
@@ -40,36 +20,51 @@ def modify_carrier_capacity(network, carrier_name, new_capacity):
     return network
 
 def modify_demand(network, scale_factor):
+    # Scale either the time-series load profile or the static load snapshot.
     if hasattr(network, "loads_t") and "p_set" in network.loads_t.columns and not network.loads_t.p_set.empty:
         current_total = network.loads_t.p_set.sum().sum()
         network.loads_t.p_set *= scale_factor
         network.loads["p_set"] = network.loads_t.p_set.mean(axis=0)
+        new_total = network.loads_t.p_set.sum().sum()
     else:
         current_total = network.loads["p_set"].sum()
         network.loads["p_set"] *= scale_factor
+        new_total = network.loads["p_set"].sum()
 
-    print(f"Modified total demand from {current_total:.2f} MW to {network.loads['p_set'].sum():.2f} MW.")
+    print(f"Modified total demand from {current_total:.2f} MW to {new_total:.2f} MW.")
 
     return network
 
-def load_networks(home, cluster, base_folder, wind_condition, capacity_scenario):
+def load_networks(home, cluster, base_folder, wind_condition, scenario_config_name, lines_setting):
+    config_path = os.path.join(home, "pypsa-eur", "config", "scenario_configs", f"{scenario_config_name}.json")
+
+    print(f"[{ctime()}] Loading scenario configuration from: {config_path}")
+    scenario_config = load_scenario_configuration(config_path)
+    scenario_name = scenario_config.get("name", "unknown_scenario")
+
     # --- BEGIN: Path Construction ---
-    network_path = os.path.join(home, "pypsa-eur", "results", f"{base_folder}{wind_condition}", "networks", f"base_s_{cluster}_elec_.nc")
+    network_path = os.path.join(
+        home,
+        "pypsa-eur",
+        "resources",
+        f"{base_folder}_{wind_condition}",
+        "networks",
+        f"base_s_{cluster}_elec_.nc",
+    )
 
-    export_folder = os.path.join(home, "pypsa-eur", "resources", f"{capacity_scenario}_{wind_condition}", "networks")
-    os.makedirs(export_folder, exist_ok=True)
-    export_path = os.path.join(export_folder, f"base_s_{cluster}_elec_.nc")
-
-    config_path = os.path.join(home, "pypsa-eur", "config", "scenario_configs", f"{capacity_scenario}.json")
-    # --- END: Path Construction ---
+    if lines_setting is None:
+        export_folder = os.path.join(home, "pypsa-eur", "resources", f"{scenario_name}_{wind_condition}", "networks")
+        os.makedirs(export_folder, exist_ok=True)
+        export_path = os.path.join(export_folder, f"base_s_{cluster}_elec_.nc")
+    else:
+        export_folder = os.path.join(home, "pypsa-eur", "resources", f"{scenario_name}-{lines_setting}_{wind_condition}", "networks")
+        os.makedirs(export_folder, exist_ok=True)
+        export_path = os.path.join(export_folder, f"base_s_{cluster}_elec_.nc")
 
     # --- BEGIN: Load Network and Configuration ---
     print(f"[{ctime()}] Loading base network from: {network_path}")
     n_base = pypsa.Network(network_path)
     n_scenario = n_base.copy()  # Create a copy of the base network for modification
-    
-    print(f"[{ctime()}] Loading scenario configuration from: {config_path}")
-    scenario_config = load_scenario_configuration(config_path)
     # --- END: Load Network and Configuration ---
 
     return n_scenario, export_path, scenario_config
@@ -79,16 +74,17 @@ def load_scenario_configuration(config_path: str) -> dict:
         return json.load(handle)
     
 def create_scenario_network(network, scenario_config):
-    if "capacity_modifications" in scenario_config:
+    if "capacities" in scenario_config:
         for carrier, new_capacity in scenario_config["capacities"].items():
             network = modify_carrier_capacity(network, carrier, new_capacity)
     
     if "demand" in scenario_config:
         demand_2025 = scenario_config["demand"].get("gross_TWh_2025", None)
-        demand_2035 = scenario_config["demand"].get("gross_TWh_2035", None)
+        target_year = scenario_config.get("year")
+        demand_target = scenario_config["demand"].get(f"gross_TWh_{target_year}", None) if target_year is not None else None
 
-        if demand_2025 is not None and demand_2035 is not None:
-            scale_factor = demand_2035 / demand_2025 
+        if demand_2025 is not None and demand_target is not None:
+            scale_factor = demand_target / demand_2025
         else:
             print("Warning: Missing demand values in scenario configuration; skipping demand modification.")
             scale_factor = 1.0  # No scaling if values are missing
@@ -100,16 +96,17 @@ def create_scenario_network(network, scenario_config):
 def main():
      # --- BEGIN: Argument Parsing ---
     parser = argparse.ArgumentParser(description="Create a custom network scenario for Germany.")
-    parser.add_argument("--wind-condition", type=str, nargs='+', required=True, help="One or more wind conditions for the base network.")
-    parser.add_argument("--capacity-scenario", type=str, nargs='+', required=True, help="One or more capacity scenarios (e.g., 'germany_scenario1').")
+    parser.add_argument("--wind-condition", type=str, required=True, help="Wind condition for the base network.")
+    parser.add_argument("--scenario_config", type=str, required=True, help="Scenario configuration name without .json (e.g., 'germany_scenario2040').")
     parser.add_argument("--home", type=str, required=True, help="Home directory path.")
     parser.add_argument("--cluster", type=str, default="450", help="Number of clusters (default: 450).")
     parser.add_argument("--base-folder", type=str, default="germany_base_", help="Base folder name (default: 'germany_base_').")
+    parser.add_argument("--lines-setting", type=str, default=None, help="Lines setting (default: None).")
     args = parser.parse_args()
     # --- END: Argument Parsing ---
 
     # 1. Load the base network form the base-folder 
-    n, export_path, scenario_config = load_networks(args.home, args.cluster, args.base_folder, args.wind_condition, args.capacity_scenario)
+    n, export_path, scenario_config = load_networks(args.home, args.cluster, args.base_folder, args.wind_condition, args.scenario_config, args.lines_setting)
     n = create_scenario_network(n, scenario_config)
 
     # 2. Print the installed capacity by carrier for the modified network
@@ -131,10 +128,10 @@ def main():
     print(f"  Total capacity: {carrier_capacity.sum():.2f} MW")
     #----------------------------------------
 
-     # --- BEGIN: Export Scenario ---
+    # --- BEGIN: Export Scenario ---
     print(f"[{ctime()}] Exporting modified network to: {export_path}")
     n.export_to_netcdf(export_path)
-    print(f"[{ctime()}] Scenario generation complete for {args.capacity_scenario} with {args.wind_condition}.")
+    print(f"[{ctime()}] Scenario generation complete for {args.scenario_config} with {args.wind_condition}.")
     # --- END: Export Scenario ---
 
     

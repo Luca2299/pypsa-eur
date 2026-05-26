@@ -1,5 +1,5 @@
 {
-  "name": "Scenario_2040_CN2045",
+  "name": "germany_scenario2040",
   "year": 2040,
   "description": "Germany 2040 power system aligned with Agora/Prognos CN2045 pathway and CAT 1.5C benchmarks",
   "capacities": {
@@ -10,7 +10,6 @@
     "ror": 5000,
     "biomass": 3000,
     "CCGT": 29000,
-    "OCGT": 10000,
     "coal": 0,
     "lignite": 0,
     "oil": 0
