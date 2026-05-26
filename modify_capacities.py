@@ -21,7 +21,7 @@ def modify_carrier_capacity(network, carrier_name, new_capacity):
 
 def modify_demand(network, scale_factor):
     # Scale either the time-series load profile or the static load snapshot.
-    if hasattr(network, "loads_t") and "p_set" in network.loads_t.columns and not network.loads_t.p_set.empty:
+    if hasattr(network.loads_t, "p_set") and not network.loads_t.p_set.empty:
         current_total = network.loads_t.p_set.sum().sum()
         network.loads_t.p_set *= scale_factor
         network.loads["p_set"] = network.loads_t.p_set.mean(axis=0)
@@ -52,14 +52,9 @@ def load_networks(home, cluster, base_folder, wind_condition, scenario_config_na
         f"base_s_{cluster}_elec_.nc",
     )
 
-    if lines_setting is None:
-        export_folder = os.path.join(home, "pypsa-eur", "resources", f"{scenario_name}_{wind_condition}", "networks")
-        os.makedirs(export_folder, exist_ok=True)
-        export_path = os.path.join(export_folder, f"base_s_{cluster}_elec_.nc")
-    else:
-        export_folder = os.path.join(home, "pypsa-eur", "resources", f"{scenario_name}-{lines_setting}_{wind_condition}", "networks")
-        os.makedirs(export_folder, exist_ok=True)
-        export_path = os.path.join(export_folder, f"base_s_{cluster}_elec_.nc")
+    export_folder = os.path.join(home, "pypsa-eur", "resources", f"{scenario_name}-{lines_setting}_{wind_condition}", "networks")
+    os.makedirs(export_folder, exist_ok=True)
+    export_path = os.path.join(export_folder, f"base_s_{cluster}_elec_.nc")
 
     # --- BEGIN: Load Network and Configuration ---
     print(f"[{ctime()}] Loading base network from: {network_path}")
@@ -126,14 +121,12 @@ def main():
     else:
         print(carrier_capacity.to_string(float_format=lambda value: f"{value:.2f}"))
     print(f"  Total capacity: {carrier_capacity.sum():.2f} MW")
+
+    # print total demand for the modified network
+    total_demand = n.loads["p_set"].sum()
+    print(f"\n{n.name} total demand: {total_demand:.2f} MW")
     #----------------------------------------
-
-    # --- BEGIN: Export Scenario ---
-    print(f"[{ctime()}] Exporting modified network to: {export_path}")
     n.export_to_netcdf(export_path)
-    print(f"[{ctime()}] Scenario generation complete for {args.scenario_config} with {args.wind_condition}.")
-    # --- END: Export Scenario ---
-
     
 if __name__ == "__main__":
     main()
