@@ -1,0 +1,22 @@
+{
+  "name": "CN2045_2035_like",
+  "year": 2035,
+  "description": "Germany 2035 power system aligned with Agora/Prognos CN2045 pathway",
+  "capacities": {
+    "solar": 234000,       
+    "onwind": 104000,       
+    "offwind-ac": 41000,   
+    "ror": 4000,           
+    "hydro": 1000,       
+    "biomass": 3000,        
+    "CCGT": 46000,       
+    "OCGT": 9000,        
+    "coal": 0,          
+    "lignite": 0,        
+    "oil": 0           
+  },
+  "demand": {
+    "gross_TWh_2035": 760,
+    "gross_TWh_2025": 574
+  }
+}

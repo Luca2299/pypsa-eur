@@ -1,0 +1,22 @@
+{
+  "name": "Scenario_2040_CN2045",
+  "year": 2040,
+  "description": "Germany 2040 power system aligned with Agora/Prognos CN2045 pathway and CAT 1.5C benchmarks",
+  "capacities": {
+    "solar": 367000, 
+    "onwind": 209000,
+    "offwind-ac": 66000,
+    "hydro": 1000,
+    "ror": 5000,
+    "biomass": 3000,
+    "CCGT": 29000,
+    "OCGT": 10000,
+    "coal": 0,
+    "lignite": 0,
+    "oil": 0
+  },
+  "demand": {
+    "gross_TWh_2040": 902,
+    "gross_TWh_2025": 574
+  }
+}
