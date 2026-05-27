@@ -1,0 +1,85 @@
+# yaml-language-server: $schema=./schema.default.json
+# Minimal Germany single-day configuration
+
+run:
+  name: "germany_scenario2040-ext_windy"
+  disable_progressbar: true
+  shared_resources:
+    policy: false
+
+scenario:
+  clusters:
+  - "450" #max clusters
+  opts:
+  - "" # base electricity model
+  planning_horizons:
+  - 2025
+
+countries: ['DE']
+
+# added
+#co2_budget:
+  #2025: 0.648 # from pypsa-de: https://github.com/PyPSA/pypsa-de/blob/main/config/config.de.yaml
+
+snapshots:
+  start: "2025-10-26"
+  end: "2025-10-27"
+
+electricity:
+  co2limit_enable: true
+  co2limit:  160000000.0     # default value: 77500000.0 -> total co2 emission wothout limit (not windy day): 713738.14
+  operational_reserve:
+    activate: true
+    epsilon_load: 0.02
+    epsilon_vres: 0.02
+    contingency: 4000
+  custom_powerplants: false
+  #renewable_carriers: [solar, onwind, offwind-ac, offwind-dc]
+  estimate_renewable_capacities:
+    enable: true
+    from_powerplantmatching: true
+    from_irenastat: true # added 22.04.
+    year: 2025
+    expansion_limit: false
+    technology_mapping:
+      Offshore: offwind-ac # assuming that all offshore wind is AC
+      PV: solar
+  extendable_carriers: 
+    Generator: [] # no extendable generators to match the status quo
+  transmission_limit: vopt # no line expansion to match the status quo
+
+
+atlite:
+  default_cutout: "europe-2025-sarah3-era5"
+
+# do not remove: does not work
+renewable:
+  onwind:
+    corine: false
+  solar:
+    corine: false
+  solar-hsat:
+    corine: false
+
+transmission_projects:
+  enable: false
+
+load:
+# Whether to supplement missing data for selected time period 
+# should be supplemented by synthetic data from Zenodo.
+  supplement_synthetic: false 
+
+solving:
+  solver:
+    name: highs
+    options: highs-default
+  options:
+    transmission_losses: true #added
+    load_shedding:
+      enable: true
+      default_cost: 10000
+      all_carriers: true
+  check_objective:
+    enable: false
+  
+
