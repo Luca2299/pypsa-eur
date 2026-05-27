@@ -39,38 +39,38 @@ Network: Wind Variability
   stores: 900
 
 Windy Marginal Price Statistics:
-count     1350.000000
-mean      1980.822920
-std       3251.852071
-min        -28.111537
-25%         18.160663
-50%        184.190384
-75%       1771.833376
-max      10000.010331
+count    1350.000000
+mean       29.186722
+std         5.808147
+min         0.024536
+25%        24.468432
+50%        29.664012
+75%        33.645811
+max        39.364150
 
 
 Not Windy Marginal Price Statistics:
-count     1350.000000
-mean      1980.822920
-std       3251.852071
-min        -28.111537
-25%         18.160663
-50%        184.190384
-75%       1771.833376
-max      10000.010331
+count    1350.000000
+mean       29.186722
+std         5.808147
+min         0.024536
+25%        24.468432
+50%        29.664012
+75%        33.645811
+max        39.364150
 
 
 Wind Variability Marginal Price Statistics:
-count     1350.000000
-mean      1980.822920
-std       3251.852071
-min        -28.111537
-25%         18.160663
-50%        184.190384
-75%       1771.833376
-max      10000.010331
+count    1350.000000
+mean       29.186722
+std         5.808147
+min         0.024536
+25%        24.468432
+50%        29.664012
+75%        33.645811
+max        39.364150
 
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/LINE_LOADING_ONLY.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP/LINE_LOADING_ONLY.png
 Plotting 'Windy' network at time 2025-10-26 16:00:00 with peak marginal price 33.90 €/MWh
 Minimum marginal price across all buses at peak time: -0.00 €/MWh
 
@@ -110,7 +110,47 @@ min         0.024536
 75%        33.645811
 max        39.364150
 
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/02_marginal_prices.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP/marginal_prices_weighted.png
+Plotting 'Windy' network at time 2025-10-26 16:00:00 with peak marginal price 33.90 €/MWh
+Minimum marginal price across all buses at peak time: -0.00 €/MWh
+
+Windy Marginal Price Statistics:
+count    1350.000000
+mean        7.675067
+std         7.869569
+min        -0.001468
+25%         0.052957
+50%         6.012397
+75%        13.342156
+max        33.899100
+
+Plotting 'Not Windy' network at time 2025-04-08 23:00:00 with peak marginal price 37.91 €/MWh
+Minimum marginal price across all buses at peak time: 28.49 €/MWh
+
+Not Windy Marginal Price Statistics:
+count    1350.000000
+mean       34.264329
+std         2.361781
+min        28.489825
+25%        32.823970
+50%        34.872385
+75%        35.844805
+max        37.907672
+
+Plotting 'Wind Variability' network at time 2025-10-06 18:00:00 with peak marginal price 39.36 €/MWh
+Minimum marginal price across all buses at peak time: 0.02 €/MWh
+
+Wind Variability Marginal Price Statistics:
+count    1350.000000
+mean       29.186722
+std         5.808147
+min         0.024536
+25%        24.468432
+50%        29.664012
+75%        33.645811
+max        39.364150
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP/02_marginal_prices.png
 ======================================================================
 Network: Windy
 count    24.000000
@@ -147,7 +187,7 @@ min      12.323209
 max      29.567539
 ======================================================================
 
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/02_average_marginal_prices.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP/02_average_marginal_prices.png
 ======================================================================
  Network: Windy
   Average loading across all lines: 23.38%
@@ -172,7 +212,7 @@ Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scen
   Lines with >70% avg loading: 211
 ======================================================================
 
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/03_load_shedding.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP/03_load_shedding.png
 ======================================================================
 Network: Windy
 Offshore wind (AC) capacity MW: 66000.00
@@ -200,7 +240,7 @@ Total curtailed (MWh): 655725.41
 Curtailed fraction: 0.64
 ======================================================================
 
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/04_offwind_curtailment.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP/04_offwind_curtailment.png
 ======================================================================
 Network: Windy
 Onshore wind capacity MW: 209000.00
@@ -228,7 +268,7 @@ Total curtailed (MWh): 726528.19
 Curtailed fraction: 0.32
 ======================================================================
 
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/05_onwind_curtailment.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP/05_onwind_curtailment.png
 ======================================================================
 Network: Windy
 Solar PV capacity MW: 367000.00
@@ -256,9 +296,9 @@ Total curtailed (MWh): 4679.22
 Curtailed fraction: 0.01
 ======================================================================
 
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/05_solar_curtailment.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/06_power_dispatch.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/07_energy_production.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP/05_solar_curtailment.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP/06_power_dispatch.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP/07_energy_production.png
 
 === Energy Production Summary ===
                            Windy     Not Windy  Wind Variability
@@ -359,218 +399,4 @@ Store       Battery Storage           1.873355e+05        0.000000e+00  2.056902
 
 
 === Analysis Complete ===
-All results saved to: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/07_energy_production.png
-
-=== Energy Production Summary ===
-                           Windy     Not Windy  Wind Variability
-Onshore wind        1.348408e+06  1.384134e+05      1.567279e+06
-Solar PV            4.378853e+05  1.774313e+06      3.780921e+05
-Offshore wind (AC)  5.258330e+04  4.915387e+04      3.704123e+05
-Run-of-river        5.985295e+04  9.540780e+04      3.916467e+04
-Biomass             1.436865e+03  4.607674e+04      2.531203e+04
-Waste               3.928253e-03  2.605030e+04      8.253453e+03
-Geothermal          6.454502e+02  6.444192e+02      6.455919e+02
-CCGT                4.602095e-03  1.251221e+00      3.831326e-01
-OCGT                5.813298e-03  9.992697e-01      3.446515e-01
-
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/06_power_dispatch.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/06_power_dispatch.png
-Plotting 'Windy' network at time 2025-10-26 16:00:00 with peak marginal price 33.90 €/MWh
-Minimum marginal price across all buses at peak time: -0.00 €/MWh
-
-Windy Marginal Price Statistics:
-count    1350.000000
-mean        7.675067
-std         7.869569
-min        -0.001468
-25%         0.052957
-50%         6.012397
-75%        13.342156
-max        33.899100
-
-Plotting 'Not Windy' network at time 2025-04-08 23:00:00 with peak marginal price 37.91 €/MWh
-Minimum marginal price across all buses at peak time: 28.49 €/MWh
-
-Not Windy Marginal Price Statistics:
-count    1350.000000
-mean       34.264329
-std         2.361781
-min        28.489825
-25%        32.823970
-50%        34.872385
-75%        35.844805
-max        37.907672
-
-Plotting 'Wind Variability' network at time 2025-10-06 18:00:00 with peak marginal price 39.36 €/MWh
-Minimum marginal price across all buses at peak time: 0.02 €/MWh
-
-Wind Variability Marginal Price Statistics:
-count    1350.000000
-mean       29.186722
-std         5.808147
-min         0.024536
-25%        24.468432
-50%        29.664012
-75%        33.645811
-max        39.364150
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/02_marginal_prices.png
-======================================================================
- Network: Windy
-  Average loading across all lines: 23.38%
-  Max average loading: 289.87%
-  Lines with >60% avg loading: 26
-  Lines with >70% avg loading: 11
-======================================================================
-
-======================================================================
- Network: Not Windy
-  Average loading across all lines: 25.54%
-  Max average loading: 111.38%
-  Lines with >60% avg loading: 44
-  Lines with >70% avg loading: 32
-======================================================================
-
-======================================================================
- Network: Wind Variability
-  Average loading across all lines: 64.42%
-  Max average loading: 426.63%
-  Lines with >60% avg loading: 250
-  Lines with >70% avg loading: 211
-======================================================================
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/03_load_shedding.png
-======================================================================
- Network: Windy
-  Average loading across all lines: 23.38%
-  Max average loading: 289.87%
-  Lines with >60% avg loading: 26
-  Lines with >70% avg loading: 11
-======================================================================
-
-======================================================================
- Network: Not Windy
-  Average loading across all lines: 25.54%
-  Max average loading: 111.38%
-  Lines with >60% avg loading: 44
-  Lines with >70% avg loading: 32
-======================================================================
-
-======================================================================
- Network: Wind Variability
-  Average loading across all lines: 64.42%
-  Max average loading: 426.63%
-  Lines with >60% avg loading: 250
-  Lines with >70% avg loading: 211
-======================================================================
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/03_load_shedding.png
-======================================================================
-Network: Windy
-Offshore wind (AC) capacity MW: 66000.00
-Total available (MWh): 1396516.72
-Total dispatched (MWh): 52583.30
-Total curtailed (MWh): 1343933.41
-Curtailed fraction: 0.96
-======================================================================
-
-======================================================================
-Network: Not Windy
-Offshore wind (AC) capacity MW: 66000.00
-Total available (MWh): 49167.88
-Total dispatched (MWh): 49153.87
-Total curtailed (MWh): 14.01
-Curtailed fraction: 0.00
-======================================================================
-
-======================================================================
-Network: Wind Variability
-Offshore wind (AC) capacity MW: 66000.00
-Total available (MWh): 1026137.76
-Total dispatched (MWh): 370412.35
-Total curtailed (MWh): 655725.41
-Curtailed fraction: 0.64
-======================================================================
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/04_offwind_curtailment.png
-======================================================================
-Network: Windy
-Onshore wind capacity MW: 209000.00
-Total available (MWh): 4334287.09
-Total dispatched (MWh): 1348408.21
-Total curtailed (MWh): 2985878.88
-Curtailed fraction: 0.69
-======================================================================
-
-======================================================================
-Network: Not Windy
-Onshore wind capacity MW: 209000.00
-Total available (MWh): 140893.32
-Total dispatched (MWh): 138413.44
-Total curtailed (MWh): 2479.88
-Curtailed fraction: 0.02
-======================================================================
-
-======================================================================
-Network: Wind Variability
-Onshore wind capacity MW: 209000.00
-Total available (MWh): 2293807.42
-Total dispatched (MWh): 1567279.23
-Total curtailed (MWh): 726528.19
-Curtailed fraction: 0.32
-======================================================================
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/05_onwind_curtailment.png
-======================================================================
-Network: Windy
-Solar PV capacity MW: 367000.00
-Total available (MWh): 517236.41
-Total dispatched (MWh): 437885.31
-Total curtailed (MWh): 79351.10
-Curtailed fraction: 0.15
-======================================================================
-
-======================================================================
-Network: Not Windy
-Solar PV capacity MW: 367000.00
-Total available (MWh): 1861083.32
-Total dispatched (MWh): 1774313.11
-Total curtailed (MWh): 86770.21
-Curtailed fraction: 0.05
-======================================================================
-
-======================================================================
-Network: Wind Variability
-Solar PV capacity MW: 367000.00
-Total available (MWh): 382771.37
-Total dispatched (MWh): 378092.15
-Total curtailed (MWh): 4679.22
-Curtailed fraction: 0.01
-======================================================================
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/05_solar_curtailment.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/06_power_dispatch.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/07_energy_production.png
-
-=== Energy Production Summary ===
-                           Windy     Not Windy  Wind Variability
-Onshore wind        1.348408e+06  1.384134e+05      1.567279e+06
-Solar PV            4.378853e+05  1.774313e+06      3.780921e+05
-Offshore wind (AC)  5.258330e+04  4.915387e+04      3.704123e+05
-Run-of-river        5.985295e+04  9.540780e+04      3.916467e+04
-Biomass             1.436865e+03  4.607674e+04      2.531203e+04
-Waste               3.928253e-03  2.605030e+04      8.253453e+03
-Geothermal          6.454502e+02  6.444192e+02      6.455919e+02
-CCGT                4.602095e-03  1.251221e+00      3.831326e-01
-OCGT                5.813298e-03  9.992697e-01      3.446515e-01
-
-
-
-=== CO2 Emissions Summary ===
-Total CO2 emissions at the Windy day: 77.46 kg CO2
-Total CO2 emissions at the Not Windy day: 24552.92 kg CO2
-Total CO2 emissions at the Wind Variability day: 7638.46 kg CO2
-
-
+All results saved to: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP

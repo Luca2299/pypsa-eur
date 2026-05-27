@@ -37,6 +37,40 @@ Network: Wind Variability
   links: 1800
   storage_units: 60
   stores: 900
+
+Windy Marginal Price Statistics:
+count     1350.000000
+mean      1980.822920
+std       3251.852071
+min        -28.111537
+25%         18.160663
+50%        184.190384
+75%       1771.833376
+max      10000.010331
+
+
+Not Windy Marginal Price Statistics:
+count     1350.000000
+mean      1980.822920
+std       3251.852071
+min        -28.111537
+25%         18.160663
+50%        184.190384
+75%       1771.833376
+max      10000.010331
+
+
+Wind Variability Marginal Price Statistics:
+count     1350.000000
+mean      1980.822920
+std       3251.852071
+min        -28.111537
+25%         18.160663
+50%        184.190384
+75%       1771.833376
+max      10000.010331
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-fixed_/LINE_LOADING_ONLY.png
 Plotting 'Windy' network at time 2025-10-26 18:00:00 with peak marginal price 10000.01 €/MWh
 Minimum marginal price across all buses at peak time: -32.34 €/MWh
 
@@ -223,60 +257,20 @@ Curtailed fraction: 0.27
 ======================================================================
 
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-fixed_/05_solar_curtailment.png
-======================================================================
-Network: Windy
-Onshore wind capacity MW: 209000.00
-Total available (MWh): 4334287.09
-Total dispatched (MWh): 1381412.58
-Total curtailed (MWh): 2952874.51
-Curtailed fraction: 0.68
-======================================================================
-
-======================================================================
-Network: Not Windy
-Onshore wind capacity MW: 209000.00
-Total available (MWh): 140893.32
-Total dispatched (MWh): 136999.23
-Total curtailed (MWh): 3894.09
-Curtailed fraction: 0.03
-======================================================================
-
-======================================================================
-Network: Wind Variability
-Onshore wind capacity MW: 209000.00
-Total available (MWh): 2293807.42
-Total dispatched (MWh): 1227490.37
-Total curtailed (MWh): 1066317.05
-Curtailed fraction: 0.46
-======================================================================
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-fixed_/05_onwind_curtailment.png
-======================================================================
-Network: Windy
-Solar PV capacity MW: 367000.00
-Total available (MWh): 517236.41
-Total dispatched (MWh): 389956.05
-Total curtailed (MWh): 127280.36
-Curtailed fraction: 0.25
-======================================================================
-
-======================================================================
-Network: Not Windy
-Solar PV capacity MW: 367000.00
-Total available (MWh): 1861083.32
-Total dispatched (MWh): 1529977.00
-Total curtailed (MWh): 331106.32
-Curtailed fraction: 0.18
-======================================================================
-
-======================================================================
-Network: Wind Variability
-Solar PV capacity MW: 367000.00
-Total available (MWh): 382771.37
-Total dispatched (MWh): 277988.65
-Total curtailed (MWh): 104782.72
-Curtailed fraction: 0.27
-======================================================================
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-fixed_/05_solar_curtailment.png
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-fixed_/06_power_dispatch.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-fixed_/07_energy_production.png
+
+=== Energy Production Summary ===
+                           Windy     Not Windy  Wind Variability
+Onshore wind        1.381413e+06  1.369992e+05      1.227490e+06
+Solar PV            3.899560e+05  1.529977e+06      2.779887e+05
+CCGT                4.145963e+04  2.148881e+05      3.949635e+05
+Run-of-river        5.817638e+04  9.398169e+04      3.839645e+04
+Unserved Load       4.503152e+03  1.023742e+03      1.632618e+05
+Offshore wind (AC)  2.521040e+04  4.779372e+04      8.104723e+04
+OCGT                3.507216e+04  2.788498e+04      8.163823e+04
+Biomass             1.569849e+04  4.851360e+04      3.862740e+04
+Waste               1.087350e+04  3.754809e+04      4.631099e+04
+Geothermal          4.584252e+02  5.100394e+02      5.307383e+02
+
+
