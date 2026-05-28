@@ -39,7 +39,6 @@ config/config.yaml
 config/scenarios.yaml
 /config/my_tests
 /analysis
-*/notebooks/analysis_notebooks
 
 /data/links_p_nom.csv
 /data/*totals.csv
