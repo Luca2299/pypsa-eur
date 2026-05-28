@@ -37,6 +37,80 @@ Network: Wind Variability
   links: 1800
   storage_units: 60
   stores: 900
+
+Windy Marginal Price Statistics:
+count    1350.000000
+mean       26.788894
+std         3.154973
+min        22.628499
+25%        24.381207
+50%        25.640838
+75%        28.637388
+max        34.444108
+
+
+Not Windy Marginal Price Statistics:
+count    1350.000000
+mean       26.788894
+std         3.154973
+min        22.628499
+25%        24.381207
+50%        25.640838
+75%        28.637388
+max        34.444108
+
+
+Wind Variability Marginal Price Statistics:
+count    1350.000000
+mean       26.788894
+std         3.154973
+min        22.628499
+25%        24.381207
+50%        25.640838
+75%        28.637388
+max        34.444108
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base-ext_/LINE_LOADING_ONLY.png
+Plotting 'Windy' network at time 2025-10-26 16:00:00 with peak marginal price 21.99 €/MWh
+Minimum marginal price across all buses at peak time: -0.02 €/MWh
+
+Windy Marginal Price Statistics:
+count    1350.000000
+mean        7.728940
+std         6.778971
+min        -0.024606
+25%         0.347400
+50%        10.691251
+75%        13.721462
+max        21.994161
+
+Plotting 'Not Windy' network at time 2025-04-08 23:00:00 with peak marginal price 59.94 €/MWh
+Minimum marginal price across all buses at peak time: 50.96 €/MWh
+
+Not Windy Marginal Price Statistics:
+count    1350.000000
+mean       54.627939
+std         2.935082
+min        50.956064
+25%        52.254428
+50%        53.224061
+75%        58.395491
+max        59.936031
+
+Plotting 'Wind Variability' network at time 2025-10-06 17:00:00 with peak marginal price 35.60 €/MWh
+Minimum marginal price across all buses at peak time: 22.47 €/MWh
+
+Wind Variability Marginal Price Statistics:
+count    1350.000000
+mean       26.943523
+std         3.504782
+min        22.471754
+25%        24.441684
+50%        25.681313
+75%        28.275615
+max        35.601855
+
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base-ext_/marginal_prices_weighted.png
 Plotting 'Windy' network at time 2025-10-26 16:00:00 with peak marginal price 21.99 €/MWh
 Minimum marginal price across all buses at peak time: -0.02 €/MWh
 

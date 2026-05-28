@@ -1,0 +1,22 @@
+day,scenario,curtailment_GWh,congested_line_count,congestion_event_count
+2025-04-08,base-ext - notwindy - extendable,0.0008286576532073793,0,0
+2025-10-06,base-ext - windvariability - extendable,32.26231460250888,0,0
+2025-10-26,base-ext - windy - extendable,514.2375047812179,0,0
+2025-04-08,base2 - notwindy - fixed,0.13277281609909614,0,0
+2025-10-06,base2 - windvariability - fixed,183.45078357947392,0,0
+2025-10-26,base2 - windy - fixed,641.1403311784262,0,0
+2025-04-08,baseTP - notwindy - projects,0.0007363272232622064,0,0
+2025-10-06,baseTP - windvariability - projects,84.35845869090248,0,0
+2025-10-26,baseTP - windy - projects,612.2117194983169,0,0
+2025-04-08,scenario-ext - notwindy - extendable + projects,0.0002686169576729285,0,0
+2025-10-06,scenario-ext - windvariability - extendable + projects,44.33424596222717,0,0
+2025-10-26,scenario-ext - windy - extendable + projects,527.1574721239235,0,0
+2025-04-08,scenario2040-TP - notwindy - projects,242.29829967264735,0,0
+2025-10-06,scenario2040-TP - windvariability - projects,974.4934393900381,0,0
+2025-10-26,scenario2040-TP - windy - projects,3097.491524450415,0,0
+2025-04-08,scenario2040-ext - notwindy - extendable,89.25008978600762,0,0
+2025-10-06,scenario2040-ext - windvariability - extendable,731.2074170371395,0,0
+2025-10-26,scenario2040-ext - windy - extendable,3065.229984637785,0,0
+2025-04-08,scenario2040-fixed - notwindy - fixed,335.0004121695526,0,0
+2025-10-06,scenario2040-fixed - windvariability - fixed,1171.0997676361008,0,0
+2025-10-26,scenario2040-fixed - windy - fixed,3080.154871850827,0,0
