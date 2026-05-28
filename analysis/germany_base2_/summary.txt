@@ -342,3 +342,31 @@ Store       Battery Storage           1.781704e+04        0.000000e+00  1.800094
 
 === Analysis Complete ===
 All results saved to: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base2_
+Plotting 'Windy' network at time 2025-10-26 12:00:00 with peak curtailment 41293.72 MW
+Plotting 'Not Windy' network at time 2025-04-08 11:00:00 with peak curtailment 57.49 MW
+Plotting 'Wind Variability' network at time 2025-10-06 00:00:00 with peak curtailment 28323.28 MW
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base2_/08_curtailment_map.png
+Plotting 'Windy' network at time 2025-10-26 12:00:00 with peak curtailment 41293.72 MW
+Plotting 'Not Windy' network at time 2025-04-08 11:00:00 with peak curtailment 57.49 MW
+Plotting 'Wind Variability' network at time 2025-10-06 00:00:00 with peak curtailment 28323.28 MW
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base2_/08_curtailment_map.png
+Plotting 'Windy' network at time 2025-10-26 12:00:00 with peak curtailment 41293.72 MW
+Plotting 'Not Windy' network at time 2025-04-08 11:00:00 with peak curtailment 57.49 MW
+Plotting 'Wind Variability' network at time 2025-10-06 00:00:00 with peak curtailment 28323.28 MW
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base2_/08_curtailment_map.png
+Plotting 'Windy' network at time 2025-10-26 12:00:00 with peak curtailment 41293.72 MW
+Plotting 'Not Windy' network at time 2025-04-08 11:00:00 with peak curtailment 57.49 MW
+Plotting 'Wind Variability' network at time 2025-10-06 00:00:00 with peak curtailment 28323.28 MW
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base2_/08_curtailment_map.png
+Plotting 'Windy' network at time 2025-10-26 12:00:00 with peak curtailment 41293.72 MW
+Plotting 'Not Windy' network at time 2025-04-08 11:00:00 with peak curtailment 57.49 MW
+Plotting 'Wind Variability' network at time 2025-10-06 00:00:00 with peak curtailment 28323.28 MW
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base2_/08_curtailment_map.png
+Plotting 'Windy' network at time 2025-10-26 12:00:00 with peak curtailment 41293.72 MW
+Plotting 'Not Windy' network at time 2025-04-08 11:00:00 with peak curtailment 57.49 MW
+Plotting 'Wind Variability' network at time 2025-10-06 00:00:00 with peak curtailment 28323.28 MW
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base2_/08_curtailment_map.png
+Plotting 'Windy' network at time 2025-10-26 12:00:00 with peak curtailment 41293.72 MW
+Plotting 'Not Windy' network at time 2025-04-08 11:00:00 with peak curtailment 57.49 MW
+Plotting 'Wind Variability' network at time 2025-10-06 00:00:00 with peak curtailment 28323.28 MW
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base2_/08_curtailment_map.png
