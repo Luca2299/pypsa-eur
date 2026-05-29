@@ -81,46 +81,6 @@ max      10000.010692
 Peak marginal price range: -28.75 to 10000.01 €/MWh
 
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/marginal_prices_weighted.png
-Plotting 'Windy' network at time 2025-10-26 08:00:00 with peak marginal price 81.06 €/MWh
-Minimum marginal price across all buses at peak time: -8.36 €/MWh
-
-Windy Marginal Price Statistics:
-count    1350.000000
-mean        6.577958
-std        10.337579
-min        -8.363250
-25%         0.025995
-50%         0.056539
-75%        12.750287
-max        81.063886
-
-Plotting 'Not Windy' network at time 2025-04-08 19:00:00 with peak marginal price 10000.01 €/MWh
-Minimum marginal price across all buses at peak time: 11.65 €/MWh
-
-Not Windy Marginal Price Statistics:
-count     1350.000000
-mean        75.929135
-std        516.990197
-min         11.652290
-25%         33.000476
-50%         44.360346
-75%         46.996999
-max      10000.009907
-
-Plotting 'Wind Variability' network at time 2025-10-06 05:00:00 with peak marginal price 10000.01 €/MWh
-Minimum marginal price across all buses at peak time: -28.75 €/MWh
-
-Wind Variability Marginal Price Statistics:
-count     1350.000000
-mean      1046.421591
-std       2305.603622
-min        -28.749948
-25%          2.516078
-50%         36.753330
-75%         81.345434
-max      10000.010692
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/02_marginal_prices.png
 ======================================================================
 Network: Windy
 count    24.000000
@@ -268,6 +228,10 @@ Curtailed fraction: 0.21
 
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/05_solar_curtailment.png
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/06_power_dispatch.png
+Plotting 'Windy' network at time 2025-10-26 11:00:00 with peak curtailment 241215.39 MW
+Plotting 'Not Windy' network at time 2025-04-08 10:00:00 with peak curtailment 58771.85 MW
+Plotting 'Wind Variability' network at time 2025-10-06 01:00:00 with peak curtailment 129697.13 MW
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/08_curtailment_map_by_carrier_pie.png
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/07_energy_production.png
 
 === Energy Production Summary ===

@@ -335,15 +335,3 @@ Store       Battery Storage           8.706591e+04        0.000000e+00  9.700995
 
 === Analysis Complete ===
 All results saved to: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-fixed_
-Plotting 'Windy' network at time 2025-10-26 09:00:00 with peak curtailment 228645.72 MW
-Plotting 'Not Windy' network at time 2025-04-08 10:00:00 with peak curtailment 76034.25 MW
-Plotting 'Wind Variability' network at time 2025-10-06 00:00:00 with peak curtailment 148265.54 MW
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-fixed_/08_curtailment_map_by_carrier_pie.png
-Plotting 'Windy' network at time 2025-10-26 09:00:00 with peak curtailment 228645.72 MW
-Plotting 'Not Windy' network at time 2025-04-08 10:00:00 with peak curtailment 76034.25 MW
-Plotting 'Wind Variability' network at time 2025-10-06 00:00:00 with peak curtailment 148265.54 MW
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-fixed_/08_curtailment_map_by_carrier_pie.png
-Plotting 'Windy' network at time 2025-10-26 09:00:00 with peak curtailment 228645.72 MW
-Plotting 'Not Windy' network at time 2025-04-08 10:00:00 with peak curtailment 76034.25 MW
-Plotting 'Wind Variability' network at time 2025-10-06 00:00:00 with peak curtailment 148265.54 MW
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-fixed_/08_curtailment_map_by_carrier_pie.png
