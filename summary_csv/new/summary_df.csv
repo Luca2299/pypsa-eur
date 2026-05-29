@@ -1,0 +1,3 @@
+scenario,wind_condition,transmission_setting,load_served_MWh,load_shedding_MWh,avg_marginal_price,max_marginal_price,total_co2_emissions,avg_line_loading_pct,max_line_loading_pct,lines_above_60pct,lines_above_70pct
+base2,windvariability,fixed,1368958.4066238403,,41.09950719925665,1112.25502745438,162112.50126885693,17.016473556631922,69.13554152027953,1,0
+base2,windy,fixed,1179664.8225402832,,14.581967994811592,253.91588328667888,36931.243745971835,15.521746534133001,69.49191944358152,4,0
