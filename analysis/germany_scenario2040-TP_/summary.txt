@@ -37,7 +37,8 @@ Network: Wind Variability
   links: 1818
   storage_units: 61
   stores: 900
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/LINE_LOADING_ONLY.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/line_congestion.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/line_link_extension.png
 Plotting 'Windy' network at time 2025-10-26 08:00:00 with peak marginal price 81.06 €/MWh
 Minimum marginal price across all buses at peak time: -8.36 €/MWh
 
@@ -117,7 +118,7 @@ min      1645.259245
 max      1724.830915
 ======================================================================
 
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/02_average_marginal_prices.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/average_marginal_prices.png
 ======================================================================
  Network: Windy
   Average loading across all lines: 18.59%
@@ -142,7 +143,7 @@ Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scen
   Lines with >70% avg loading: 0
 ======================================================================
 
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/03_load_shedding.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/load_shedding.png
 ======================================================================
 Network: Windy
 Offshore wind (AC) capacity MW: 66000.00
@@ -170,7 +171,7 @@ Total curtailed (MWh): 817075.09
 Curtailed fraction: 0.80
 ======================================================================
 
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/04_offwind_curtailment.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/offwind_curtailment.png
 ======================================================================
 Network: Windy
 Onshore wind capacity MW: 209000.00
@@ -198,7 +199,7 @@ Total curtailed (MWh): 894811.96
 Curtailed fraction: 0.39
 ======================================================================
 
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/05_onwind_curtailment.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/onwind_curtailment.png
 ======================================================================
 Network: Windy
 Solar PV capacity MW: 367000.00
@@ -226,13 +227,14 @@ Total curtailed (MWh): 79681.48
 Curtailed fraction: 0.21
 ======================================================================
 
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/05_solar_curtailment.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/06_power_dispatch.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/solar_curtailment.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/power_dispatch.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/power_dispatch_wind-only.png
 Plotting 'Windy' network at time 2025-10-26 11:00:00 with peak curtailment 241215.39 MW
 Plotting 'Not Windy' network at time 2025-04-08 10:00:00 with peak curtailment 58771.85 MW
 Plotting 'Wind Variability' network at time 2025-10-06 01:00:00 with peak curtailment 129697.13 MW
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/08_curtailment_map_by_carrier_pie.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/07_energy_production.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/curtailment_map_by_carrier_pie.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/total_energy_production.png
 
 === Energy Production Summary ===
                            Windy     Not Windy  Wind Variability
