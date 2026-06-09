@@ -1,0 +1,4 @@
+day,scenario,scenario_name,curtailment_GWh,congested_line_count,congestion_event_count,transmission_setting,wind_condition
+2025-04-08,germany_base2_notwindy,base2,0.1327728160990961,0,0,fixed,notwindy
+2025-10-06,germany_base2_windvariability,base2,183.45078357947392,0,0,fixed,windvariability
+2025-10-26,germany_base2_windy,base2,641.1403311784262,0,0,fixed,windy

@@ -5,9 +5,6 @@ day,scenario,scenario_name,total_unserved_energy_MWh,peak_load_shedding_MW,trans
 2025-04-08,germany_scenario2040-TP_notwindy,scenario2040,1023.7338628653469,251.4906026497809,TP,notwindy
 2025-10-06,germany_scenario2040-TP_windvariability,scenario2040,26935.808215195197,2313.786042516193,TP,windvariability
 2025-10-26,germany_scenario2040-TP_windy,scenario2040,0.0009710585549686,4.0467477368595774e-05,TP,windy
-2025-04-08,germany_scenario2040-ext-TP_notwindy,scenario2040,0.0122443683598465,0.0005104897934406,ext-TP,notwindy
-2025-10-06,germany_scenario2040-ext-TP_windvariability,scenario2040,0.0042030377148225,0.0001753141547525,ext-TP,windvariability
-2025-10-26,germany_scenario2040-ext-TP_windy,scenario2040,0.0001366752568421,5.696655989542275e-06,ext-TP,windy
 2025-04-08,germany_scenario2040-ext_notwindy,scenario2040,0.0103984530915955,0.0004335284438417,ext,notwindy
 2025-10-06,germany_scenario2040-ext_windvariability,scenario2040,0.0045492008870524,0.0001897465177113,ext,windvariability
 2025-10-26,germany_scenario2040-ext_windy,scenario2040,0.0001129420525267,4.707747282003385e-06,ext,windy

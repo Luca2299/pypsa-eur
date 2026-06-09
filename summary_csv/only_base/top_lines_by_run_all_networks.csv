@@ -1,0 +1,16 @@
+scenario,line_id,bus0,bus1,average_loading_pct,max_loading_pct,hours_above_60,hours_above_70,scenario_name,transmission_setting,wind_condition
+germany_base2_notwindy,99,DE0 13,DE0 69,52.28278054414508,52.28279080978796,0.0,0.0,base2,fixed,notwindy
+germany_base2_notwindy,169,DE0 156,DE0 48,51.61306163912411,69.13563699735943,9.0,0.0,base2,fixed,notwindy
+germany_base2_notwindy,168,DE0 156,DE0 22,49.92278689386827,66.52078233628414,5.0,0.0,base2,fixed,notwindy
+germany_base2_notwindy,235,DE0 18,DE0 282,42.173620856282,47.53373921391613,0.0,0.0,base2,fixed,notwindy
+germany_base2_notwindy,248,DE0 184,DE0 329,40.83267825571426,56.01187597210456,0.0,0.0,base2,fixed,notwindy
+germany_base2_windvariability,98,DE0 13,DE0 329,62.64867585792734,62.73519438907539,24.0,0.0,base2,fixed,windvariability
+germany_base2_windvariability,248,DE0 184,DE0 329,57.20002681501965,59.03823335568092,0.0,0.0,base2,fixed,windvariability
+germany_base2_windvariability,169,DE0 156,DE0 48,56.38838549316931,69.13554152027953,11.0,0.0,base2,fixed,windvariability
+germany_base2_windvariability,622,DE0 61,DE0 96,56.221647391009135,68.23615824161587,15.0,0.0,base2,fixed,windvariability
+germany_base2_windvariability,60,DE0 115,DE0 46,54.69732066107255,64.68884258608315,10.0,0.0,base2,fixed,windvariability
+germany_base2_windy,188,DE0 161,DE0 4,66.45547591516357,68.4872784129128,22.0,0.0,base2,fixed,windy
+germany_base2_windy,622,DE0 61,DE0 96,65.81780094226708,68.2361602820685,20.0,0.0,base2,fixed,windy
+germany_base2_windy,169,DE0 156,DE0 48,63.6502677518552,69.13557095110725,17.0,0.0,base2,fixed,windy
+germany_base2_windy,189,DE0 161,DE0 68,61.20320473887233,67.65162232935614,13.0,0.0,base2,fixed,windy
+germany_base2_windy,187,DE0 161,DE0 230,59.36797976013531,66.19145962031136,11.0,0.0,base2,fixed,windy

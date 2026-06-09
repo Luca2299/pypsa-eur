@@ -5,9 +5,6 @@ day,scenario,scenario_name,curtailment_GWh,congested_line_count,congestion_event
 2025-04-08,germany_scenario2040-TP_notwindy,scenario2040,242.29829967264732,0,0,TP,notwindy
 2025-10-06,germany_scenario2040-TP_windvariability,scenario2040,974.493439390038,0,0,TP,windvariability
 2025-10-26,germany_scenario2040-TP_windy,scenario2040,3097.491524450415,0,0,TP,windy
-2025-04-08,germany_scenario2040-ext-TP_notwindy,scenario2040,87.54808850645837,0,0,ext-TP,notwindy
-2025-10-06,germany_scenario2040-ext-TP_windvariability,scenario2040,809.7243735149518,0,0,ext-TP,windvariability
-2025-10-26,germany_scenario2040-ext-TP_windy,scenario2040,3044.428799084816,0,0,ext-TP,windy
 2025-04-08,germany_scenario2040-ext_notwindy,scenario2040,89.25008978600762,0,0,ext,notwindy
 2025-10-06,germany_scenario2040-ext_windvariability,scenario2040,731.2074170371395,0,0,ext,windvariability
 2025-10-26,germany_scenario2040-ext_windy,scenario2040,3065.229984637785,0,0,ext,windy

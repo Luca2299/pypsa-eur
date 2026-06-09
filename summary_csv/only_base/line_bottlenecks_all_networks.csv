@@ -1,0 +1,6 @@
+line_id,bus0,bus1,number_of_networks_congested,list_of_networks_congested,average_loading_across_networks,maximum_loading_across_networks,min_loading_across_networks,loading_change_vs_fixed,line_length,carrier,bus0_x,bus0_y,country,x_coordinate,y_coordinate
+188,DE0 161,DE0 4,1,germany_base2_windy,66.46,66.46,66.46,,23.048144803782876,AC,10.41387335,53.41293643,DE,,
+622,DE0 61,DE0 96,1,germany_base2_windy,65.82,65.82,65.82,,70.3190124626766,AC,11.89471336,51.40650196,DE,,
+169,DE0 156,DE0 48,1,germany_base2_windy,63.65,63.65,63.65,,24.664619358207478,AC,10.99935198,52.20014332,DE,,
+98,DE0 13,DE0 329,1,germany_base2_windvariability,62.65,62.65,62.65,,38.208492875279354,AC,11.80761134,48.45542373,DE,,
+189,DE0 161,DE0 68,1,germany_base2_windy,61.2,61.2,61.2,,66.62569065673907,AC,10.41387335,53.41293643,DE,,

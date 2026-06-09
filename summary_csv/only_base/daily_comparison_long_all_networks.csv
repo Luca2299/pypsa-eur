@@ -1,0 +1,4 @@
+day,scenario,scenario_name,total_unserved_energy_MWh,peak_load_shedding_MW,avg_price_eur_per_MWh,temporal_price_spread_eur_per_MWh,avg_spatial_price_spread_eur_per_MWh,curtailment_GWh,congested_line_count,congestion_event_count,transmission_setting,wind_condition
+2025-04-08,germany_base2_notwindy,base2,0.0161494232089426,0.0006731492092612,52.03196012731281,27.55826565585417,124.51645653933582,0.1327728160990961,0,0,fixed,notwindy
+2025-10-06,germany_base2_windvariability,base2,0.0102920032356932,0.0004290138909334,46.48241108801806,19.25969521044344,1125.963054185963,183.45078357947392,0,0,fixed,windvariability
+2025-10-26,germany_base2_windy,base2,0.0014919297669744,6.217826021220484e-05,12.746300724270226,10.918411975118518,233.8008740000963,641.1403311784262,0,0,fixed,windy

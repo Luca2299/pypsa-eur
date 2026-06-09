@@ -1,0 +1,4 @@
+day,scenario,scenario_name,avg_price_eur_per_MWh,temporal_price_spread_eur_per_MWh,avg_spatial_price_spread_eur_per_MWh,transmission_setting,wind_condition
+2025-04-08,germany_base2_notwindy,base2,52.03196012731281,27.55826565585417,124.51645653933582,fixed,notwindy
+2025-10-06,germany_base2_windvariability,base2,46.48241108801806,19.25969521044344,1125.963054185963,fixed,windvariability
+2025-10-26,germany_base2_windy,base2,12.746300724270226,10.918411975118518,233.8008740000963,fixed,windy

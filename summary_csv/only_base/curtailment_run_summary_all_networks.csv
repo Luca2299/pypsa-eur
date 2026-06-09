@@ -1,0 +1,4 @@
+scenario,total_available_mwh,total_dispatched_mwh,total_curtailed_mwh,total_capacity_mw,curtailment_share_pct,scenario_name,transmission_setting,wind_condition
+germany_base2_notwindy,559805.0757613375,559670.0093289285,135.06643240900922,174917.92760899998,0.0241274040299327,base2,fixed,notwindy
+germany_base2_windvariability,1094740.099922213,806746.2661311448,287993.8337910681,174917.92760899998,26.30705076132057,base2,fixed,windvariability
+germany_base2_windy,1918853.3509125472,1078283.6147280023,840569.7361845447,174917.92760899998,43.80583517676303,base2,fixed,windy

@@ -1,0 +1,4 @@
+day,scenario,scenario_name,total_unserved_energy_MWh,peak_load_shedding_MW,transmission_setting,wind_condition
+2025-04-08,germany_base2_notwindy,base2,0.0161494232089426,0.0006731492092612,fixed,notwindy
+2025-10-06,germany_base2_windvariability,base2,0.0102920032356932,0.0004290138909334,fixed,windvariability
+2025-10-26,germany_base2_windy,base2,0.0014919297669744,6.217826021220484e-05,fixed,windy
