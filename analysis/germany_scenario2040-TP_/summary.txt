@@ -39,7 +39,9 @@ Network: Scenario 2040 TP - Wind Variability
   stores: 900
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/network.png
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/line_congestion_YlOrRd.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/line_congestion.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/max_line_congestion_YlOrRd.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/max_line_congestion_YlOrRd.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/line_congestion_YlOrRd_links.png
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/line_extension_union_mapped.png
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/line_link_extension.png
 Plotting 'Scenario 2040 TP - Windy' network at time 2025-10-26 08:00:00 with peak marginal price 81.06 €/MWh
@@ -344,53 +346,5 @@ Store       Battery Storage           1.463668e+05        0.000000e+00  1.555836
 
 === Analysis Complete ===
 All results saved to: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/max_line_congestion_YlOrRd.png
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/line_congestion_YlOrRd.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/line_congestion_YlOrRd.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/line_congestion_YlOrRd.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/line_congestion_YlOrRd_links.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/line_congestion_YlOrRd_links.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/line_congestion_YlOrRd_links.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/line_congestion_YlOrRd.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/line_congestion_YlOrRd.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/line_congestion_YlOrRd.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/line_congestion_YlOrRd.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/line_congestion_YlOrRd.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/line_congestion_YlOrRd_links.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/line_link_extension.png
-======================================================================
- Network: Scenario 2040 TP - Windy
-  Average loading across all lines: 18.59%
-  Max average loading: 66.41%
-  Lines with >60% avg loading: 4
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Scenario 2040 TP - Not Windy
-  Average loading across all lines: 16.15%
-  Max average loading: 68.81%
-  Lines with >60% avg loading: 5
-  Lines with >70% avg loading: 0
-======================================================================
-
-======================================================================
- Network: Scenario 2040 TP - Wind Variability
-  Average loading across all lines: 21.35%
-  Max average loading: 68.98%
-  Lines with >60% avg loading: 20
-  Lines with >70% avg loading: 0
-======================================================================
-
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/load_shedding.png
-Plotting 'Scenario 2040 TP - Windy' network at time 2025-10-26 11:00:00 with peak curtailment 241215.39 MW
-Plotting 'Scenario 2040 TP - Not Windy' network at time 2025-04-08 10:00:00 with peak curtailment 58771.85 MW
-Plotting 'Scenario 2040 TP - Wind Variability' network at time 2025-10-06 01:00:00 with peak curtailment 129697.13 MW
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/curtailment_map_by_carrier_pie.png
-Plotting 'Scenario 2040 TP - Windy' network at time 2025-10-26 11:00:00 with peak curtailment 241215.39 MW
-Plotting 'Scenario 2040 TP - Not Windy' network at time 2025-04-08 10:00:00 with peak curtailment 58771.85 MW
-Plotting 'Scenario 2040 TP - Wind Variability' network at time 2025-10-06 01:00:00 with peak curtailment 129697.13 MW
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/curtailment_map_by_carrier_pie.png
-Plotting 'Scenario 2040 TP - Windy' network at time 2025-10-26 11:00:00 with peak curtailment 241215.39 MW
-Plotting 'Scenario 2040 TP - Not Windy' network at time 2025-04-08 10:00:00 with peak curtailment 58771.85 MW
-Plotting 'Scenario 2040 TP - Wind Variability' network at time 2025-10-06 01:00:00 with peak curtailment 129697.13 MW
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/curtailment_map_by_carrier_pie.png

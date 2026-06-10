@@ -39,7 +39,9 @@ Network: Base Case - Wind Variability
   stores: 900
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base2_/network.png
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base2_/line_congestion_YlOrRd.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base2_/line_congestion.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base2_/max_line_congestion_YlOrRd.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base2_/max_line_congestion_YlOrRd.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base2_/line_congestion_YlOrRd_links.png
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base2_/line_extension_union_mapped.png
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base2_/line_link_extension.png
 Plotting 'Base Case - Windy' network at time 2025-10-26 16:00:00 with peak marginal price 253.92 €/MWh
