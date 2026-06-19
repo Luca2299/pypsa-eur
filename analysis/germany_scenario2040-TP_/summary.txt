@@ -346,5 +346,3 @@ Store       Battery Storage           1.463668e+05        0.000000e+00  1.555836
 
 === Analysis Complete ===
 All results saved to: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/max_line_congestion_YlOrRd.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-TP_/line_congestion_YlOrRd.png

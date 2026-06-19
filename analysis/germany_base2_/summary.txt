@@ -354,3 +354,5 @@ Store       Battery Storage           1.781704e+04        0.000000e+00  1.800094
 
 === Analysis Complete ===
 All results saved to: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base2_
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base2_/max_line_congestion_YlOrRd.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_base2_/max_line_congestion_YlOrRd.png

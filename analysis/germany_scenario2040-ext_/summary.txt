@@ -39,7 +39,9 @@ Network: Scenario 2040 Extension - Wind Variability
   stores: 900
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/network.png
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/line_congestion_YlOrRd.png
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/line_congestion.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/max_line_congestion_YlOrRd.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/max_line_congestion_YlOrRd.png
+Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/line_congestion_YlOrRd_links.png
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/line_extension_union_mapped.png
 Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/line_link_extension.png
 Plotting 'Scenario 2040 Extension - Windy' network at time 2025-10-26 16:00:00 with peak marginal price 33.90 €/MWh
@@ -340,4 +342,3 @@ Store       Battery Storage           1.873355e+05        0.000000e+00  2.056902
 
 === Analysis Complete ===
 All results saved to: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_
-Saved figure: /home/lucakristin/Desktop/my_pypsa/pypsa-eur/analysis/germany_scenario2040-ext_/line_congestion_YlOrRd.png
